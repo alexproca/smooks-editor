@@ -32,6 +32,6 @@ For the moment it can be buit only from eclipse.
  - [video tutorial here][video-guide]
 
 
-[jboos-smooks-editor]: https://github.com/jbosstools/jbosstools-full-svn-mirror/tree/3.3.indigo/smooks "Smooks Editor"
+[jboss-smooks-editor]: https://github.com/jbosstools/jbosstools-full-svn-mirror/tree/3.3.indigo/smooks "Smooks Editor"
 [html-guide]: http://docs.jboss.org/tools/OLD/3.1.0.GA/en/jboss_smooks_plugin_ref_guide/html_single/index.html "Html guide"
 [video-guide]: http://www.smooks.org/mediawiki/index.php?title=Eclipse_IDE "Video guide"
