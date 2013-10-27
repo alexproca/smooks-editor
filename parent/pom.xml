@@ -7,9 +7,6 @@
 	<version>0.0.3-SNAPSHOT</version>
 	<name>JBoss Tools Parent</name>
 	<packaging>pom</packaging>
-	<modules>
-		<module>../target-platform</module>
-	</modules>
 
 	<properties>
 		<!--tychoVersion>0.10.0-SNAPSHOT</tychoVersion -->
@@ -31,7 +28,6 @@
 		</target.platform.classifier.local>
 
 		<jbosstools-nightly>http://download.jboss.org/jbosstools/updates/nightly/3.3.indigo/</jbosstools-nightly>
-		<jbosstools-target-site>http://download.jboss.org/jbosstools/updates/target-platform_3.3.indigo/latest/</jbosstools-target-site>
 
 		<!-- pass in your own path using -Dlocal.site=file://home/$user/trunk/build/target-platform/REPO/ -->
 		<local.site>file://home/hudson/static_build_env/jbds/target-platform_3.3.indigo/e37M5-wtp33M5.target/</local.site>
@@ -265,171 +261,10 @@
 			</repositories>
 		</profile>
 
-		<profile>
-			<id>jbosstools-nightly</id>
-			<repositories>
-				<repository>
-					<id>jbosstools-nightly</id>
-					<url>${jbosstools-nightly}</url>
-					<layout>p2</layout>
-					<snapshots>
-						<enabled>true</enabled>
-					</snapshots>
-					<releases>
-						<enabled>true</enabled>
-					</releases>
-				</repository>
-			</repositories>
-		</profile>
-		<profile>
-			<id>jbosstools-nightly-staging-composite</id>
-			<activation>
-				<activeByDefault>false</activeByDefault>
-			</activation>
-			<repositories>
-				<repository>
-					<id>jbosstools-nightly-staging-composite</id>
-					<url>http://download.jboss.org/jbosstools/builds/staging/_composite_/3.3.indigo/</url>
-					<layout>p2</layout>
-					<snapshots>
-						<enabled>true</enabled>
-					</snapshots>
-					<releases>
-						<enabled>true</enabled>
-					</releases>
-				</repository>
-			</repositories>
-		</profile>
-		<profile>
-			<id>jboss-requirements-composite-mirror</id>
-			<activation>
-				<activeByDefault>false</activeByDefault>
-			</activation>
-			<repositories>
-				<repository>
-					<id>jboss-requirements-composite-mirror</id>
-					<url>http://download.jboss.org/jbosstools/updates/indigo/</url>
-					<layout>p2</layout>
-					<snapshots>
-						<enabled>true</enabled>
-					</snapshots>
-					<releases>
-						<enabled>true</enabled>
-					</releases>
-				</repository>
-			</repositories>
-		</profile>
-
-		<!-- Target platform file pointing at a single update site from which to 
-			resolve. See unified.site if you want to resolve against a site w/o using 
-			the unified.target file -->
-		<profile>
-			<id>unified.target</id>
-			<activation>
-				<activeByDefault>false</activeByDefault>
-			</activation>
-			<properties>
-			</properties>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.eclipse.tycho</groupId>
-						<artifactId>target-platform-configuration</artifactId>
-						<version>${tychoVersion}</version>
-						<configuration>
-							<target>
-								<artifact>
-									<groupId>org.jboss.tools</groupId>
-									<artifactId>org.jboss.tools.target.platform</artifactId>
-									<version>0.0.3-SNAPSHOT</version>
-									<classifier>${target.platform.classifier.unified}</classifier>
-								</artifact>
-							</target>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-
-		<!-- To use this profile, must have first created a local.target file, 
-			which points to a local repo. You can do this by hand or generate it from 
-			multiple.target using: cd ~/trunk/build/target-platform; ant See also the 
-			README in target-platform/ folder for additional usage examples. You can 
-			also run `ant help`. If you want to build the target-platform/pom.xml AND 
-			generate a local repo + local.target file ALL AT THE SAME TIME, you can do: 
-			mvn clean install -Pget.local.target -f /path/to/target-platform/pom.xml -->
-		<profile>
-			<id>local.target</id>
-			<activation>
-				<activeByDefault>false</activeByDefault>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.eclipse.tycho</groupId>
-						<artifactId>target-platform-configuration</artifactId>
-						<version>${tychoVersion}</version>
-						<configuration>
-							<target>
-								<artifact>
-									<groupId>org.jboss.tools</groupId>
-									<artifactId>org.jboss.tools.target.platform</artifactId>
-									<version>0.0.3-SNAPSHOT</version>
-									<classifier>${target.platform.classifier.local}</classifier>
-								</artifact>
-							</target>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
 
 		<!-- if you have a local repo mirror of the unified.site, you can use this 
 			profile with the -Dlocal.site=file://path/to/repo to resolve dependencies 
 			without needing to use a local.site file -->
-		<profile>
-			<id>local.site</id>
-			<activation>
-				<activeByDefault>false</activeByDefault>
-			</activation>
-			<repositories>
-				<repository>
-					<id>local.site</id>
-					<url>${local.site}</url>
-					<layout>p2</layout>
-					<snapshots>
-						<enabled>true</enabled>
-					</snapshots>
-					<releases>
-						<enabled>true</enabled>
-					</releases>
-				</repository>
-			</repositories>
-		</profile>
-
-		<!-- Time saver: to build everything from scratch from a single repo containing 
-			all deps in unified.target, but without using the target file to filter site 
-			contents (may end up using a different version of a dependency if site contains 
-			multiple versions) -->
-		<profile>
-			<id>unified.site</id>
-			<activation>
-				<activeByDefault>false</activeByDefault>
-			</activation>
-			<repositories>
-				<repository>
-					<id>jbosstools-target-site</id>
-					<url>${jbosstools-target-site}</url>
-					<layout>p2</layout>
-					<snapshots>
-						<enabled>true</enabled>
-					</snapshots>
-					<releases>
-						<enabled>true</enabled>
-					</releases>
-				</repository>
-			</repositories>
-		</profile>
 
 		<profile>
 			<id>osx</id>
