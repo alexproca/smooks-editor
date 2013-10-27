@@ -1,0 +1,12 @@
+.idea/
+*.iml
+target/
+*.log
+.project
+.settings/
+.classpath
+.vagrant
+
+app.log
+app.log.1
+activemq-data/

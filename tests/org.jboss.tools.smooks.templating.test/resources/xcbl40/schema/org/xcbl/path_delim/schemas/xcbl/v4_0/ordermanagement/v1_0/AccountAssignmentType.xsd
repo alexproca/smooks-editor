@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="AccountAssignmentType">
+        <xsd:annotation>
+            <xsd:documentation>provides detailed account assignment information referring to items of internal documents.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="AccountAssignmentID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is the item number of account assignment information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="DistributionPercentage" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation>is the distribution by percentage in the case of multiple account assignment. The total for all account assignment information for an item must always be 100%.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="GLAccount" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is the General Ledger Account to which the costs are posted.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CostCenter" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is the assignment to a cost center as cost object.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="AccountAssignmentOrderNumber" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation/>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OperationNumber" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is the assignment to an activity within the order.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="SalesOrderReference" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation/>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="BusinessArea" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is the assignment to a business area as cost object.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ControllingArea" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is the assignment to a controlling area as cost object.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ProfitCenter" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is the assignment to a profit center as cost object.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="WorkBreakdownStructure" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is the assignment to a work breakdown structure element as cost object.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Network" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is the assignment to a network as cost object.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="FixedAsset" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is the assignment to an asset type (office inventory, for example) as cost object.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="FixedAssetSub" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation/>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="FundsCenter" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is the assignment to a funds center as cost object (usual for public facilities).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Fund" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is the assignment to a fund as cost object (usual for public facilities).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CommitmentItem" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is the assignment to a commitment item as cost object (usual for public facilities).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="FunctionalArea" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is the assignment to a functional area as cost object (usual for public facilities).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="GenericAccounting" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is a user defined account assignment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfNameValueSet" type="core:ListOfNameValueSetType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a collection of name and value sets.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ListOfAccountAssignmentType">
+        <xsd:annotation>
+            <xsd:documentation>is a list of account assignment information that references items in internal documents.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="AccountAssignment" type="AccountAssignmentType">
+                <xsd:annotation>
+                    <xsd:documentation>contains account assignment information </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

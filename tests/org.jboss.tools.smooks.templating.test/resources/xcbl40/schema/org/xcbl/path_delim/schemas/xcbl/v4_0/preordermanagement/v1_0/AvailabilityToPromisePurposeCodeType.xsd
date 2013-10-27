@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/preordermanagement/v1_0/preordermanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/preordermanagement/v1_0/preordermanagement.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType name="AvailabilityToPromisePurposeCodeType">
+        <xsd:annotation>
+            <xsd:documentation>This code identifies the purpose of the <!--code-->AvailabilityToPromise<!--/code--> message. This is a subset codelist derived from EDIFACT 1225 (Message Function,
+        Coded) and X12 353 (Transaction Set Purpose Code) and 587 (Acknowledgement Type Code)</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Other">
+                <xsd:annotation>
+                    <xsd:documentation>Custom Code</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Closed">
+                <xsd:annotation>
+                    <xsd:documentation>The Availabiltiy To Promise process is closed</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Open">
+                <xsd:annotation>
+                    <xsd:documentation>The Availabiltiy To Promise process is open</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Original">
+                <xsd:annotation>
+                    <xsd:documentation>Refers to the initial transmission of the Availability To Promise message.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Cancellation">
+                <xsd:annotation>
+                    <xsd:documentation>Indicates that a previous transmission of the Availabiltiy To Promise message is to be cancelled.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="EndProcess">
+                <xsd:annotation>
+                    <xsd:documentation>Specifies that the Availability To Promise process is to be terminated.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

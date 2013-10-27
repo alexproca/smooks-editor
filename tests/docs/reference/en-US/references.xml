@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter id="references">
+    <?dbhtml filename="reference.html"?>
+    <chapterinfo>
+        <keywordset>
+            <keyword>JBoss Tools</keyword>
+            <keyword>Smooks</keyword>
+            <keyword>JBDS</keyword>
+        </keywordset>
+    </chapterinfo>
+    <title>Reference</title>
+    <para>This chapter includes detailed reference information on all tabs in the Smooks Configuration Editor.</para>
+    <section id="process_tab">
+        <title>Process tab</title>
+        <para>The Process tab of the Smooks Configuration Editor provides a way to configure different types of transformations. By default the smooks configuration file is opened in this editor. If you have set another editor to open the file by default, you should right click on the smooks configuration file and select <menuchoice><guimenuitem>Open With</guimenuitem><guimenuitem>Smooks Configuration Editor</guimenuitem></menuchoice>.</para>
+        <para>The Process tab has two sections:</para>
+        <itemizedlist>
+            <listitem><para><xref linkend="processing_task_section"/></para></listitem>
+            <listitem><para><xref linkend="selected_task_details"/></para></listitem>
+        </itemizedlist>
+        <para>You can see them on the picture below.</para>
+        <figure>
+            <title>Two Sections of the Process tab.</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="images/reference/reference_1.png" scale="90"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <section id="processing_task_section">
+            <title>Processing Task section</title>
+            <para>Using the popup menu in the Processing Task section you can select which types of technologies (templating or mapping ones) you will use for transformation: </para>
+            <para>The descriptions of the popup menu options are in the following table.</para>
+            <table>
+                <title>Process Tab. Processing Task section.</title>   
+                <tgroup cols="3">
+                    <colspec colnum="1" align="left" colwidth="1*"/>
+                    <colspec colnum="2" align="left" colwidth="3*"/>
+                    <colspec colnum="3" align="left" colwidth="1*"/>
+                    
+                    <thead>
+                        <row>
+                            <entry>Option</entry>									
+                            <entry>Description</entry>
+                            <entry>Default</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>Add Task</entry>
+                            <entry>Select one of the following tasks according to the required Source and Result file types:
+                                <itemizedlist>
+                                    <listitem><para><emphasis>Input</emphasis> - this task is required and appears automatically when Smooks config file is created. You should just configure it properly.</para></listitem>
+                                    <listitem><para><emphasis>Java Mapping</emphasis></para></listitem>
+                                    <listitem><para><emphasis>Apply Template</emphasis></para></listitem>
+                                </itemizedlist>
+                            </entry>
+                            <entry></entry>
+                        </row> 
+                        
+                        <row>
+                            <entry>Delete</entry>
+                            <entry>Click this option if you want to delete some task from the section. Note:you can't delete input task because it's required.</entry>
+                            <entry></entry>
+                            
+                        </row> 
+                        
+                        <row>
+                            <entry>Input Methods</entry>
+                            <entry>Choose one of the following methods:
+                                <itemizedlist>
+                                    <listitem><para>System</para></listitem>
+                                    <listitem><para>Simple</para></listitem>
+                                    <listitem><para>IBus (Inteligent Input Bus)</para></listitem>                                    
+                                    <listitem><para>Amharic(EZ+)</para></listitem>
+                                    <listitem><para>Cedilla</para></listitem>
+                                    <listitem><para>Cyrillic</para></listitem>
+                                    <listitem><para>Inuktitut</para></listitem>
+                                    <listitem><para>IPA</para></listitem>
+                                    <listitem><para>Multipress</para></listitem>
+                                    <listitem><para>SCIM Bridge Input Method</para></listitem>
+                                    <listitem><para>SCIM Input Method</para></listitem>
+                                    <listitem><para>Thai-Lio</para></listitem>
+                                    <listitem><para>Tigrigna-Eritrean(EZ+)</para></listitem>
+                                    <listitem><para>Tigrigna-Ethiopian(EZ+)</para></listitem>
+                                    <listitem><para>Vietnamese</para></listitem>
+                                    <listitem><para>X input Method</para></listitem>
+                                    <listitem><para>None</para></listitem>                                    
+                                </itemizedlist>
+                            </entry>
+                            <entry>System</entry>
+                        </row> 
+                    </tbody>
+                </tgroup>
+            </table>
+        </section>
+        <section id="selected_task_details">
+            <title>Selected Task Details Section</title>
+            <para>The options available in this section depends on the selected task in the Processing Task section. Because there are 3 types of tasks there are 3 different sets of its options in the Selected Task Details Section. They will be described one by one. </para>
+            <section>
+                <title>Selected Task Details Section for Input Task.</title>
+                <para>On the picture below you can find an example of the Selected Task Details Section view if XML is selected as input type.</para>
+                
+                <figure>
+                    <title>Selected Task Details Section for Input XML Task.</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/reference/reference_2.png" scale="90"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+                <para>As you can see on the picture above the Input Configuration section is empty for XML input file. However, this section has special configuration options for CSV,EDI,JSON,Custom input files.</para>
+                
+                <para>Here are the screens of these configuration options:</para>
+                <itemizedlist>
+                    <listitem><para>CSV:</para>
+                        <figure>
+                            <title>Selected Task Details Section for Input CSV Task.</title>
+                            <mediaobject>
+                                <imageobject>
+                                    <imagedata fileref="images/reference/reference_3.png" />
+                                </imageobject>
+                            </mediaobject>
+                        </figure>
+                    </listitem>
+                    <listitem><para>EDI:</para>
+                        <figure>
+                            <title>Selected Task Details Section for Input EDI Task.</title>
+                            <mediaobject>
+                                <imageobject>
+                                    <imagedata fileref="images/reference/reference_4.png"/>
+                                </imageobject>
+                            </mediaobject>
+                        </figure>
+                    </listitem>
+                    <listitem><para>JSON:</para>
+                        <figure>
+                            <title>Selected Task Details Section for Input JSON Task.</title>
+                            <mediaobject>
+                                <imageobject>
+                                    <imagedata fileref="images/reference/reference_5.png"/>
+                                </imageobject>
+                            </mediaobject>
+                        </figure>
+                    </listitem>
+                    <listitem><para>Custom:</para>
+                        <figure>
+                            <title>Selected Task Details Section for Input Custom Task.</title>
+                            <mediaobject>
+                                <imageobject>
+                                    <imagedata fileref="images/reference/reference_6.png"/>
+                                </imageobject>
+                            </mediaobject>
+                        </figure>
+                    </listitem>
+                </itemizedlist>
+                <para>All the input task configuration positions can be found in the table below:</para>   
+                <table>
+                    <title>Selected Task Details Section. Options for Input Task.</title>   
+                    <tgroup cols="3">
+                        <colspec colnum="1" align="left" colwidth="1*"/>
+                        <colspec colnum="2" align="left" colwidth="3*"/>
+                        <colspec colnum="3" align="left" colwidth="1*"/>           
+                        <thead>
+                            <row>
+                                <entry>Option</entry>									
+                                <entry>Description</entry>
+                                <entry>Default</entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <entry>Input type</entry>
+                                <entry>Select your type of input file.
+                                    If you don't find your type in the list, you should use Custom type:
+                                    <itemizedlist>
+                                        <listitem><para>No Input</para></listitem>
+                                        <listitem><para>XML</para></listitem>
+                                        <listitem><para>Java</para></listitem>
+                                        <listitem><para>XSD/WSDL</para></listitem>
+                                        <listitem><para>CSV</para></listitem>
+                                        <listitem><para>EDI</para></listitem>
+                                        <listitem><para>JSON</para></listitem>
+                                        <listitem><para>Custom</para></listitem>
+                                    </itemizedlist>
+                                </entry>
+                                <entry>XML</entry>
+                            </row> 
+                            
+                            <row>
+                                <entry>Input configuration
+                                    
+                                </entry>
+                                <entry>
+                                    <itemizedlist>
+                                        <listitem><para><emphasis>No Input</emphasis> - no info required</para></listitem>
+                                        <listitem><para><emphasis>XML</emphasis> - no info required</para></listitem>
+                                        <listitem><para><emphasis>Java</emphasis> - no info required</para></listitem>
+                                        <listitem><para><emphasis>XSD/WSDL</emphasis> - no info required</para></listitem>
+                                        <listitem><para><emphasis>CSV</emphasis></para><itemizedlist>
+                                            <listitem><para><emphasis>Fields</emphasis> - Comma separated list of CSV record field names
+                                            </para></listitem>
+                                            <listitem><para><emphasis>Separator Character</emphasis> - Field separator character.
+                                            </para></listitem>
+                                            <listitem><para><emphasis>Quote Character</emphasis> - Quote character.
+                                            </para></listitem>
+                                            <listitem><para><emphasis>Record Name</emphasis> - Name of csv record element.</para></listitem>
+                                            <listitem><para><emphasis>Root Name</emphasis> - Name of csv root element.</para></listitem>
+                                            <listitem><para><emphasis>indent</emphasis> - Add indentation character data to the generated event stream.  This simply makes the generated event stream easier to read in its serialized form.  Useful for testing etc.
+                                            </para></listitem>
+                                            <listitem><para><emphasis>Skip Lines</emphasis> - Number of lines to skip before processing starts.                                   
+                                            </para></listitem>
+                                        </itemizedlist>
+                                        </listitem>
+                                        <listitem><para><emphasis>EDI</emphasis></para>
+                                            <itemizedlist>
+                                                <listitem><para><emphasis>Target Profile</emphasis> - Defines the output transformation profile
+                                                </para></listitem>
+                                                <listitem><para><emphasis>Encoding</emphasis> - The character encoding.</para></listitem>
+                                                <listitem><para><emphasis>Mapping Model</emphasis> - Defines the EDI Mapping Model configuration for processing the EDI message stream to a stream of SAX events that can be processed by Smooks.</para></listitem>
+                                                <listitem><para><emphasis>Validate</emphasis> - This attribute turns on/off datatype validation in the EDI Parser. Validation is on by default. It makes sense to turn datatype validation off on the EDI Reader if the EDI data is being bound into a Java Object model.
+                                                </para></listitem>
+                                            </itemizedlist>
+                                        </listitem>
+                                        <listitem><para><emphasis>JSON</emphasis></para>
+                                            <itemizedlist>
+                                                <listitem><para><emphasis>Target Profile</emphasis> - Defines the output transformation profile</para></listitem>
+                                                <listitem><para><emphasis>Array Element Name</emphasis> - The element name of an array element.
+                                                </para></listitem>
+                                                <listitem><para><emphasis>Encoding</emphasis> - encoding: The default encoding of any JSON message InputStream processed by this Reader.</para></listitem>
+                                                <listitem><para><emphasis>Illegal Element Name Char Replacement</emphasis> - If illegal characters are encountered in a JSON element name then they are replaced with this value. By default this is not defined, so that the reader doesn't doesn't search for illegal characters.
+                                                </para></listitem>
+                                                <listitem><para><emphasis>Indent</emphasis> - Add indentation character data to the generated event stream.  This simply makes the generated event stream easier to read in its serialized form.  Useful for testing etc.
+                                                </para></listitem>
+                                                <listitem><para><emphasis>Key Prefix on Numeric</emphasis> - The prefix character to add if the JSON node name starts with a number. By default this is not defined, so that the reader doesn't search for element names that start with a number.
+                                                </para></listitem>
+                                                <listitem><para><emphasis>Key Whitespace Replacement</emphasis> - The replacement character for whitespaces in a JSON map key. By default this not defined, so that the reader doesn't search for whitespaces.
+                                                </para></listitem>
+                                                <listitem><para><emphasis>Null Value Replacement</emphasis> - The replacement string for JSON NULL values.</para></listitem>
+                                                <listitem><para><emphasis>Root Name</emphasis> - The element name of the document root.
+                                                </para></listitem>
+                                                <listitem><para><emphasis>Key Maps</emphasis> - Defines a JSON element name mapping The "from" key will be replaced with the "to" key or the contents of the element.
+                                                </para></listitem>                        
+                                            </itemizedlist>
+                                        </listitem>
+                                        <listitem><para><emphasis>Custom</emphasis></para>
+                                            <itemizedlist>
+                                                <listitem><para><emphasis>Target Profile</emphasis> - Defines the output transformation profile</para></listitem>
+                                                <listitem><para><emphasis>Class</emphasis> - Custom reader class.</para></listitem>
+                                                <listitem><para><emphasis>Handlers</emphasis> - Set a handler on the reader instance e.g. an EntityResolver, ErrorHandler etc.
+                                                </para></listitem>
+                                                <listitem><para><emphasis>Features</emphasis> - Reader Features List</para></listitem>
+                                                <listitem><para><emphasis>Parametres</emphasis> - Resource Parameters</para></listitem>
+                                                
+                                            </itemizedlist>
+                                        </listitem>
+                                    </itemizedlist></entry>
+                                <entry><itemizedlist>
+                                    <listitem><para><emphasis>CSV</emphasis></para><itemizedlist>
+                                        <listitem><para>not defined</para></listitem>
+                                        <listitem><para>','</para></listitem>
+                                        <listitem><para>'"'</para></listitem>
+                                        <listitem><para>csv-record</para></listitem>
+                                        <listitem><para>csv-set</para></listitem>
+                                        <listitem><para>true</para></listitem>
+                                        <listitem><para>0</para></listitem>
+                                    </itemizedlist>
+                                    </listitem>
+                                    <listitem><para><emphasis>EDI</emphasis></para>
+                                        <itemizedlist>
+                                            <listitem><para>not defined</para></listitem>
+                                            <listitem><para>UTF-8</para></listitem>
+                                            <listitem><para>not defined</para></listitem>
+                                            <listitem><para>true</para></listitem>
+                                        </itemizedlist>
+                                    </listitem>
+                                    <listitem><para><emphasis>JSON</emphasis></para>
+                                        <itemizedlist>
+                                            <listitem><para>not defined</para></listitem>
+                                            <listitem><para>element</para></listitem>
+                                            <listitem><para>UTF-8</para></listitem>
+                                            <listitem><para>not defined</para></listitem>
+                                            <listitem><para>false</para></listitem>
+                                            <listitem><para>not defined</para></listitem>
+                                            <listitem><para>not defined</para></listitem>
+                                            <listitem><para>""(an empty string)</para></listitem>
+                                            <listitem><para>'json'</para></listitem>
+                                            <listitem><para>not defined</para></listitem>                        
+                                        </itemizedlist>
+                                    </listitem>
+                                    <listitem><para><emphasis>Custom</emphasis></para>
+                                        <itemizedlist>
+                                            <listitem><para>no defaults</para></listitem>
+                                            
+                                        </itemizedlist>
+                                    </listitem>
+                                </itemizedlist></entry>
+                            </row> 
+                            <row>
+                                <entry>Input Data</entry>
+                                <entry>You should select a data file using the <guibutton>Add</guibutton> and <guibutton>Delete</guibutton> buttons</entry>
+                                <entry></entry>
+                            </row>
+                            <row>
+                                <entry>Input Model View</entry>
+                                <entry>Using this view you can see the structure of your input file.If  the file has been changed, to see the changes click the <emphasis>Refresh</emphasis>link.</entry>
+                                <entry></entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </section>
+            <section id="mapping_task"><title>Selected Task Details section for Java Mapping Task.</title>
+                <para>Selected Task Details section for this task is presented by the graph, which eases the process of java mapping. </para>
+                <figure>
+                    <title>Selected Task Details Section for Mapping Task.</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/reference/reference_7.png" scale="90"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+                <para>This graphical editor allows you to perform drag&amp;drop operations with the nodes of transformed data to map the source data to target data. When you save the changes in the graphical editor the correct Smooks configuration file content will be generated. </para>
+                <para>Using the popup menu in the <emphasis>Selected Task Details</emphasis> section you can manage the diagram elements on the canvas. </para>
+                <para>The descriptions of the popup menu options are in the following table.</para>
+                <table id="popup">
+                    <title>Popup menu. Selected Task Details section.</title>   
+                    <tgroup cols="3">
+                        <colspec colnum="1" align="left" colwidth="1*"/>
+                        <colspec colnum="2" align="left" colwidth="3*"/>
+                        <colspec colnum="3" align="left" colwidth="1*"/>
+                        
+                        <thead>
+                            <row>
+                                <entry>Option</entry>									
+                                <entry>Description</entry>
+                                <entry>Default</entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <entry>Add</entry>
+                                <entry>Select one of the following tasks:
+                                    <itemizedlist>
+                                        <listitem><para><emphasis>Java Class</emphasis> - adds a bean context item to the config file. This option is available when no elements are selected and a user right clicks on the canvas.
+                                        </para></listitem>
+                                        <listitem><para><emphasis>Expession Binding</emphasis> - adds expression based binding to selected java binding element.</para></listitem>
+                                        <listitem><para><emphasis>Value Binding</emphasis> - adds Value binding (&lt;jb:value&gt;) to the selected java binding element.</para></listitem>
+                                        <listitem><para><emphasis>Bean Binding</emphasis> - adds Wiring binding (&lt;jb:wiring&gt;) to the selected java binding element.</para></listitem>
+                                    </itemizedlist>
+                                </entry>
+                                <entry></entry>
+                            </row> 
+                            <row>
+                                <entry>Undo</entry>
+                                <entry>This option allows you to revert any changes made in the previous step.
+                                </entry>
+                                <entry></entry>
+                                
+                            </row> 
+                            <row>
+                                <entry>Redo</entry>
+                                <entry>This option allows you to redo the changes made at the previous step.
+                                </entry>
+                                <entry></entry>
+                                
+                            </row> 
+                            <row>
+                                <entry>Delete</entry>
+                                <entry>This option is available only if you select an element on the canvas. Click this option if you want to delete the element from it.
+                                </entry>
+                                <entry></entry>
+                                
+                            </row> 
+                            <row>
+                                <entry>Auto Layout</entry>
+                                <entry>Sets the default layout of the elements on the canvas.</entry>
+                                <entry></entry>
+                                
+                            </row>                          
+                            <row>
+                                <entry>Properties</entry>
+                                <entry>Click this option if you want to add the <emphasis>Properties view</emphasis> to the current perspective. The <emphasis>Properties view</emphasis> 
+                                    will automatically display the properties of the selected diagram element.
+                                </entry>
+                                <entry></entry>
+                            </row> 
+                            
+                            <row>
+                                <entry>Input Methods</entry>
+                                <entry>Choose one of the following methods:
+                                    <itemizedlist>
+                                        <listitem><para>System</para></listitem>
+                                        <listitem><para>Simple</para></listitem>
+                                        <listitem><para>Amharic(EZ+)</para></listitem>
+                                        <listitem><para>Cedilla</para></listitem>
+                                        <listitem><para>Cyrillic</para></listitem>
+                                        <listitem><para>Inuktitut</para></listitem>
+                                        <listitem><para>IPA</para></listitem>
+                                        <listitem><para>Multipress</para></listitem>
+                                        <listitem><para>SCIM Bridge Input Method</para></listitem>
+                                        <listitem><para>SCIM Input Method</para></listitem>
+                                        <listitem><para>Thai-Lio</para></listitem>
+                                        <listitem><para>Tigrigna-Eritrean(EZ+)</para></listitem>
+                                        <listitem><para>Tigrigna-Ethiopian(EZ+)</para></listitem>
+                                        <listitem><para>Vietnamese</para></listitem>
+                                        <listitem><para>X input Method</para></listitem>
+                                    </itemizedlist>
+                                </entry>
+                                <entry>System</entry>
+                            </row> 
+                        </tbody>
+                    </tgroup>
+                </table> 
+            </section>
+            <section><title>Selected Task Details section for Template Task.</title>
+                <para>Selected Task Details section for this task is presented by the graph, which is similar to what is described in the section <xref linkend="mapping_task"/>.
+                </para>
+                <figure>
+                    <title>Selected Task Details Section for Template Task.</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/reference/reference_7a.png" scale="90"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+                <para>Popup menu similar to <xref linkend="popup"/>.</para>
+            </section>
+        </section>
+        
+    </section>
+    <section id="options_tab">
+        <title>Options Tab</title>
+        <para>This section describes Options tab of the Smooks Configuration File editor, and gives short recommendations how this tab can be used during the project configuring.</para>
+        <figure>
+            <title> Options tab of the Smooks Configuration File editor</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="images/reference/reference_8.png" scale="90"/>
+                </imageobject>
+            </mediaobject>
+        </figure> 
+        <section>
+            <title>Smooks Configuration section</title>
+            <para> 
+                The <property>Smooks Configuration</property> section in the <property>Options Tab</property> displays only the Smooks Platform Version value.
+            </para>
+            <figure>
+                <title>Smooks Configuration section of Options tab</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="images/reference/reference_9.png" scale="90"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+            <para>This value can not be modified, and is set according to the version of the Smooks libraries that are added to the project.
+            </para>
+        </section>
+        
+        <section>
+            <title>Filter Settings Filter section</title>
+            <para> 
+                In Filter Settings section you can set the following global options responsible for the Smooks filtering configuration:</para>
+            <figure>
+                <title>Filter Settings section of Options tab</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="images/reference/reference_10.png" scale="90"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+            <para>This behavior can be turned off using this global configuration parameter and can be overridden on a per fragment basis by targeting a Visitor implementation at that fragment that takes ownership of the Result writer (in the case of SAX filtering), or simply modifies the DOM (in the case of DOM filtering). As an example of this, see the FreeMarkerTemplateProcessor. 
+            </para>
+            <table>
+                <title>Options Tab. Filter Settings section.</title>   
+                <tgroup cols="3">
+                    <colspec colnum="1" align="left" colwidth="1*"/>
+                    <colspec colnum="2" align="left" colwidth="3*"/>
+                    <colspec colnum="3" align="left" colwidth="1*"/>
+                    
+                    <thead>
+                        <row>
+                            <entry>Option</entry>									
+                            <entry>Description</entry>
+                            <entry>Default</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>Stream Filter Type</entry>
+                            <entry>Determines the type of processing model that will be used. Please refer to the <ulink url="http://www.smooks.org/mediawiki/index.php?title=V1.2:Smooks_v1.2_User_Guide#Filtering_Process_Selection_.28DOM_or_SAX.3F.29"> Filtering Process Selection section</ulink> of the official Smooks User Guide for more information about these models:
+                                <itemizedlist>
+                                    <listitem><para><emphasis>SAX</emphasis></para></listitem>
+                                    <listitem><para><emphasis>DOM</emphasis></para></listitem>
+                                </itemizedlist>
+                            </entry>
+                            <entry>SAX</entry>
+                        </row> 
+                        
+                        <row>
+                            <entry>Default Serialization is On</entry>
+                            <entry>Defines whether the default serialization should be switched on. Default serialization being enabled leads to locating StreamResult/DOMResult to the Result objects provided to the Smooks.filterSource method and to serialization all the events to that Result.</entry>
+                            <entry>false</entry>
+                            
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+        </section> 
+    </section>
+    <section id="smooksformeditor_sourcetab">
+        
+        <title>Source Tab</title>
+        <para>This section provides information about the Smooks Source Editor Page.</para>
+        <section>
+            <title>XML Source Editor</title>
+            <para>You can use this editor to edit the Smooks Configuration file directly. </para>
+            <figure>
+                <title>Graphical Editor</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="images/source_editor/source_editor1.png" scale="90"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+        </section>
+        <section>
+            <title>Error underlining in Graphical Editor</title>
+            <para>If the <property>Smooks tools</property> can&apos;t understand the configuration file or the configuration file is illegal (e.g. XML structure isn&apos;t valid for a Smooks Configuration file), the error is underlined.</para>
+            <figure>
+                <title>Graphical Editor</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="images/reference/reference_11.png" scale="90"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+            
+        </section>
+        
+        <section>
+            <title>Smooks Configuration File Validator</title>
+            <para>
+            	The Smooks configuration file validator will validate your Smooks configuration file. Just right-click on the file and then click on the <guibutton>Validate</guibutton> button. The validator can be enabled/disabled by selecting <menuchoice><guimenuitem>Window</guimenuitem><guimenuitem>Preferences</guimenuitem><guimenuitem>Validation</guimenuitem></menuchoice>, as you can see in the image below:
+            </para>
+            
+            <figure>
+                <title>Validation: Smooks Configuration File Validator</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="images/source_editor/smooks_conf_validator.png" scale="90"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+            
+            <para>You can set up your Smooks validator to include and exclude groups to validate, and specify rules for validation. Just click on the <guibutton>Settings</guibutton> button and use the options provided, which you can see in the image below:</para>
+            
+            <figure>
+                <title>Smooks Configuration File Validator Settings</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="images/source_editor/smooks_conf_validator_settings.png" scale="90"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+        </section>
+    </section>
+    <section>
+        <title>Properties View</title>
+        <para><emphasis><property>Properties View</property></emphasis> is available for some elements on the canvas of Java Mapping and Apply Template Tasks, like:</para>
+        <itemizedlist>
+            <listitem><para><emphasis><property>Java mapping</property></emphasis>:java class members,its fields,
+                links between input values and the class members;</para></listitem>
+            <listitem><para><emphasis><property>Apply Template</property></emphasis>:output template.</para></listitem>
+        </itemizedlist>
+        <para>To add <emphasis><property>Properties View</property></emphasis> 
+            to the opened perspective the user can either open <menuchoice><guimenuitem>Window</guimenuitem><guimenuitem>Show View</guimenuitem><guimenuitem>Preferences</guimenuitem></menuchoice> in the toolbar or right click the element which properties he wants to inspect and select <property>Properties</property> in the popup menu. On the picture below you can see how this view looks like when some csv template is selected.
+        </para>
+        <figure>
+            <title>Properties View</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="images/reference/reference_12.png" scale="90"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>
+            This view is fully synchronized with the canvas of the <emphasis><property>Smooks Configuration Editor</property></emphasis>. This means that when you change the selected element by clicking on it, the properties of a new element are immediately displayed in it. Using <emphasis><property>Properties View</property></emphasis> you can then edit all the properties of the selected item.
+        </para>
+        <figure>
+            <title>Synchronization between Properties View and the canvas</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="images/reference/reference_13.png" scale="90"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <section>
+            <title>Decode Configuration</title>
+            <para>Smooks tools support decode parameter configuration through the Decode tab in <emphasis> <property>Properties View</property></emphasis> activated by clicking the connection between input model and bean items. </para>
+            <para>On the picture below you can see an example of decode configurations for mapping an <property>Input Model</property> Item to a <property>Date</property> format:</para>
+            <figure>
+                <title>Decode Configuration tab in Properties View</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="images/reference/reference_14.png" scale="90"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+            <para>The descriptions of the <property>Decode Configuration</property> tab options are listed in the following table:</para>
+            <table>
+                <title>Decode Configuration tab in Properties View</title>   
+                <tgroup cols="3">
+                    <colspec colnum="1" align="left" colwidth="1*"/>
+                    <colspec colnum="2" align="left" colwidth="3*"/>
+                    <colspec colnum="3" align="left" colwidth="1*"/>
+                    
+                    <thead>
+                        <row>
+                            <entry>Option</entry>									
+                            <entry>Description</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>Decoder</entry>
+                            <entry>Select from the dropdown list the type of decoder you need.
+                            </entry>
+                        </row> 
+                        
+                        <row>
+                            <entry>Decoder Parameters</entry>
+                            <entry>For most of decoders the <emphasis><property>Decoder Parameters table</property></emphasis> is empty. But some of the decoders require additional configuration
+                                (like Date decoder on the picture above), so you should configure them by editing the corresponding line in the <property>Value</property> row. For example, for the Date Decoder:
+                                <itemizedlist>
+                                    <listitem><para><property>format</property> - Date format string.</para></listitem>
+                                    <listitem><para><property>locale country</property> - ISO Country Code. Upper case two-letter code defined by ISO-3166. </para></listitem>
+                                    <listitem><para><property>locale language</property> - ISO Language Code. Lower case two-letter code defined by ISO-639. </para></listitem>
+                                </itemizedlist>
+                            </entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <para>The <property>Decoder Parameters</property> section for <property>EnumDecoder</property> quite differs from other types of decoders. See the picture below:</para>
+            <figure>
+                <title>EnumDecoder in Properties View</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="images/reference/reference_15.png" scale="90"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+            <para>The Decoder Parameters section for EnumDecoder in Properties View consists of 2 rows:</para>
+            <itemizedlist>
+                <listitem><para><property>From Data Value</property>  - The lines in this row are editable. You can change them according to the names of enum types you used in input file. 
+                </para></listitem>
+                <listitem><para><property>To Enum Value</property> - The lines in this row are not editable. Here a set of all constants declared in mapped Enum type is listed. The user is responsible for correspondence between the values in these two rows. </para></listitem>
+            </itemizedlist>
+            
+            <para>For more information about different decoder parameters read the <ulink url="http://www.smooks.org/mediawiki/index.php?title=Main_Page">Smooks Technology Documentation</ulink>.</para>
+        </section>
+        <section>
+            <title>Apply Template Wizard</title>
+            <para>The <property>Apply Template Wizard</property> helps you to add a new <property>Apply Template Task</property> to the Smooks configuration file. You can call it from the popup menu when the <property>Java Mapping</property> item in the Processing Task section is selected by following <menuchoice><guimenuitem>Add Task</guimenuitem><guimenuitem>Apply Template</guimenuitem></menuchoice> (see <xref linkend="apply_templ"/> picture).</para>
+            <para>The wizard consists of several pages:</para>
+            
+            <orderedlist>
+                <listitem>
+                    <para>The first one includes only one option to adjust.The user should select in
+                        which of the two formats(<property>XML</property> or <property>CSV</property>) 
+                        he prefers to create an output message:</para>
+                    <figure>
+                        <title>The first page of Apply Template Wizard</title>
+                        <mediaobject>
+                            <imageobject>
+                                <imagedata fileref="images/reference/reference_24.png"/>
+                            </imageobject>
+                        </mediaobject>
+                    </figure>
+                    
+                </listitem>
+                <listitem><para>The second page is specific for each of the output message formats:</para>
+                    <itemizedlist>
+                        <listitem><para>If the <property>CSV</property> output message type was selected in the previous step the second wizard page will be the following :</para>
+                            <figure>
+                                <title>CSV:The second page of Apply Template Wizard</title>
+                                <mediaobject>
+                                    <imageobject>
+                                        <imagedata fileref="images/reference/reference_25.png"/>
+                                    </imageobject>
+                                </mediaobject>
+                            </figure> 
+                            <para>The wizard page includes the next options to adjust:</para>
+                            
+                            <table>
+                                <title>Apply Template Wizard. Second Page Options if CSV output format is selected.</title>   
+                                <tgroup cols="3">
+                                    <colspec colnum="1" align="left" colwidth="1*"/>
+                                    <colspec colnum="2" colwidth="3*"/>
+                                    <colspec colnum="3" align="left" colwidth="1*"/>
+                                    <thead>
+                                        <row>
+                                            <entry>Option</entry>									
+                                            <entry>Description</entry>
+                                            <entry>Default</entry>
+                                        </row>
+                                    </thead>
+                                    <tbody>
+                                        <row>
+                                            <entry>Fields</entry>
+                                            <entry>Comma separated list of CSV record field names.</entry>
+                                            <entry>Empty</entry>
+                                        </row> 
+                                        
+                                        <row>
+                                            <entry>Separator Character</entry>
+                                            <entry>Field separator character in the output message.</entry>
+                                            <entry>,</entry>
+                                        </row> 
+                                        
+                                        <row>
+                                            <entry>Quote Character</entry>
+                                            <entry>Quote character in the output message.</entry>
+                                            <entry>"</entry>
+                                        </row> 
+                                        
+                                        <row>
+                                            <entry>Output Field name</entry>
+                                            <entry>Click the checkbox if you want the output CSV message to also include field names.</entry>
+                                            <entry></entry>
+                                        </row> 
+                                        
+                                    </tbody>
+                                </tgroup>
+                            </table>
+                        </listitem>
+                        <listitem>
+                            <para>The following second wizard page will appear if the <property>XML</property> output message type was selected in the previous step:</para>
+                            <figure>
+                                <title>Apply Template Wizard. Second Page Options if XML output format is selected.</title>
+                                <mediaobject>
+                                    <imageobject>
+                                        <imagedata fileref="images/reference/reference_22.png"/>
+                                    </imageobject>
+                                </mediaobject>
+                            </figure>
+                            <para>Here you should first select the XSD or Sample XML output template format and then click the <property>Browse File System</property>
+                                or the <property>Browse Workspace</property> button depending on what browse type you want to use. For example, if you click <property>Browse Workspace</property>
+                                the following view will appear:
+                            </para>
+                            <figure>
+                                <title>Browse Workspace</title>
+                                <mediaobject>
+                                    <imageobject>
+                                        <imagedata fileref="images/reference/reference_18.png"/>
+                                    </imageobject>
+                                </mediaobject>
+                            </figure>
+                            <para>In the workspace you should select the template you want to use and click the <guibutton>OK</guibutton> button.
+                            </para>
+                            <para>If you selected XSD format after adjusting the template path you should click the <guibutton>Load</guibutton> button: 
+                            </para> 
+                            <figure>
+                                <title>Load Button</title>
+                                <mediaobject>
+                                    <imageobject>
+                                        <imagedata fileref="images/reference/reference_19.png"/>
+                                    </imageobject>
+                                </mediaobject>
+                            </figure>
+                            <para>After that it is necessary to select the root node for the template in the <property>Select Root Element</property>. Then click the <guibutton>Finish</guibutton> button.</para>
+                            <figure>
+                                <title>Load Button</title>
+                                <mediaobject>
+                                    <imageobject>
+                                        <imagedata fileref="images/reference/reference_20.png"/>
+                                    </imageobject>
+                                </mediaobject>
+                            </figure>                           
+                            <para>If you have chosen Sample XML option after selecting the template XML file destination you should only click the <guibutton>Finish</guibutton> button: 
+                            </para>
+                            <figure>
+                                <title>Load Button</title>
+                                <mediaobject>
+                                    <imageobject>
+                                        <imagedata fileref="images/reference/reference_23.png"/>
+                                    </imageobject>
+                                </mediaobject>
+                            </figure>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+            </orderedlist>
+        </section>
+        
+    </section>
+    
+</chapter>

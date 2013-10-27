@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="CategoryAttributeType">
+        <xsd:annotation>
+            <xsd:documentation>holds definitions of additional attributes (if any) applicable to members
+        of this category.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="AttributeID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the category's attribute. It must be unique among
+        attributes present in this particular <!--code-->SchemaCategory<!--/code-->. If a child
+        <!--code-->SchemaCategory<!--/code--> has the same <!--code-->AttributeID<!--/code--> as a parent
+        <!--code-->SchemaCategory<!--/code-->, the suggested behavior of an xCBL catalog
+        processor is to report this as an error. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="AttributeName" type="AttributeNameType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the name of the attribute. Multilanguage support is
+        provided by potentially having multiple <!--code-->AttributeName<!--/code--> elements,
+        each of which has an <!--code-->xml:lang<!--/code--> attribute. <!--code-->xml:lang<!--/code-->
+        must contain a value that is a valid RFC 1766 language code. If not specified
+        in <!--code-->DefaultLanguage<!--/code--> or in a specific element, the value is assumed
+        to be <!--code-->en<!--/code--> for "English."</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="AttributeType" type="AttributeTypeType">
+                <xsd:annotation>
+                    <xsd:documentation>provides the data type of the category's attribute. Has
+        <!--code-->ScalarType<!--/code--> enumerated attribute that indicates whether this data
+        value is a <!--code-->String<!--/code-->, an <!--code-->Integer<!--/code-->, a <!--code-->Numeric<!--/code-->
+        value (such as a floating point number), a <!--code-->Currency<!--/code--> (an ISO
+        Currency Code), a <!--code-->Date<!--/code-->, or an <!--code-->Enumeration<!--/code-->. If an
+        <!--code-->Enumeration<!--/code-->, <!--code-->AttributeType<!--/code--> has a set of subelements
+        called <!--code-->EnumeratedValue<!--/code--> which list the values of the enumeration.
+        Also optionally has <!--code-->MaxSize<!--/code--> attribute which indicates the maximum
+        length of the string in characters.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DefaultUOM" type="core:UOMType">
+                <xsd:annotation>
+                    <xsd:documentation>is the default unit of measure for this attribute.  This defaults to EA (each) and
+        implies the dimensionality of the attribute (e.g. length, mass, time, etc.)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="IsRequired" type="IsRequiredType">
+                <xsd:annotation>
+                    <xsd:documentation>indicates, by its presence in the message, that the attribute is
+        required. This should be reflected by the validation behavior of the processing
+        application.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

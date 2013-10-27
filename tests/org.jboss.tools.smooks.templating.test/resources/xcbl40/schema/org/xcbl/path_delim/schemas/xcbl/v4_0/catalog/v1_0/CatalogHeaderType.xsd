@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="CatalogHeaderType">
+        <xsd:annotation>
+            <xsd:documentation>provides administrative information about the catalog including its provider, and suppliers and other trading partners present in the catalog.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="CatalogID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>holds a required unique identifier for catalog. Must be unique within the set of catalogs provided by a particular catalog provider.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CatalogDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>is the date that this catalog information was created.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="CatalogProvider" type="CatalogProviderType">
+                <xsd:annotation>
+                    <xsd:documentation>specifies the providing party of this catalog. Contains an optional <!--code-->Party<!--/code--> subelement. Has optional attribute of <!--code-->ProviderID<!--/code--> whose ID overrides the ID present on a <!--code-->Party<!--/code--> element. Either a <!--code-->ProviderID<!--/code--> attribute or a <!--code-->Party<!--/code--> subelement must be present.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CatalogPrettyName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is used to hold the name of the catalog to be used for display purposes.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CatalogLogoURL" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>holds the location of a logo for the catalog to be used for display purposes.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PricingInformation" type="PricingInformationType">
+                <xsd:annotation>
+                    <xsd:documentation>A list of <!--code-->PriceCatalog<!--/code--> definitions  (see sub-element tables for definition) NOTE: without mention in a <!--code-->SupplierAccount<!--/code-->, the audience for prices in a <!--code-->PriceCatalog<!--/code--> is undefined.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="SupplierAccountInformation" type="SupplierAccountInformationType">
+                <xsd:annotation>
+                    <xsd:documentation>is used by the supplier to provide a within-catalog unique name for an account
+        associated with a particular buyer that has a specific pricing rule associated with it.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ValidFrom" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>gives the date that products and price in this catalog begin to be available.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ValidUntil" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>gives the date on which the information in this catalog is no longer applicable.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CatalogVersion" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation>holds the version number of catalog specified as a single integer. Should be specified as a higher number than any previous catalog updates that have been sent.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DefaultLanguage" type="DefaultLanguageType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the attribute <!--code-->xml:lang<!--/code--> indicating the language that should be assumed for the catalogdocument (and subsequent documents targeting this catalog, if it is not respecified) when it is not specified explicitly on a particular element.  The value of <!--code-->xml:lang<!--/code--> must be a valid RFC 1766 language code.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DefaultCurrency" type="core:CurrencyType">
+                <xsd:annotation>
+                    <xsd:documentation>ISO currency code indicating the currency that should be assumed in this catalog document (and subsequent documents targeting this catalog, if it is not respecified).  Contains a <!--code-->Currency<!--/code--> element from the rest of xCBL, which itself contains a <!--code-->CurrencyCoded<!--/code--> and a <!--code-->CurrencyCodedOther<!--/code-->  element.  Only <!--code-->CurrencyCoded<!--/code--> is required to appear in the <!--code-->Currency<!--/code--> element.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="IsReplacement" type="IsReplacementType">
+                <xsd:annotation>
+                    <xsd:documentation>indicates that this is a complete replacement for an existing catalog's Schema and Products-Pricing's are unaffected by this flag (see the PriceCatalog <!--code-->Action<!--/code--> sub-element for how to effect bulk deletions of Pricings).The independence between <!--code-->Product<!--/code--> and <!--code-->Pricing<!--/code--> replacement is a feature enabling a new set of Product information to be added without needing to restate all the pricing information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="ShortDescription" type="ShortDescriptionType">
+                <xsd:annotation>
+                    <xsd:documentation>gives a short description of the catalog. Has <!--code-->xml:lang<!--/code--> attribute so there can be more than one <!--code-->ShortDescription<!--/code--> in multiple languages. <!--code-->xml:lang<!--/code--> must contain valid RFC 1766 language code.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="LongDescription" type="LongDescriptionType">
+                <xsd:annotation>
+                    <xsd:documentation>gives a long description of the catalog. Has <!--code-->xml:lang<!--/code--> attribute for multilanguage support. <!--code-->xml:lang<!--/code--> must contain valid RFC 1766 language code. If not specified in <!--code-->DefaultLanguage<!--/code--> or in a specific element, the value is assumed to be <!--code-->en<!--/code--> for "English." <!--code-->DescriptionPurpose<!--/code--> is an attribute that attempts to describe what the description is for. Examples of valid values are "sales" and "internal use only".</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="ObjectAttribute" type="ObjectAttributeType">
+                <xsd:annotation>
+                    <xsd:documentation>provides other data items for the overall catalog or catalog administration that are not in elements that already exist in the <!--code-->CatalogHeader<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

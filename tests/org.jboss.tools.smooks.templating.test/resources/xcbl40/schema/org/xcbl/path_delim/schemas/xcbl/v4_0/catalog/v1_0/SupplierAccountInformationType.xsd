@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="SupplierAccountInformationType">
+        <xsd:annotation>
+            <xsd:documentation>can provide a within-catalog unique name for an account associated with a particular Buyer,
+        that has a specific pricing rule associated with it. This supports supplier/buyer relationships that
+        may have more than one pricing agreement as well as those suppliers which only have a single pricing
+        agreement with each buyer.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="SupplierAccount" type="SupplierAccountType">
+                <xsd:annotation>
+                    <xsd:documentation>links a supplier's id for an account that a buyer may purchase against,
+        and the buyer's TPID.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

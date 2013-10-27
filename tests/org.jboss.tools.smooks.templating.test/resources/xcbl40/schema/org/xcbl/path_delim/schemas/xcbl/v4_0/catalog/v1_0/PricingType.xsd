@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="PricingType">
+        <xsd:annotation>
+            <xsd:documentation>contains all prices associated with a particular product from a particular
+        price catalog.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="ProductIDRef" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is the identification of the product to which the prices are for.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="PriceCatalogIDRef" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is a reference to the price catalog that the product prices are members of.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="ProductPrice" type="ProductPriceType">
+                <xsd:annotation>
+                    <xsd:documentation>is a list of the product pricing schemes</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

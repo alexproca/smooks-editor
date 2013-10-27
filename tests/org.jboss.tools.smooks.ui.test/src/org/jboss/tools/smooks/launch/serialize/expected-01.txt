@@ -1,0 +1,17 @@
+> order (beanId = "order")
+    > header (beanId = "header")
+        > customerNumber = 188276L
+        > customerName = "Mr. Fox"
+    > orderItems (beanId = "orderItems")
+        > org.jboss.tools.smooks.launch.serialize.OrderItem (beanId = "orderItem")
+            > productId = 55126L
+            > quantity = 6I
+            > price = 65.98D
+        > org.jboss.tools.smooks.launch.serialize.OrderItem (beanId = "orderItem")
+            > productId = 23423L
+            > quantity = 3I
+            > price = 8.42D
+        > org.jboss.tools.smooks.launch.serialize.OrderItem (beanId = "orderItem")
+            > productId = 45645L
+            > quantity = 7I
+            > price = 999.0D

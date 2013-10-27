@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/preordermanagement/v1_0/preordermanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/preordermanagement/v1_0/preordermanagement.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="RequestQuoteHeaderType">
+        <xsd:annotation>
+            <xsd:documentation>holds all RequestForQuotation header-level information.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="RequestQuoteID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains a reference number to identify the request
+                    document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="RequestQuoteIssueDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>indicates the date the request is created in the
+                    application.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="RequestForQuotationReferences" type="RequestQuoteReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a list of references for the request.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Purpose" type="RequestQuotePurposeType">
+                <xsd:annotation>
+                    <xsd:documentation>indicates the use of the document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="RequestQuoteDates" type="RequestQuoteDateType">
+                <xsd:annotation>
+                    <xsd:documentation>holds the dates for the <!--code-->RequestforQuotation<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="QuoteParty" type="QuotePartyType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the parties involved in the quotation.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ResultingOrderType" type="core:OrderTypeType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the type of the resulting order.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="QuoteCurrency" type="core:CurrencyType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the currency to quote in.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="AllowancesOrCharges" type="core:ListOfAllowOrChargeType">
+                <xsd:annotation>
+                    <xsd:documentation>lists the allowances and or charges for the request.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PaymentInstructions" type="core:PaymentInstructionsType">
+                <xsd:annotation>
+                    <xsd:documentation>describes the terms of payment relevant to the request.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="TermsOfDelivery" type="core:TermsOfDeliveryType">
+                <xsd:annotation>
+                    <xsd:documentation>defines the terms of delivery for the request.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="TaxReference" type="core:TaxReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the relevant tax information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfTransportRounting" type="core:ListOfTransportRoutingType">
+                <xsd:annotation>
+                    <xsd:documentation>describes the transport information for the message.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Language" type="core:LanguageType">
+                <xsd:annotation>
+                    <xsd:documentation>describes the language used on the
+                    <!--code-->RequestForQuotation<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="RequestQuoteHeaderNotes" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains general instructions for the <!--code-->RequestForQuotation<!--/code-->. This
+                    can be used to nominate another supplier if applicable.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfStructuredNote" type="core:ListOfStructuredNoteType">
+                <xsd:annotation>
+                    <xsd:documentation>contains one or more structured notes that allow you to provide
+                    notes that are more than a simple free-text field. such notes may include the
+                    message text, or this text may be referenced with an external identifier or a
+                    URL. An agency may be specified, and is needed in the case where an ID has been
+                    provided for a note that is either included in-line or referenced. This field
+                    is often used to include references to centrally stored clauses in contracts
+                    that are required to appear within business documents.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfAttachment" type="core:ListOfAttachmentType">
+                <xsd:annotation>
+                    <xsd:documentation>holds the list of attachments for the request.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

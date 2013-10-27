@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="PriceCatalogType">
+        <xsd:annotation>
+            <xsd:documentation>provides a means of naming a set of <!--code-->ProductPrices<!--/code--> when used
+        in conjunction with the <!--code-->Pricing<!--/code--> element.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="Action" type="ActionType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the action to be taken on the price catalog.  Add, Replace, Update and Delete are
+        acceptable values and additionally apply to all the <!--code-->Pricing<!--/code--> elements whose
+        <!--code-->PriceCatalogIDRef<!--/code--> matches this <!--code-->PriceCatalogID<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="PriceCatalogID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is a catalog-unique identification to refer to a set of <!--code-->ProductPrices<!--/code--> denoted
+        by grouping them in a <!--code-->Pricing<!--/code--> element with a <!--code-->PriceCatalogIDRef<!--/code--> matching this.
+        NOTE: <!--code-->PriceCatalog<!--/code-->'s have no established audience unless <!--code-->SupplierAccount<!--/code-->
+        is defined which references it.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ValidFrom" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>is the date from which the <!--code-->Pricings<!--/code--> in the catalog are effective.  This
+        overrides individual <!--code-->ProductPrice<!--/code--> <!--code-->ValidFrom<!--/code--> dates if and only if they
+        are earlier than this date.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ValidUntil" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>is the date until which the <!--code-->Pricings<!--/code--> in the catalog are effective.  This
+        overrides individual <!--code-->ProductPrice<!--/code--> <!--code-->ValidUntil<!--/code--> dates if and only if they
+        are later than this date</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

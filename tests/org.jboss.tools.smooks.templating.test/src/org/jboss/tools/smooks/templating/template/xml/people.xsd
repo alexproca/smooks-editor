@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:tns="http://www.example.org/people/"
+	xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/people/" xmlns:pref="http://www.example.org/simple-01/">
+	<import schemaLocation="simple-person.xsd" namespace="http://www.example.org/simple-01/"></import>
+
+	<element name="people" type="tns:people"></element>
+	
+    <complexType name="people">
+    	<sequence>
+    		<element name="person" type="pref:person" minOccurs="1" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+</schema>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="VisibilityRulesType">
+        <xsd:annotation>
+            <xsd:documentation>indicates the visibility level of the auction. If the information
+        is not provided, then the assumption is made that the auction is public and
+        that all values are visible. </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="VisibilityIndicator" type="xsd:boolean">
+                <xsd:annotation>
+                    <xsd:documentation>is a general indicator to specify whether or not the auction is
+        public or private.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="VisibilityOfComments" type="xsd:boolean">
+                <xsd:annotation>
+                    <xsd:documentation>indicates if an auction participant can access the comments of
+        other participants.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="VisibilityOfAmounts" type="xsd:boolean">
+                <xsd:annotation>
+                    <xsd:documentation>indicates if an auction participant can access the bid amounts of
+        other participants.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="VisibilityOfQuantities" type="xsd:boolean">
+                <xsd:annotation>
+                    <xsd:documentation>indicates if an auction participant can access the bid quantities
+        of other participants.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="VisibilityOfParticipants" type="xsd:boolean">
+                <xsd:annotation>
+                    <xsd:documentation>indicates if an auction participant can access the identities of
+        other participants.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

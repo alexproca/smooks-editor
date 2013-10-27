@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="OrderConfirmationResponseHeaderType">
+        <xsd:annotation>
+            <xsd:documentation>contains the header info of the <!--code-->OrderConfirmationResponse<!--/code-->.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="BuyerOrderConfirmationID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is the confirmation number of the order confirmation response in the buyer system.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="SellerOrderConfirmationReference" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the ID and issue date of a confirmation that for the <!--code-->OrderConfirmationResponse<!--/code--> in the supplier system.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OrderConfirmationResponseIssueDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>is the date that the order confirmation response was created.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OrderConfirmationType" type="OrderConfirmationTypeType">
+                <xsd:annotation>
+                    <xsd:documentation>is the type of the order confirmation (confirmation, return delivery).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="OrderConfirmationResponseCoded" type="core:BasicResponseCodeType">
+                <xsd:annotation>
+                    <xsd:documentation>is the response code. The confirmation can be rejected or accepted by the order confirmation response.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OrderConfirmationResponseCodedOther" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is used to provide a non-standard <!--code-->OrderConfirmationResponseCode<!--/code-->. This element is mandatory if the value of <!--code-->OrderConfirmationResponseCoded<!--/code--> is 'Other'. These codes should not contain white space unless absolutely necessary.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Language" type="core:LanguageType">
+                <xsd:annotation>
+                    <xsd:documentation>is the language of the <!--code-->OrderConfirmationResponse<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="OrderConfirmationResponseParty" type="OrderConfirmationResponsePartyType">
+                <xsd:annotation>
+                    <xsd:documentation>holds all party information related to the <!--code-->OrderConfirmationResponse<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OrderConfirmationResponseHeaderNote" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains a note or description of the <!--code-->OrderConfirmationResponseHeader<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfStructuredNote" type="core:ListOfStructuredNoteType">
+                <xsd:annotation>
+                    <xsd:documentation>contains one or more structured notes that allow you to provide notes that are more than a simple free-text field. Such notes may include the message text, or this text may be referenced with an external identifier or a URL. An agency may be specified, and is needed in the case where an ID has been provided for a note that is either included in-line or referenced. This field is often used to include references to centrally stored clauses in contracts that are required to appear within business documents.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ErrorInfo" type="core:ErrorInfoType">
+                <xsd:annotation>
+                    <xsd:documentation>contains error information related to the processing of the header or the order confirmation.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfNameValueSet" type="core:ListOfNameValueSetType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a collection of name and value sets, which can be freely defined by the user.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfAttachment" type="core:ListOfAttachmentType">
+                <xsd:annotation>
+                    <xsd:documentation>is container that holds one or more Attachment elements.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

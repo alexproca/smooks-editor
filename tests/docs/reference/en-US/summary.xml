@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<chapter>
+	<?dbhtml filename="summary.html"?>
+	<title>Summary</title>
+	<para>The document summarizes the capabilities of Smooks Tools, and provides some instructions on how to use them. The chapters above also walked you through the steps on creating and configuring a XML to JAVA mapping project. If you have questions or suggestions concerned both the documentation and tools behavior, you are welcome to JBoss Tools Users forum. Please, use Jira to report bugs and requests on documentation.</para>
+
+	<section>
+		<title>Other relevant resources on the topic</title>
+		<para>All JBoss Developer Studio/JBoss Tools release documentation can be found at <ulink url="http://docs.jboss.org/tools">http://docs.jboss.org/tools</ulink> in the corresponding release directory.
+        </para>
+		<para>The latest documentation builds are available at <ulink url="http://download.jboss.org/jbosstools/nightly-docs">http://download.jboss.org/jbosstools/nightly-docs</ulink>. </para>
+		<para>
+    For more information about Smooks technology please visit the <ulink url="http://www.smooks.org/mediawiki/index.php?title=Main_Page">Smooks Technology Home Page</ulink>
+		</para>
+		<para>You can find a collection of screencasts covering the Smooks tools technology <ulink url="http://community.jboss.org/wiki/JBossTools-SmooksEditor">here</ulink>.</para>
+	</section>
+</chapter>

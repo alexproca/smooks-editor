@@ -1,0 +1,1422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+"http://www.docbook.org/xml/4.3/docbookx.dtd"
+
+[
+<!ENTITY introduction SYSTEM "introduction.xml">  
+<!ENTITY tasks SYSTEM "tasks.xml">
+<!ENTITY references SYSTEM "references.xml">
+<!ENTITY summary SYSTEM "summary.xml">
+]><book xmlns:diffmk="http://diffmk.sf.net/ns/diff">
+
+	<bookinfo>
+
+		<title>Smooks Developer Tools Reference Guide</title>
+			<corpauthor>
+				<inlinemediaobject>
+					<imageobject role="fo">
+						<imagedata fileref="images/jbosstools_logo.png" format="PNG"></imagedata>
+					</imageobject>	
+					<imageobject role="html">
+						<imagedata></imagedata>
+					</imageobject>	
+				</inlinemediaobject>           
+			</corpauthor>
+		<author>
+			<firstname>Xue(Dart)</firstname>
+			<surname>Peng</surname>
+		</author>
+		<copyright>
+			<year>2009,2010</year>
+			<holder>JBoss by Red Hat</holder>
+		</copyright>
+		<releaseinfo><diffmk:wrapper diffmk:change="changed">
+			Version: 1.1.1.GA
+         </diffmk:wrapper></releaseinfo>
+
+		<abstract>
+			<title></title>
+			<para>
+				<ulink url="http://download.jboss.org/jbosstools/nightly-docs/en/smooks/pdf/Smooks_Reference_Guide.pdf">PDF version</ulink>
+			</para>
+		</abstract>
+
+
+	</bookinfo>
+	<toc></toc>
+	
+<chapter id="introduction" xml:base="file:///home/vchukhutsina/repos/ochik_jboss/smooks/docs/reference/en-US/introduction.xml">
+	<?dbhtml filename="introduction.html"?>
+	<chapterinfo>
+		<keywordset>
+			<keyword>JBoss Tools</keyword>
+			<keyword>Smooks</keyword>
+			<keyword>JBDS</keyword>
+		</keywordset>
+	</chapterinfo>
+	<title>Introduction</title>
+	<para>This chapter gives you a short introduction to Smooks, Smooks tools and its installation.</para>
+	<para>First, have a look at the key features of Smooks tools:</para>
+	<section>
+		<title>Key Features of Smooks Tools</title>
+		<para>Here, we provide you with a key functionality which is integrated in Smooks tools.</para>
+		<table>
+			
+			<title>Key Functionality for Smooks Tools</title>
+			<tgroup cols="3">
+				
+				<colspec align="left" colnum="1" colwidth="2*"></colspec>
+				<colspec colnum="2" colwidth="4*"></colspec>
+				<colspec align="left" colnum="3" colwidth="2*"></colspec>
+				
+				<thead>
+					<row>
+						<entry>Feature</entry>
+						<entry>Benefit</entry>
+						<entry>Chapter</entry>
+					</row>
+				</thead>
+				
+				<tbody>
+					
+					<row>
+						<entry><para>Smooks Configuration File Wizard</para></entry>
+						<entry><para>Smooks tools allows to create/edit the Smooks configuration file for Java2Java data transformation.</para></entry>
+						<entry>
+							<link linkend="config_file_wizzard">Smooks Configuration File Wizard</link>
+						</entry>
+					</row>
+					
+					<row>
+						<entry><para>Smooks Editor</para></entry>
+						<entry><para>Smooks Editor helps configure the created Smooks configuration file.</para></entry>
+						<entry>
+							<link linkend="process_tab">Smooks Editor</link>
+						</entry>
+					</row>
+					
+				</tbody>
+				
+			</tgroup>
+		</table>
+		
+		
+	
+	</section>
+	
+	
+	
+	<section>
+		<title>What is Smooks?</title>
+
+		<para><property moreinfo="none">Smooks</property> is a Java Framework/Engine for processing XML and non XML
+			data (CSV, EDI, Java, JSON etc).It provides: </para>
+		<para></para>
+		<para>
+			<orderedlist continuation="restarts" inheritnum="inherit" numeration="upperroman">
+				<listitem>
+					<para><emphasis role="bold">Transformation</emphasis>: Perform a wide range of
+						Data Transforms. Supports many different Source and Result types
+						-XML/CSV/EDI/Java/JSON to XML/CSV/EDI/Java/JSON.</para>
+				</listitem>
+				<listitem>
+					<para><emphasis role="bold">Java Binding</emphasis>: Bind into a Java Object
+						Model from any data source (CSV, EDI, XML, Java, JSON etc). </para>
+				</listitem>
+
+				<listitem>
+					<para><emphasis role="bold">Huge Message Processing</emphasis>: Process huge
+						messages (GBs) - Split, Transform and Route message fragments to JMS, File,
+						Database etc destinations. Route multiple message formats to multiple
+						destinations in a single pass over a message. </para>
+				</listitem>
+
+				<listitem>
+					<para><emphasis role="bold">Message Enrichment</emphasis>: Enrich a message with
+						data from a Database, or other Datasources. </para>
+				</listitem>
+
+				<listitem>
+					<para><emphasis role="bold">Combine</emphasis>: Combine the above features in
+						different ways e.g. add Message Enrichment as part of a Splitting and
+						Routing process. </para>
+				</listitem>
+			</orderedlist>
+		</para>
+		<figure float="0">
+			<title>Smooks</title>
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="images/introduction/introduction1.png" scale="90"></imagedata>
+				</imageobject>
+			</mediaobject>
+		</figure>
+		<para> For more informations about <property moreinfo="none">Smooks</property>, please visit <ulink url="http://www.smooks.org">Smooks official site</ulink>.</para>
+	</section>
+	<section>
+		<title>What is Smooks Tools?</title>
+
+		<para>Smooks tools is a set of graphical tools for editing Smooks configuration file
+			based on Eclipse.</para>
+		<figure float="0">
+			<title>Smooks Form editor</title>
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="images/introduction/introduction2.png" scale="90"></imagedata>
+				</imageobject>
+			</mediaobject>
+		</figure>
+		<!-- <para>The easiest way to use the Smooks Configuration Editor is to create a project
+			(Java project, an ESB project, etc.), right-click on it and select <property>New -> Other</property>
+			to open the New wizard. Drill into <property>Smooks -> Smooks Configuration File</property>
+			and continue through the wizard.
+			Once the file is created, it will open in the Smooks Configuration Editor.</para> -->
+	</section>
+	<section>
+		<title>Adding Smooks jars</title>
+		
+		<para>During your development, you probably will be faced with the 
+			necessity to include some additional Smooks jars to your project.
+			This problem can be solved in such a way:</para>
+		<itemizedlist>
+		<listitem><para>Create the folder named "lib" inside your project,if it doesn't exist yet.
+				Copy all the Smooks jars you need to include into the <emphasis><property moreinfo="none">lib</property></emphasis> directory.
+			</para></listitem>
+			<listitem><para>Right-click on the project and select Properties.</para></listitem>
+			<listitem><para>Select the "Java Build Path" item in the Properties list, then the Libraries tab, and click "Add JARs".
+					</para></listitem>
+			<listitem><para>In the Jar Selection dialog, select all the jars in the "lib" directory you want to include and click OK.</para></listitem>
+			<listitem><para>
+				Now you should see all the jars  
+				included to your project hierarchy. </para></listitem>
+		</itemizedlist>
+		
+		<figure float="0">
+			<title>Smooks Form editor</title>
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="images/introduction/introduction2.png" scale="90"></imagedata>
+				</imageobject>
+			</mediaobject>
+		</figure>
+		<!-- <para>The easiest way to use the Smooks Configuration Editor is to create a project
+			(Java project, an ESB project, etc.), right-click on it and select <property>New -> Other</property>
+			to open the New wizard. Drill into <property>Smooks -> Smooks Configuration File</property>
+			and continue through the wizard.
+			Once the file is created, it will open in the Smooks Configuration Editor.</para> -->
+	</section>
+	<!-- <section>
+		<title>How to install Smooks dev tools?</title>
+
+		<para> The Smooks tools was included by the <property>JBoss Tools</property> since 3.0.0
+			Beta1 version. You can download the <property>JBoss Tools</property> from <ulink
+				url="http://jboss.org/tools/download.html">JBoss download site</ulink>.</para>
+		<para> Smooks tools (<property>JBoss Tools</property>) run with the latest Eclipse and
+			other required plug-ins (GEF, EMF, etc.).</para>
+		<para> You should download the latest IDE for Java EE developers from <ulink
+				url="http://www.eclipse.org/downloads/"> Eclipse site</ulink>. It contains many plug-ins (
+				GEF, EMF, etc. ) required by Smooks dev tools. </para>
+		<para>The Smooks Configuration depends on having all of the appropriate Smooks runtime jars in the path of the Eclipse Plug-in or Java Project in the Eclipse workspace.
+			
+			The easiest solution is to do the following:
+			<itemizedlist>
+				<listitem><para>1) Download the Smooks distribution from here: http://www.smooks.org/mediawiki/index.php?title=Downloads .
+					Grab the latest "ALL" distribution (as of today, it is the Smooks v.1.2.2 "ALL" distribution) and it will include binaries, examples, etc.</para></listitem>
+				<listitem><para>2) Extract files from the archive somewhere on your machine.</para></listitem>
+				<listitem><para>3) In your Eclipse workspace, copy the Smooks jars into a directory of your Eclipse plug-in or Java project named "lib".</para></listitem>
+				<listitem><para>4) For your Eclipse Plug-in or Java Project, right-click on the project and select Properties.</para></listitem>
+				<listitem><para>5) Select the "Java Build Path" item in the Properties list, select the Libraries tab, and click "Add JARs"
+				</para></listitem>
+				<listitem><para>6) In the Jar Selection dialog, select all the jars in the "lib" directory mentioned in step 3 and click <property>OK</property>.
+				</para></listitem>
+				<listitem><para>7) Click <property>OK</property> to close the Properties dialog. Now you should see a "Referenced Libraries" node that appeared in your project hierarchy in Eclipse.
+				</para></listitem>
+			</itemizedlist>
+	
+		</para>
+		<para>Now let's progress to more advanced topics.</para>
+	</section>
+	-->
+</chapter>
+
+	
+<chapter id="process_page" xml:base="file:///home/vchukhutsina/repos/ochik_jboss/smooks/docs/reference/en-US/tasks.xml">
+    <?dbhtml filename="tasks.html"?>
+    <chapterinfo>
+        <keywordset>
+            <keyword>JBoss Tools</keyword>
+            <keyword>Smooks</keyword>
+            <keyword>JBDS</keyword>
+        </keywordset>
+    </chapterinfo>
+    <title>Tasks</title>
+    <para><diffmk:wrapper diffmk:change="added">This chapter describes the main tasks a user can be faced during Smooks tools usage.
+        In this chapter we use the example that can be downloaded from
+        </diffmk:wrapper><ulink diffmk:change="added" url="http://anonsvn.jboss.org/repos/jbosstools/trunk/smooks/docs/reference/xml-to-java.zip"><diffmk:wrapper diffmk:change="added">
+            here</diffmk:wrapper></ulink><diffmk:wrapper diffmk:change="added">. </diffmk:wrapper></para>
+    <section id="config_file_wizzard">
+        <title>New Smooks Configuration File Creation</title>
+        <para>Select the  project where you want to create new Smooks Configuration File  and right-click on it,
+            select in the menu <emphasis><property moreinfo="none">New &gt; Other</property>,</emphasis> then find
+            <emphasis><property moreinfo="none">Smooks &gt; Smooks Configuration File</property>.</emphasis>
+            Click the <emphasis>
+                <property moreinfo="none">Next</property>
+            </emphasis> button. </para>
+        <figure float="0">
+            <title>Selecting Smooks Configuration File Wizard</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="images/quick_start/quick_start1.png" scale="90"></imagedata>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para><diffmk:wrapper diffmk:change="changed">The wizard page is a file path creation page. Select the </diffmk:wrapper><emphasis>
+            <property moreinfo="none">src</property>
+        </emphasis> folder to be the files container, and input the name
+            <emphasis><property moreinfo="none">smooks-config.xml</property>.</emphasis> Click
+            <emphasis><property moreinfo="none">Next</property>.</emphasis></para>
+        <figure float="0">
+            <title>Choosing the configuration file container and the file name</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="images/quick_start/quick_start2.png" scale="90"></imagedata>
+                </imageobject>
+            </mediaobject>
+        </figure>
+       
+        </section>
+    <section>
+        <title>Input Task Configuring</title>
+        <para> 
+            <property moreinfo="none">Input task configuring</property> is an obligatory step for your smooks project creation.
+            You can configure it on the Process page of the editor: look for the "Input Task" in the Process Map at the top of the page.
+        </para>
+        <figure float="0">
+            <title>Input Task Configuring</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="images/process_page/process1.png" scale="90"></imagedata>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>Select it and you will see all the properties to set for the Input reader of your Smooks configuration.
+            "Input type" corresponds to the type of data that you will be working with. 
+            For example, to work with incoming CSV (Comma-separated Values) data, you would specify "CSV" in the drop-down list.
+            Each reader type has slightly different configuration details that must be set in the "Input configuration" area.
+            For instance, the CSV reader requires you to specify details such as the encoding, quote character, separator character, and the list of incoming fields. 
+            The EDI reader requires the encoding and the path to the Mapping Model describing the incoming data.            
+            In the <emphasis>Input data</emphasis> section, you specify some sample data that conforms to your reader configuration. 
+        </para>
+        
+        <para>
+            Once you've specified your reader configuration and sample data, you can see the input model rendered in a tree form in the <emphasis>Input model</emphasis><diffmk:wrapper diffmk:change="added"> section.
+            On the picture below you can see the correct configuration of some XML input task where </diffmk:wrapper><emphasis diffmk:change="added"><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">input-message.xml</diffmk:wrapper></property></emphasis><diffmk:wrapper diffmk:change="added"> is set as an input data file.
+        </diffmk:wrapper></para>
+        <figure float="0">
+            <title>Input Task Configuring</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="images/process_page/process2.png" scale="90"></imagedata>
+                </imageobject>
+            </mediaobject>
+        </figure>
+    </section>
+    <section>
+        <title>"Java Mapping" or "Apply Template"?</title>
+        
+        <para>Though there are many options in Smooks as far as what you can do with input 
+            data such as transformation, routing, and persistence, this version 
+            of the Smooks Configuration Editor focuses only on these areas: 
+            mapping to java and applying templates to create different output formats.       
+            If you have a set of Java classes you want to use the incoming data for, 
+            you can use the "Java Mapping" task to specify those classes and use drag and
+            drop to map between the input model generated by the reader and elements in the output model.
+            Or if you simply want to transform your output to one or more formats, you can use the "Apply Template" 
+            task to map it to a CSV file, XML or XSD file (and other formats in the future).
+            <note><title>Note</title>
+                <para>Now you can't transform your output directly,
+                    using only Input and Template tasks.
+                    You should use Mapping as an interagent between these tasks.</para>
+             </note>
+        </para>
+    </section>
+    <section id="mapping">
+        <title>Java Mapping Task</title>
+        
+        <para>
+            If you decide to do Java Mapping, you need to make sure that your Input reader has been set up and you have some sample data specified.
+            Then you should select <emphasis>Input Task</emphasis> in the Process tab and click the plus (+) sign to the right of the icon.
+            Select <emphasis>Java Mapping</emphasis> from the popup menu and it will appear to the right, connected to <emphasis>Input Task</emphasis>. Then select <emphasis>Java Mapping</emphasis> task.
+        </para>
+        <figure float="0">
+            <title>Java Mapping configuration</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="images/process_page/process3.png"></imagedata>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>Another method of adding <emphasis>Java Mapping</emphasis> element 
+            to the canvas in the Processing Tasks section is to right click Input Task
+            element and select <emphasis>Java Mapping</emphasis><diffmk:wrapper diffmk:change="changed"> in the popup menu. </diffmk:wrapper></para>
+        <figure float="0">
+            <title>Java Mapping configuration</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="images/process_page/process4.png"></imagedata>
+                </imageobject>
+            </mediaobject>
+        </figure>  
+        <para>
+            Right-click on the canvas in an empty space and select "Add -&gt;Java Class".
+        </para>
+        <figure float="0">
+            <title>Java Mapping configuration</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="images/process_page/process5.png"></imagedata>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para>
+            <emphasis>Java Bean Creation</emphasis><diffmk:wrapper diffmk:change="changed"> wizard appears.
+            Specify a unique identifier for the new class, the class path. 
+            If the Java class is specified, you'll see a list of the properties in the box below.
+            Click </diffmk:wrapper><emphasis>Finish</emphasis> when you're done.
+            Now with the input and output models on the canvas, you can click and drag 
+            from the various input elements to corresponding output elements. 
+            Make sure to connect collection elements to corresponding collection elements.
+            Finally your mapping should look nearly like the one on the picture below.
+        </para>
+        <figure float="0">
+            <title>Final Mapping schema</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="images/process_page/process6.png"></imagedata>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">For details, also see the movie,
+            </diffmk:wrapper><ulink diffmk:change="added" url="http://www.screencast.com/users/tfennelly/folders/Camtasia/media/a6648ba3-953f-40bf-8241-570306fba776"><diffmk:wrapper diffmk:change="added">"XML to Java"</diffmk:wrapper></ulink><diffmk:wrapper diffmk:change="added">.
+        </diffmk:wrapper></para>
+        <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">If you are interested in transforming EDI to Java, please, follow the 
+            </diffmk:wrapper><ulink diffmk:change="added" url="http://www.screencast.com/users/tfennelly/folders/Camtasia/media/a72704fb-ff74-4d5d-9869-9092611f52c2"><diffmk:wrapper diffmk:change="added">link</diffmk:wrapper></ulink><diffmk:wrapper diffmk:change="added">.</diffmk:wrapper></para>
+    </section>
+    <section>
+        <title>Apply Template Task</title>
+        
+        <para>The "Apply Template" task works very similarly to the <link linkend="mapping">"Java Mapping" task</link>, where you map between an input model and an output model.
+            Select the <emphasis>Java Mapping</emphasis> task you want to use as the input model in the Process Map pane and click the plus (+) sign to the right of the icon.
+        </para>
+        <figure float="0" id="apply_templ">
+            <title>Apply Template configuration</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="images/process_page/process7.png"></imagedata>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">
+            The </diffmk:wrapper><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Message Type Selection</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added"> wizard will appear.
+            In our example we will transfer our data to csv output format,so you should select </diffmk:wrapper><emphasis diffmk:change="added"><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">CSV</diffmk:wrapper></property></emphasis><diffmk:wrapper diffmk:change="added"> and click </diffmk:wrapper><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Next</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added">.</diffmk:wrapper></para>
+        <figure diffmk:change="added" float="0">
+            <title diffmk:change="added"><diffmk:wrapper diffmk:change="added">Message Type Selection</diffmk:wrapper></title>
+            <mediaobject diffmk:change="added">
+                <imageobject diffmk:change="added">
+                    <imagedata diffmk:change="added" fileref="images/process_page/process7a.png"></imagedata>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para><diffmk:wrapper diffmk:change="added">
+            On the next wizard page put the following string into the Fields,select </diffmk:wrapper><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Output Fields Names</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added"> and click </diffmk:wrapper><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Finish</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added">.</diffmk:wrapper></para>
+        <figure diffmk:change="added" float="0">
+            <title diffmk:change="added"><diffmk:wrapper diffmk:change="added">CSV output message configuration</diffmk:wrapper></title>
+            <mediaobject diffmk:change="added">
+                <imageobject diffmk:change="added">
+                    <imagedata diffmk:change="added" fileref="images/process_page/process7b.png"></imagedata>
+                </imageobject>
+            </mediaobject>
+        </figure>     
+        <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">
+            After these steps </diffmk:wrapper><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">"Apply Template"</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added">
+            task will appear to the right, connected to the task you created it from.
+            To continue the process of configuration you should click on it and find </diffmk:wrapper><emphasis diffmk:change="added"><diffmk:wrapper diffmk:change="added">CSV Template</diffmk:wrapper></emphasis><diffmk:wrapper diffmk:change="added"> 
+            item with entered fields on the canvas.Now  you can click and drag from various 
+            input elements to corresponding output elements
+            in the template. Make sure to connect collection elements to the c
+            orresponding </diffmk:wrapper><emphasis diffmk:change="added"><diffmk:wrapper diffmk:change="added">csv-record</diffmk:wrapper></emphasis><diffmk:wrapper diffmk:change="added">.
+            In our example we transfer into CSV output only the elements 
+            of </diffmk:wrapper><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">orderItems</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added"> collection (see the picture below): 
+        </diffmk:wrapper></para>
+        <figure diffmk:change="added" float="0">
+            <title diffmk:change="added"><diffmk:wrapper diffmk:change="added">Relations between input and output models</diffmk:wrapper></title>
+            <mediaobject diffmk:change="added">
+                <imageobject diffmk:change="added">
+                    <imagedata diffmk:change="added" fileref="images/process_page/process7c.png"></imagedata>
+                </imageobject>
+            </mediaobject>
+        </figure>  
+    </section>
+    <section>
+        <title>Smooks Configuration testing using Smooks Run Configuration</title>
+        
+        <para><diffmk:wrapper diffmk:change="added">This option is intended to view the results of Smooks transforming procedure.
+            To do the testing you should select your </diffmk:wrapper><emphasis diffmk:change="added"><diffmk:wrapper diffmk:change="added">Smooks Configuration file</diffmk:wrapper></emphasis><diffmk:wrapper diffmk:change="added"> you want to transfer in the Project Navigator or open it in 
+            the Smooks Configuration Editor and then select "Run As..." from the </diffmk:wrapper><emphasis diffmk:change="added"><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Run</diffmk:wrapper></property></emphasis><diffmk:wrapper diffmk:change="added">
+            toolbar button
+            or </diffmk:wrapper><emphasis diffmk:change="added"><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Run-&gt;Smooks Run Configuration</diffmk:wrapper></property></emphasis><diffmk:wrapper diffmk:change="added"> option in the top menu bar. And Smooks Configuration file will be run automatically. 
+        </diffmk:wrapper></para>
+        <figure diffmk:change="added" float="0">
+            <title diffmk:change="added"><diffmk:wrapper diffmk:change="added">Smooks Configuration testing</diffmk:wrapper></title>
+            <mediaobject diffmk:change="added">
+                <imageobject diffmk:change="added">
+                    <imagedata diffmk:change="added" fileref="images/process_page/process8.png"></imagedata>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">If any errors or warnings appear, they will pop up in a dialog.
+            The output of the test will appear in the Console view.
+                 In our case the following streaming output will appear:</diffmk:wrapper></para>
+        <programlisting diffmk:change="added" format="linespecific" role="JAVA"><diffmk:wrapper diffmk:change="added"><![CDATA[[Stream Templating Result ...]
+    |--
+    |"productId","quantity","price"
+    |"111","2","8.9"
+    |"222","7","5.2"
+    |--
+
+[Java Mapping Results...]
+    |--
+    |> order (beanId = "order")
+    |    > header (beanId = "header")
+    |        > date = "2006-11-15 20:45:28.0 EET"
+    |        > customerNumber = 123123L
+    |        > customerName = "Joe"
+    |    > orderItems (beanId = "orderItems")
+    |        > example.model.OrderItem (beanId = "orderItem")
+    |            > productId = 111L
+    |            > quantity = 2I
+    |            > price = 8.9D
+    |        > example.model.OrderItem (beanId = "orderItem")
+    |            > productId = 222L
+    |            > quantity = 7I
+    |            > price = 5.2D
+    |--
+]]></diffmk:wrapper></programlisting>  
+        <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">If the test runs but doesn't generate any streaming output the Console output will be the following:
+        </diffmk:wrapper></para>
+        <programlisting diffmk:change="added" format="linespecific" role="JAVA"><diffmk:wrapper diffmk:change="added"><![CDATA[ Nothing to Display:
+            - No Java Mappings.
+            - No Templates Applied.]]></diffmk:wrapper>
+            </programlisting>
+            
+    </section>
+</chapter>
+
+
+	
+<chapter id="reference" xml:base="file:///home/vchukhutsina/repos/ochik_jboss/smooks/docs/reference/en-US/references.xml">
+    <?dbhtml filename="reference.html"?>
+    <chapterinfo>
+        <keywordset>
+            <keyword>JBoss Tools</keyword>
+            <keyword>Smooks</keyword>
+            <keyword>JBDS</keyword>
+        </keywordset>
+    </chapterinfo>
+    <title>Reference</title>
+    <para><diffmk:wrapper diffmk:change="added">This chapter includes detailed reference information about all tabs of the Smooks Configuration Editor.</diffmk:wrapper></para>
+    <section id="process_tab">
+        <title>Process tab</title>
+        <para><diffmk:wrapper diffmk:change="changed">The Process tab of the Smooks Configuration Editor helps to configure different types of transformations.
+            By default smooks configuration file is opened in this editor.If you have another default settings for editor opening
+            you should left click smooks configuration file and select:</diffmk:wrapper><emphasis>Open With-&gt;Smooks Configuration Editor</emphasis>.</para>
+        <para>The Process tab has two sections:</para>
+        <itemizedlist>
+            <listitem><para><link linkend="processing_task_section">Processing Task section</link></para></listitem>
+            <listitem><para><link linkend="selected_task_details">Selected Task Details section</link></para></listitem>
+        </itemizedlist>
+        <para>You can see them on the picture below.</para>
+        <figure float="0">
+            <title>Two Sections of the Process tab.</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="images/reference/reference_1.png" scale="90"></imagedata>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <section id="processing_task_section">
+            <title>Processing Task section</title>
+            <para><diffmk:wrapper diffmk:change="changed">Using the popup menu in the Processing Task section you
+                can select which types of technologies(templating or mapping ones) you will use for transofmation: </diffmk:wrapper></para>
+            <para>The descriptions of the popup menu options are in the following table.</para>
+            <table>
+                <title>Process Tab. Processing Task section.</title>   
+                <tgroup cols="3">
+                    <colspec align="left" colnum="1" colwidth="1*"></colspec>
+                    <colspec align="left" colnum="2" colwidth="3*"></colspec>
+                    <colspec align="left" colnum="3" colwidth="1*"></colspec>
+                    
+                    <thead>
+                        <row>
+                            <entry>Option</entry>									
+                            <entry>Description</entry>
+                            <entry>Default</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>Add Task</entry>
+                            <entry><diffmk:wrapper diffmk:change="changed">Select one of the following tasks according to the necessary type of Source and Result types of the files:
+                                </diffmk:wrapper><itemizedlist>
+                                    <listitem><para><emphasis>Input</emphasis><diffmk:wrapper diffmk:change="changed"> - this task is required and
+                                        appears automatically when Smooks config file is created.
+                                        You should just configure it properly.</diffmk:wrapper></para></listitem>
+                                    <listitem><para><emphasis>Java Mapping</emphasis></para></listitem>
+                                    <listitem><para><emphasis>Apply Template</emphasis></para></listitem>
+                                </itemizedlist>
+                            </entry>
+                            <entry></entry>
+                        </row> 
+                        
+                        <row>
+                            <entry>Delete</entry>
+                            <entry><diffmk:wrapper diffmk:change="changed">Click this option if you want to delete some task from the section.
+                                Note:you can't delete input task because it's required.</diffmk:wrapper></entry>
+                            <entry></entry>
+                            
+                        </row> 
+                        
+                        <row>
+                            <entry>Input Methods</entry>
+                            <entry><diffmk:wrapper diffmk:change="changed">Choose one of the following methods:
+                                </diffmk:wrapper><itemizedlist>
+                                    <listitem><para>System</para></listitem>
+                                    <listitem><para>Simple</para></listitem>
+                                    <listitem><para>Amharic(EZ+)</para></listitem>
+                                    <listitem><para>Cedilla</para></listitem>
+                                    <listitem><para>Cyrillic</para></listitem>
+                                    <listitem><para>Inuktitut</para></listitem>
+                                    <listitem><para>IPA</para></listitem>
+                                    <listitem><para>Multipress</para></listitem>
+                                    <listitem><para>SCIM Bridge Input Method</para></listitem>
+                                    <listitem><para>SCIM Input Method</para></listitem>
+                                    <listitem><para>Thai-Lio</para></listitem>
+                                    <listitem><para>Tigrigna-Eritrean(EZ+)</para></listitem>
+                                    <listitem><para>Tigrigna-Ethiopian(EZ+)</para></listitem>
+                                    <listitem><para>Vietnamese</para></listitem>
+                                    <listitem><para>X input Method</para></listitem>
+                                </itemizedlist>
+                            </entry>
+                            <entry>System</entry>
+                        </row> 
+                    </tbody>
+                </tgroup>
+            </table>
+        </section>
+        <section id="selected_task_details">
+            <title>Selected Task Details Section</title>
+            <para><diffmk:wrapper diffmk:change="changed">The options of this section depends on the selected task in the Processing Task section.
+                Because there are 3 types of tasks there are 3 different sets of its options in the Selected Task Details Section.
+                They will be described one by one. </diffmk:wrapper></para>
+            <section>
+                <title>Selected Task Details Section for Input Task.</title>
+                <para><diffmk:wrapper diffmk:change="changed">On the picture below you can find an example of Selected Task Details Section view
+                    if XML is selected as input type.</diffmk:wrapper></para>
+                
+                <figure float="0">
+                    <title>Selected Task Details Section for Input XML Task.</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/reference/reference_2.png" scale="90"></imagedata>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+                <para><diffmk:wrapper diffmk:change="changed">As you can see on the picture above Input Configuration section is empty for XML input file.
+                    But this section has special configuration options for CSV,EDI,JSON,Custom input files.</diffmk:wrapper></para>
+                
+                <para>Here are the screens of these configuration options:</para>
+                <itemizedlist>
+                    <listitem><para>CSV:</para>
+                        <figure float="0">
+                            <title>Selected Task Details Section for Input CSV Task.</title>
+                            <mediaobject>
+                                <imageobject>
+                                    <imagedata fileref="images/reference/reference_3.png"></imagedata>
+                                </imageobject>
+                            </mediaobject>
+                        </figure>
+                    </listitem>
+                    <listitem><para>EDI:</para>
+                        <figure float="0">
+                            <title>Selected Task Details Section for Input EDI Task.</title>
+                            <mediaobject>
+                                <imageobject>
+                                    <imagedata fileref="images/reference/reference_4.png"></imagedata>
+                                </imageobject>
+                            </mediaobject>
+                        </figure>
+                    </listitem>
+                    <listitem><para>JSON:</para>
+                        <figure float="0">
+                            <title>Selected Task Details Section for Input JSON Task.</title>
+                            <mediaobject>
+                                <imageobject>
+                                    <imagedata fileref="images/reference/reference_5.png"></imagedata>
+                                </imageobject>
+                            </mediaobject>
+                        </figure>
+                    </listitem>
+                    <listitem><para>Custom:</para>
+                        <figure float="0">
+                            <title>Selected Task Details Section for Input Custom Task.</title>
+                            <mediaobject>
+                                <imageobject>
+                                    <imagedata fileref="images/reference/reference_6.png"></imagedata>
+                                </imageobject>
+                            </mediaobject>
+                        </figure>
+                    </listitem>
+                </itemizedlist>
+                <para>All the input task configuration positions can be found in the table below:</para>   
+                <table>
+                    <title>Selected Task Details Section. Options for Input Task.</title>   
+                    <tgroup cols="3">
+                        <colspec align="left" colnum="1" colwidth="1*"></colspec>
+                        <colspec align="left" colnum="2" colwidth="3*"></colspec>
+                        <colspec align="left" colnum="3" colwidth="1*"></colspec>           
+                        <thead>
+                            <row>
+                                <entry>Option</entry>									
+                                <entry>Description</entry>
+                                <entry>Default</entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <entry>Input type</entry>
+                                <entry><diffmk:wrapper diffmk:change="changed">Select your type of input file.
+                                    If don't find your type in the list,you should use Custom type:
+                                    </diffmk:wrapper><itemizedlist>
+                                        <listitem><para>No Input</para></listitem>
+                                        <listitem><para>XML</para></listitem>
+                                        <listitem><para>Java</para></listitem>
+                                        <listitem><para>XSD/WSDL</para></listitem>
+                                        <listitem><para>CSV</para></listitem>
+                                        <listitem><para>EDI</para></listitem>
+                                        <listitem><para>JSON</para></listitem>
+                                        <listitem><para>Custom</para></listitem>
+                                    </itemizedlist>
+                                </entry>
+                                <entry>XML</entry>
+                            </row> 
+                            
+                            <row>
+                                <entry><diffmk:wrapper diffmk:change="changed">Input configuration
+                                    
+                                </diffmk:wrapper></entry>
+                                <entry>
+                                    <itemizedlist>
+                                        <listitem><para><emphasis>No Input</emphasis><diffmk:wrapper diffmk:change="changed"> - no info required</diffmk:wrapper></para></listitem>
+                                        <listitem><para><emphasis>XML</emphasis><diffmk:wrapper diffmk:change="changed"> - no info required</diffmk:wrapper></para></listitem>
+                                        <listitem><para><emphasis>Java</emphasis><diffmk:wrapper diffmk:change="changed"> - no info required</diffmk:wrapper></para></listitem>
+                                        <listitem><para><emphasis>XSD/WSDL</emphasis><diffmk:wrapper diffmk:change="changed"> - no info required</diffmk:wrapper></para></listitem>
+                                        <listitem><para><emphasis>CSV</emphasis></para><itemizedlist>
+                                            <listitem><para><emphasis>Fields</emphasis><diffmk:wrapper diffmk:change="changed"> - Comma separated list of CSV record field names
+                                            </diffmk:wrapper></para></listitem>
+                                            <listitem><para><emphasis>Separator Character</emphasis><diffmk:wrapper diffmk:change="changed"> - Field separator character.
+                                            </diffmk:wrapper></para></listitem>
+                                            <listitem><para><emphasis>Quote Character</emphasis><diffmk:wrapper diffmk:change="changed"> - Quote character.
+                                            </diffmk:wrapper></para></listitem>
+                                            <listitem><para><emphasis>Record Name</emphasis><diffmk:wrapper diffmk:change="changed"> - Name of csv record element.</diffmk:wrapper></para></listitem>
+                                            <listitem><para><emphasis>Root Name</emphasis><diffmk:wrapper diffmk:change="changed"> - Name of csv root element.</diffmk:wrapper></para></listitem>
+                                            <listitem><para><emphasis>indent</emphasis><diffmk:wrapper diffmk:change="changed"> - Add indentation character data to
+                                                the generated event stream.  This simply makes
+                                                the generated event stream easier to read in its serialized form.  Useful for
+                                                testing etc.
+                                            </diffmk:wrapper></para></listitem>
+                                            <listitem><para><emphasis>Skip Lines</emphasis><diffmk:wrapper diffmk:change="changed"> - Number of lines to skip before processing starts.                                   
+                                            </diffmk:wrapper></para></listitem>
+                                        </itemizedlist>
+                                        </listitem>
+                                        <listitem><para><emphasis>EDI</emphasis></para>
+                                            <itemizedlist>
+                                                <listitem><para><emphasis>Target Profile</emphasis><diffmk:wrapper diffmk:change="changed"> - Defines the output
+                                                    transformation profile
+                                                </diffmk:wrapper></para></listitem>
+                                                <listitem><para><emphasis>Encoding</emphasis><diffmk:wrapper diffmk:change="changed"> - The character encoding.</diffmk:wrapper></para></listitem>
+                                                <listitem><para><emphasis>Mapping Model</emphasis><diffmk:wrapper diffmk:change="changed"> - Defines the EDI Mapping Model
+                                                    configuration for processing the 
+                                                    EDI message stream to a stream of SAX events that can be processed by Smooks.</diffmk:wrapper></para></listitem>
+                                                <listitem><para><emphasis>Validate</emphasis><diffmk:wrapper diffmk:change="changed"> - This attribute turns on/off datatype validation in the EDI Parser.
+                                                    Validation is on by default.
+                                                    It makes sense to turn datatype validation off on the EDI Reader 
+                                                    if the EDI data is being bound into a Java Object model.
+                                                </diffmk:wrapper></para></listitem>
+                                            </itemizedlist>
+                                        </listitem>
+                                        <listitem><para><emphasis>JSON</emphasis></para>
+                                            <itemizedlist>
+                                                <listitem><para><emphasis>Target Profile</emphasis><diffmk:wrapper diffmk:change="changed"> - Defines the output transformation profile</diffmk:wrapper></para></listitem>
+                                                <listitem><para><emphasis>Array Element Name</emphasis><diffmk:wrapper diffmk:change="changed"> - The element name of an array element.
+                                                </diffmk:wrapper></para></listitem>
+                                                <listitem><para><emphasis>Encoding</emphasis><diffmk:wrapper diffmk:change="changed"> - encoding: The default encoding of any JSON message 
+                                                    InputStream processed by this Reader.</diffmk:wrapper></para></listitem>
+                                                <listitem><para><emphasis>Illegal Element Name Char Replacement</emphasis><diffmk:wrapper diffmk:change="changed"> - If illegal characters are encountered in a JSON element name then they are replaced with this value.
+                                                    By default this is not defined, so that the reader doesn't doesn't search for illegal characters.
+                                                </diffmk:wrapper></para></listitem>
+                                                <listitem><para><emphasis>Indent</emphasis><diffmk:wrapper diffmk:change="changed"> - Add indentation character data to the generated event stream.  This simply makes
+                                                    the generated event stream easier to read in its serialized form.  Useful for
+                                                    testing etc.
+                                                </diffmk:wrapper></para></listitem>
+                                                <listitem><para><emphasis>Key Prefix on Numeric</emphasis><diffmk:wrapper diffmk:change="changed"> - The prefix character to add if the JSON node name starts with a number.
+                                                    By default this is not defined, so that the reader doesn't search for element names that start with a number.
+                                                </diffmk:wrapper></para></listitem>
+                                                <listitem><para><emphasis>Key Whitespace Replacement</emphasis><diffmk:wrapper diffmk:change="changed"> - The replacement character for whitespaces in a JSON map key.
+                                                    By default this not defined, so that the reader doesn't search for whitespaces.
+                                                </diffmk:wrapper></para></listitem>
+                                                <listitem><para><emphasis>Null Value Replacement</emphasis><diffmk:wrapper diffmk:change="changed"> - The replacement string for JSON NULL values.</diffmk:wrapper></para></listitem>
+                                                <listitem><para><emphasis>Root Name</emphasis><diffmk:wrapper diffmk:change="changed"> - The element name of the document root.
+                                                </diffmk:wrapper></para></listitem>
+                                                <listitem><para><emphasis>Key Maps</emphasis><diffmk:wrapper diffmk:change="changed"> - Defines a JSON element name mapping
+                                                    The "from" key will be replaced with the "to" key or the contents of the element.
+                                                </diffmk:wrapper></para></listitem>                        
+                                            </itemizedlist>
+                                        </listitem>
+                                        <listitem><para><emphasis>Custom</emphasis></para>
+                                            <itemizedlist>
+                                                <listitem><para><emphasis>Target Profile</emphasis><diffmk:wrapper diffmk:change="changed"> - Defines the output transformation profile</diffmk:wrapper></para></listitem>
+                                                <listitem><para><emphasis>Class</emphasis><diffmk:wrapper diffmk:change="changed"> - Custom reader class.</diffmk:wrapper></para></listitem>
+                                                <listitem><para><emphasis>Handlers</emphasis><diffmk:wrapper diffmk:change="changed"> - Set a handler on the reader instance e.g. an EntityResolver, ErrorHandler etc.
+                                                </diffmk:wrapper></para></listitem>
+                                                <listitem><para><emphasis>Features</emphasis><diffmk:wrapper diffmk:change="changed"> - Reader Features List</diffmk:wrapper></para></listitem>
+                                                <listitem><para><emphasis>Parametres</emphasis><diffmk:wrapper diffmk:change="changed"> - Resource Parameters</diffmk:wrapper></para></listitem>
+                                                
+                                            </itemizedlist>
+                                        </listitem>
+                                    </itemizedlist></entry>
+                                <entry><itemizedlist>
+                                    <listitem><para><emphasis>CSV</emphasis></para><itemizedlist>
+                                        <listitem><para>not defined</para></listitem>
+                                        <listitem><para>','</para></listitem>
+                                        <listitem><para>'"'</para></listitem>
+                                        <listitem><para>csv-record</para></listitem>
+                                        <listitem><para>csv-set</para></listitem>
+                                        <listitem><para>true</para></listitem>
+                                        <listitem><para>0</para></listitem>
+                                    </itemizedlist>
+                                    </listitem>
+                                    <listitem><para><emphasis>EDI</emphasis></para>
+                                        <itemizedlist>
+                                            <listitem><para>not defined</para></listitem>
+                                            <listitem><para>UTF-8</para></listitem>
+                                            <listitem><para>not defined</para></listitem>
+                                            <listitem><para>true</para></listitem>
+                                        </itemizedlist>
+                                    </listitem>
+                                    <listitem><para><emphasis>JSON</emphasis></para>
+                                        <itemizedlist>
+                                            <listitem><para>not defined</para></listitem>
+                                            <listitem><para>element</para></listitem>
+                                            <listitem><para>UTF-8</para></listitem>
+                                            <listitem><para>not defined</para></listitem>
+                                            <listitem><para>false</para></listitem>
+                                            <listitem><para>not defined</para></listitem>
+                                            <listitem><para>not defined</para></listitem>
+                                            <listitem><para>""(an empty string)</para></listitem>
+                                            <listitem><para>'json'</para></listitem>
+                                            <listitem><para>not defined</para></listitem>                        
+                                        </itemizedlist>
+                                    </listitem>
+                                    <listitem><para><emphasis>Custom</emphasis></para>
+                                        <itemizedlist>
+                                            <listitem><para>no defaults</para></listitem>
+                                            
+                                        </itemizedlist>
+                                    </listitem>
+                                </itemizedlist></entry>
+                            </row> 
+                            <row>
+                                <entry>Input Data</entry>
+                                <entry>You should select a data file using <emphasis>Add</emphasis> and <emphasis>Delete</emphasis> buttons</entry>
+                                <entry></entry>
+                            </row>
+                            <row>
+                                <entry>Input Model View</entry>
+                                <entry><diffmk:wrapper diffmk:change="changed">Using this view you can see the structure of your input file.If  the file has been changed, to see the changes
+                                    click </diffmk:wrapper><emphasis>Refresh</emphasis>link.</entry>
+                                <entry></entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </section>
+            <section id="mapping_task"><title>Selected Task Details section for Java Mapping Task.</title>
+                <para><diffmk:wrapper diffmk:change="changed">Selected Task Details section for this task is presented by the graf,
+                    that lighten the process of java mapping. </diffmk:wrapper></para>
+                <figure float="0">
+                    <title>Selected Task Details Section for Mapping Task.</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/reference/reference_7.png" scale="90"></imagedata>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+                <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">This graphical editor allows you to perform drag&amp;drop operation with the nodes of transformed data to map the source data to target data.
+                    When you save the changes in the graphical editor the correct Smooks configuration file content will be generated. </diffmk:wrapper></para>
+                <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">Using the popup menu in the </diffmk:wrapper><emphasis diffmk:change="added"><diffmk:wrapper diffmk:change="added">Selected Task Details</diffmk:wrapper></emphasis><diffmk:wrapper diffmk:change="added"> section you
+                    can manage the diagram elements on the canvas. </diffmk:wrapper></para>
+                <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">The descriptions of the popup menu options are in the following table.</diffmk:wrapper></para>
+                <table diffmk:change="added" id="popup">
+                    <title diffmk:change="added"><diffmk:wrapper diffmk:change="added">Popup menu. Selected Task Details section.</diffmk:wrapper></title>   
+                    <tgroup cols="3" diffmk:change="added">
+                        <colspec align="left" colnum="1" colwidth="1*" diffmk:change="added"></colspec>
+                        <colspec align="left" colnum="2" colwidth="3*" diffmk:change="added"></colspec>
+                        <colspec align="left" colnum="3" colwidth="1*" diffmk:change="added"></colspec>
+                        
+                        <thead diffmk:change="added">
+                            <row diffmk:change="added">
+                                <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Option</diffmk:wrapper></entry>									
+                                <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Description</diffmk:wrapper></entry>
+                                <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Default</diffmk:wrapper></entry>
+                            </row>
+                        </thead>
+                        <tbody diffmk:change="added">
+                            <row diffmk:change="added">
+                                <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Add</diffmk:wrapper></entry>
+                                <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Select one of the following tasks:
+                                    </diffmk:wrapper><itemizedlist diffmk:change="added">
+                                        <listitem diffmk:change="added"><para diffmk:change="added"><emphasis diffmk:change="added"><diffmk:wrapper diffmk:change="added">Java Class</diffmk:wrapper></emphasis><diffmk:wrapper diffmk:change="added"> - adds bean context item to the config file.
+                                            This option is available when no elements are selected and a user right click the canvas.
+                                        </diffmk:wrapper></para></listitem>
+                                        <listitem diffmk:change="added"><para diffmk:change="added"><emphasis diffmk:change="added"><diffmk:wrapper diffmk:change="added">Expession Binding</diffmk:wrapper></emphasis><diffmk:wrapper diffmk:change="added"> - adds expression based 
+                                            binding to selected java binding element.</diffmk:wrapper></para></listitem>
+                                        <listitem diffmk:change="added"><para diffmk:change="added"><emphasis diffmk:change="added"><diffmk:wrapper diffmk:change="added">Value Binding</diffmk:wrapper></emphasis><diffmk:wrapper diffmk:change="added"> - adds Value binding (&lt;jb:value&gt;)
+                                            to the selected java binding element.</diffmk:wrapper></para></listitem>
+                                        <listitem diffmk:change="added"><para diffmk:change="added"><emphasis diffmk:change="added"><diffmk:wrapper diffmk:change="added">Bean Binding</diffmk:wrapper></emphasis><diffmk:wrapper diffmk:change="added"> - adds Wiring binding (&lt;jb:wiring&gt;) 
+                                            to the selected java binding element.</diffmk:wrapper></para></listitem>
+                                    </itemizedlist>
+                                </entry>
+                                <entry diffmk:change="added"></entry>
+                            </row> 
+                            <row diffmk:change="added">
+                                <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Undo</diffmk:wrapper></entry>
+                                <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">By this option you can revert the changes made at the previous step.
+                                </diffmk:wrapper></entry>
+                                <entry diffmk:change="added"></entry>
+                                
+                            </row> 
+                            <row diffmk:change="added">
+                                <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Redo</diffmk:wrapper></entry>
+                                <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">By this option you can redo the changes made at the previous step.
+                                </diffmk:wrapper></entry>
+                                <entry diffmk:change="added"></entry>
+                                
+                            </row> 
+                            <row diffmk:change="added">
+                                <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Delete</diffmk:wrapper></entry>
+                                <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">This option is available only if you select some element on the canvas.
+                                    Click this option if you want to delete the element from it.
+                                </diffmk:wrapper></entry>
+                                <entry diffmk:change="added"></entry>
+                                
+                            </row> 
+                            <row diffmk:change="added">
+                                <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Auto Layout</diffmk:wrapper></entry>
+                                <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Sets the default layout of the elements on the canvas.</diffmk:wrapper></entry>
+                                <entry diffmk:change="added"></entry>
+                                
+                            </row>                          
+                            <row diffmk:change="added">
+                                <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Properties</diffmk:wrapper></entry>
+                                <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Click this option if you want to add </diffmk:wrapper><emphasis diffmk:change="added"><diffmk:wrapper diffmk:change="added">Properties view</diffmk:wrapper></emphasis><diffmk:wrapper diffmk:change="added">
+                                    to the current perspective.
+                                    The just opened </diffmk:wrapper><emphasis diffmk:change="added"><diffmk:wrapper diffmk:change="added">Properties view</diffmk:wrapper></emphasis><diffmk:wrapper diffmk:change="added"> 
+                                    will automatically reflect the properties of the selected 
+                                    diagram element.
+                                </diffmk:wrapper></entry>
+                                <entry diffmk:change="added"></entry>
+                            </row> 
+                            
+                            <row diffmk:change="added">
+                                <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Input Methods</diffmk:wrapper></entry>
+                                <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Choose one of the following methods:
+                                    </diffmk:wrapper><itemizedlist diffmk:change="added">
+                                        <listitem diffmk:change="added"><para diffmk:change="added"><diffmk:wrapper diffmk:change="added">System</diffmk:wrapper></para></listitem>
+                                        <listitem diffmk:change="added"><para diffmk:change="added"><diffmk:wrapper diffmk:change="added">Simple</diffmk:wrapper></para></listitem>
+                                        <listitem diffmk:change="added"><para diffmk:change="added"><diffmk:wrapper diffmk:change="added">Amharic(EZ+)</diffmk:wrapper></para></listitem>
+                                        <listitem diffmk:change="added"><para diffmk:change="added"><diffmk:wrapper diffmk:change="added">Cedilla</diffmk:wrapper></para></listitem>
+                                        <listitem diffmk:change="added"><para diffmk:change="added"><diffmk:wrapper diffmk:change="added">Cyrillic</diffmk:wrapper></para></listitem>
+                                        <listitem diffmk:change="added"><para diffmk:change="added"><diffmk:wrapper diffmk:change="added">Inuktitut</diffmk:wrapper></para></listitem>
+                                        <listitem diffmk:change="added"><para diffmk:change="added"><diffmk:wrapper diffmk:change="added">IPA</diffmk:wrapper></para></listitem>
+                                        <listitem diffmk:change="added"><para diffmk:change="added"><diffmk:wrapper diffmk:change="added">Multipress</diffmk:wrapper></para></listitem>
+                                        <listitem diffmk:change="added"><para diffmk:change="added"><diffmk:wrapper diffmk:change="added">SCIM Bridge Input Method</diffmk:wrapper></para></listitem>
+                                        <listitem diffmk:change="added"><para diffmk:change="added"><diffmk:wrapper diffmk:change="added">SCIM Input Method</diffmk:wrapper></para></listitem>
+                                        <listitem diffmk:change="added"><para diffmk:change="added"><diffmk:wrapper diffmk:change="added">Thai-Lio</diffmk:wrapper></para></listitem>
+                                        <listitem diffmk:change="added"><para diffmk:change="added"><diffmk:wrapper diffmk:change="added">Tigrigna-Eritrean(EZ+)</diffmk:wrapper></para></listitem>
+                                        <listitem diffmk:change="added"><para diffmk:change="added"><diffmk:wrapper diffmk:change="added">Tigrigna-Ethiopian(EZ+)</diffmk:wrapper></para></listitem>
+                                        <listitem diffmk:change="added"><para diffmk:change="added"><diffmk:wrapper diffmk:change="added">Vietnamese</diffmk:wrapper></para></listitem>
+                                        <listitem diffmk:change="added"><para><diffmk:wrapper diffmk:change="changed">X input Method</diffmk:wrapper></para></listitem>
+                                    </itemizedlist>
+                                </entry>
+                                <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">System</diffmk:wrapper></entry>
+                            </row> 
+                        </tbody>
+                    </tgroup>
+                </table> 
+            </section>
+            <section><title>Selected Task Details section for Template Task.</title>
+                <para><diffmk:wrapper diffmk:change="changed">Selected Task Details section for this task is presented by the graf,
+                    that is similar to the one in the </diffmk:wrapper><link linkend="mapping_task">previous section</link><diffmk:wrapper diffmk:change="changed">.
+                </diffmk:wrapper></para>
+                <figure float="0">
+                    <title>Selected Task Details Section for Template Task.</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/reference/reference_7a.png" scale="90"></imagedata>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+                <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">Popup menu similar to the one in </diffmk:wrapper><link diffmk:change="added" linkend="popup"><diffmk:wrapper diffmk:change="added">Selected Task Details section
+                    for Java Mapping Task</diffmk:wrapper></link><diffmk:wrapper diffmk:change="added"> is also available here.</diffmk:wrapper></para>
+            </section>
+        </section>
+        
+    </section>
+    <section id="options_tab">
+        <title>Options Tab</title>
+        <para>This section describes Options tab of the Smooks Configuration File editor, gives short recommendations how this tab can be used during the project configuring.</para>
+        <figure float="0">
+            <title> Options tab of the Smooks Configuration File editor</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="images/reference/reference_8.png" scale="90"></imagedata>
+                </imageobject>
+            </mediaobject>
+        </figure> 
+        <section>
+            <title>Smooks Configuration section</title>
+            <para><diffmk:wrapper diffmk:change="changed"> 
+                In the </diffmk:wrapper><property moreinfo="none">Smooks Configuration</property> section of <property moreinfo="none">Options Tab</property><diffmk:wrapper diffmk:change="changed">
+                only one  element is availible:Smooks Platform Version
+            </diffmk:wrapper></para>
+            <figure float="0">
+                <title>Smooks Configuration section of Options tab</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="images/reference/reference_9.png" scale="90"></imagedata>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+            <para><diffmk:wrapper diffmk:change="changed">This parameter is not rechangable,
+                and is set according to the vesion of the Smooks libraries that are added to the project.
+            </diffmk:wrapper></para>
+        </section>
+        
+        <section>
+            <title>Filter Settings Filter section</title>
+            <para> 
+                In Filter Settings section you can set
+                the following global options responsible for Smooks filtering configuring:</para>
+            <figure float="0">
+                <title>Filter Settings section of Options tab</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="images/reference/reference_10.png" scale="90"></imagedata>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+            <para>This behavior can be turned off using this global configuration parameter and can be overriden on a per fragment basis by targetting a Visitor implementation at that fragment that takes ownership of the Result writer (in the case of SAX filtering), or simply modifies the DOM (in the case of DOM filtering). As an example of this, see the FreeMarkerTemplateProcessor. 
+            </para>
+            <table>
+                <title>Options Tab. Filter Settings section.</title>   
+                <tgroup cols="3">
+                    <colspec align="left" colnum="1" colwidth="1*"></colspec>
+                    <colspec align="left" colnum="2" colwidth="3*"></colspec>
+                    <colspec align="left" colnum="3" colwidth="1*"></colspec>
+                    
+                    <thead>
+                        <row>
+                            <entry>Option</entry>									
+                            <entry>Description</entry>
+                            <entry>Default</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>Stream Filter Type</entry>
+                            <entry>Determines the type of processing model that will be used.
+                                Please refer to <ulink url="http://www.smooks.org/mediawiki/index.php?title=V1.2:Smooks_v1.2_User_Guide#Filtering_Process_Selection_.28DOM_or_SAX.3F.29">
+                                    Filtering Process Selection section</ulink>
+                                of the official Smooks User Guide for more information about these models:
+                                <itemizedlist>
+                                    <listitem><para><emphasis>SAX</emphasis></para></listitem>
+                                    <listitem><para><emphasis>DOM</emphasis></para></listitem>
+                                </itemizedlist>
+                            </entry>
+                            <entry><diffmk:wrapper diffmk:change="changed">SAX</diffmk:wrapper></entry>
+                        </row> 
+                        
+                        <row>
+                            <entry>Default Serialization is On</entry>
+                            <entry>Defines whether default serialization should be switched on.
+                                Default serialization being turned on leads to locating StreamResult/DOMResult
+                                to the Result objects provided to the Smooks.filterSource method and to
+                                serialization all the events to that Result.</entry>
+                            <entry><diffmk:wrapper diffmk:change="changed">false</diffmk:wrapper></entry>
+                            
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+        </section> 
+    </section>
+    <section id="smooksformeditor_sourcetab">
+        
+        <title>Source Tab</title>
+        <para>This section provides information about Smooks Source Editor Page.</para>
+        <section>
+            <title>XML Source Editor</title>
+            <para>You can use this editor to edit the Smooks Configuration file directly. </para>
+            <figure float="0">
+                <title>Graphical Editor</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="images/source_editor/source_editor1.png" scale="90"></imagedata>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+        </section>
+        <section>
+            <title>Error underlining in Graphical Editor</title>
+            <para>If the <property moreinfo="none">Smooks tools</property><diffmk:wrapper diffmk:change="changed"> can't understand the configuration
+                file or the configuration file is illegal (XML structure isn't right for Smooks
+                Configuration file, etc.), the error is underlined.</diffmk:wrapper></para>
+            <figure float="0">
+                <title>Graphical Editor</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="images/reference/reference_11.png" scale="90"></imagedata>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+            
+        </section>
+        
+        <section>
+            <title>Smooks Configuration File Validator</title>
+            <para>Smooks configuration file validator will validate your Smooks configuration file. Just  right-click on the file and then click on the <property moreinfo="none">Validate</property> button. The validator can be enabled/disabled in <emphasis><property moreinfo="none">Window -&gt; Preferences -&gt; Validation</property></emphasis>:</para>
+            
+            <figure float="0">
+                <title>Validation: Smooks Configuration File Validator</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="images/source_editor/smooks_conf_validator.png" scale="90"></imagedata>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+            
+            <para>You can set up your Smooks validator to include, exclude groups to validate and specify rules for validation. Just click on the <property moreinfo="none">Settings</property> button and use the options provided:</para>
+            
+            <figure float="0">
+                <title>Smooks Configuration File Validator Settings</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="images/source_editor/smooks_conf_validator_settings.png" scale="90"></imagedata>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+            <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">For more details about Smooks editor, also see the movie, </diffmk:wrapper><ulink diffmk:change="added" url=""><diffmk:wrapper diffmk:change="added">"Overview of the Smooks Editor"</diffmk:wrapper></ulink><diffmk:wrapper diffmk:change="added">.</diffmk:wrapper></para>
+        </section>
+    </section>
+    <section diffmk:change="added">
+        <title diffmk:change="added"><diffmk:wrapper diffmk:change="added">Properties View</diffmk:wrapper></title>
+        <para diffmk:change="added"><emphasis diffmk:change="added"><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Properties View</diffmk:wrapper></property></emphasis><diffmk:wrapper diffmk:change="added"> is available for some
+            elements on the canvas of Java Mapping and Apply Template Tasks,like:</diffmk:wrapper></para>
+        <itemizedlist diffmk:change="added">
+            <listitem diffmk:change="added"><para diffmk:change="added"><emphasis diffmk:change="added"><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Java mapping</diffmk:wrapper></property></emphasis><diffmk:wrapper diffmk:change="added">:java class members,its fields,
+                links between input values and the class members;</diffmk:wrapper></para></listitem>
+            <listitem diffmk:change="added"><para diffmk:change="added"><emphasis diffmk:change="added"><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Apply Template</diffmk:wrapper></property></emphasis><diffmk:wrapper diffmk:change="added">:output template.</diffmk:wrapper></para></listitem>
+        </itemizedlist>
+        <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">To add </diffmk:wrapper><emphasis diffmk:change="added"><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Properties View</diffmk:wrapper></property></emphasis><diffmk:wrapper diffmk:change="added"> 
+            to the opened perspective the user can either open </diffmk:wrapper><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Window-&gt;Show View-&gt;Preferences</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added"> 
+            in the toolbar or right click the element which properties he wants to inspect and select </diffmk:wrapper><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Properties</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added">
+            in the popup menu.On the picture below you can see how this view looks like when some csv template is selected.
+        </diffmk:wrapper></para>
+        <figure diffmk:change="added" float="0">
+            <title diffmk:change="added"><diffmk:wrapper diffmk:change="added">Properties View</diffmk:wrapper></title>
+            <mediaobject diffmk:change="added">
+                <imageobject diffmk:change="added">
+                    <imagedata diffmk:change="added" fileref="images/reference/reference_12.png" scale="90"></imagedata>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">
+            This view is fully syncronized with the canvas of </diffmk:wrapper><emphasis diffmk:change="added"><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Smooks Configuration Editor</diffmk:wrapper></property></emphasis><diffmk:wrapper diffmk:change="added">.
+            This means that when you change selected element by click,the properties of a new element are immediatly displayed in it. 
+            Using </diffmk:wrapper><emphasis diffmk:change="added"><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Properties View</diffmk:wrapper></property></emphasis><diffmk:wrapper diffmk:change="added"> you can edit all the properties of the selected item.
+        </diffmk:wrapper></para>
+        <figure diffmk:change="added" float="0">
+            <title diffmk:change="added"><diffmk:wrapper diffmk:change="added">Synchronization between Properties View and the canvas</diffmk:wrapper></title>
+            <mediaobject diffmk:change="added">
+                <imageobject diffmk:change="added">
+                    <imagedata diffmk:change="added" fileref="images/reference/reference_13.png" scale="90"></imagedata>
+                </imageobject>
+            </mediaobject>
+        </figure>
+        <section diffmk:change="added">
+            <title diffmk:change="added"><diffmk:wrapper diffmk:change="added">Decode Configuration</diffmk:wrapper></title>
+            <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">Smooks tools support decode parameter configuration through the Decode tab in </diffmk:wrapper><emphasis diffmk:change="added">
+                <property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Properties View</diffmk:wrapper></property></emphasis><diffmk:wrapper diffmk:change="added"> 
+                activated by clicking the connection between input model and bean items. </diffmk:wrapper></para>
+            <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">On the picture below you can see an example of decode configurations
+                for mapping some </diffmk:wrapper><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Input Model</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added"> Item to </diffmk:wrapper><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Date</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added"> format:</diffmk:wrapper></para>
+            <figure diffmk:change="added" float="0">
+                <title diffmk:change="added"><diffmk:wrapper diffmk:change="added">Decode Configuration tab in Properties View</diffmk:wrapper></title>
+                <mediaobject diffmk:change="added">
+                    <imageobject diffmk:change="added">
+                        <imagedata diffmk:change="added" fileref="images/reference/reference_14.png" scale="90"></imagedata>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+            <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">The descriptions of the </diffmk:wrapper><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Decode Configuration</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added"> tab options are listed in the following table:</diffmk:wrapper></para>
+            <table diffmk:change="added">
+                <title diffmk:change="added"><diffmk:wrapper diffmk:change="added">Decode Configuration tab in Properties View</diffmk:wrapper></title>   
+                <tgroup cols="3" diffmk:change="added">
+                    <colspec align="left" colnum="1" colwidth="1*" diffmk:change="added"></colspec>
+                    <colspec align="left" colnum="2" colwidth="3*" diffmk:change="added"></colspec>
+                    <colspec align="left" colnum="3" colwidth="1*" diffmk:change="added"></colspec>
+                    
+                    <thead diffmk:change="added">
+                        <row diffmk:change="added">
+                            <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Option</diffmk:wrapper></entry>									
+                            <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Description</diffmk:wrapper></entry>
+                        </row>
+                    </thead>
+                    <tbody diffmk:change="added">
+                        <row diffmk:change="added">
+                            <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Decoder</diffmk:wrapper></entry>
+                            <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Select from the dropdown list the type of decoder you need.
+                            </diffmk:wrapper></entry>
+                        </row> 
+                        
+                        <row diffmk:change="added">
+                            <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Decoder Parameters</diffmk:wrapper></entry>
+                            <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">For most of decoders </diffmk:wrapper><emphasis diffmk:change="added"><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Decoder Parametres table</diffmk:wrapper></property></emphasis><diffmk:wrapper diffmk:change="added"> is empty.
+                                But some of the decoders require additional configuration
+                                (like Date decoder on the picture above),so you should configure them
+                                by editing the corresponding line in the </diffmk:wrapper><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Value</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added"> row.
+                                For example for Date Decoder:
+                                </diffmk:wrapper><itemizedlist diffmk:change="added">
+                                    <listitem diffmk:change="added"><para diffmk:change="added"><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">format</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added"> - Date format string.</diffmk:wrapper></para></listitem>
+                                    <listitem diffmk:change="added"><para diffmk:change="added"><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">locale country</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added"> - ISO Country Code.
+                                        Upper case two-letter code defined by ISO-3166. </diffmk:wrapper></para></listitem>
+                                    <listitem diffmk:change="added"><para diffmk:change="added"><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">locale language</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added"> - ISO Language Code.
+                                        Lower case two-letter code defined by ISO-639. </diffmk:wrapper></para></listitem>
+                                </itemizedlist>
+                            </entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">The </diffmk:wrapper><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Decoder Parameters</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added">  section for </diffmk:wrapper><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">EnumDecoder</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added">
+                quite differs from other types of decoders.
+                See the picture below:</diffmk:wrapper></para>
+            <figure diffmk:change="added" float="0">
+                <title diffmk:change="added"><diffmk:wrapper diffmk:change="added">EnumDecoder in Properties View</diffmk:wrapper></title>
+                <mediaobject diffmk:change="added">
+                    <imageobject diffmk:change="added">
+                        <imagedata diffmk:change="added" fileref="images/reference/reference_15.png" scale="90"></imagedata>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+            <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">The Decoder Parameters section for EnumDecoder in Properties View consists of 2 rows:</diffmk:wrapper></para>
+            <itemizedlist diffmk:change="added">
+                <listitem diffmk:change="added"><para diffmk:change="added"><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">From Data Value</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added">  - The lines in this row are editable.
+                    You can change them according to the names of enum types you used in input file. 
+                </diffmk:wrapper></para></listitem>
+                <listitem diffmk:change="added"><para diffmk:change="added"><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">To Enum Value</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added"> - The lines in this row are not editable.
+                    Here a set of all constants declared in mapped Enum type is listed.
+                    The user is responsible for correspondence between the values in these two rows. </diffmk:wrapper></para></listitem>
+            </itemizedlist>
+            
+            <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">For more information about different decoder parametres read </diffmk:wrapper><ulink diffmk:change="added" url="http://www.smooks.org/mediawiki/index.php?title=Main_Page"><diffmk:wrapper diffmk:change="added">
+                Smooks Technology Documentation</diffmk:wrapper></ulink><diffmk:wrapper diffmk:change="added">.</diffmk:wrapper></para>
+        </section>
+        <section diffmk:change="added">
+            <title diffmk:change="added"><diffmk:wrapper diffmk:change="added">Apply Template Wizard</diffmk:wrapper></title>
+            <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">The </diffmk:wrapper><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Apply Template Wizard</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added"> 
+                helps you to add a new </diffmk:wrapper><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Apply Template Task</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added"> to 
+                Smooks configuration file.
+                You can call it from the popup menu when </diffmk:wrapper><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Java Mapping</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added"> item in Processing
+                Task section is selected by following </diffmk:wrapper><emphasis diffmk:change="added"><diffmk:wrapper diffmk:change="added">Add Task &gt; Apply Template</diffmk:wrapper></emphasis><diffmk:wrapper diffmk:change="added">
+                (see </diffmk:wrapper><link diffmk:change="added" linkend="apply_templ"><diffmk:wrapper diffmk:change="added">Apply Template configuration</diffmk:wrapper></link><diffmk:wrapper diffmk:change="added"> picture).</diffmk:wrapper></para>
+            <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">The wizard consists of several pages:</diffmk:wrapper></para>
+            
+            <orderedlist continuation="restarts" diffmk:change="added" inheritnum="ignore">
+                <listitem diffmk:change="added">
+                    <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">The first one includes only one option to adjust.The user should select in
+                        which of the two formats(</diffmk:wrapper><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">XML</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added"> or </diffmk:wrapper><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">CSV</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added">) 
+                        he prefers to create an output message:</diffmk:wrapper></para>
+                    <figure diffmk:change="added" float="0">
+                        <title diffmk:change="added"><diffmk:wrapper diffmk:change="added">The first page of Apply Template Wizard</diffmk:wrapper></title>
+                        <mediaobject diffmk:change="added">
+                            <imageobject diffmk:change="added">
+                                <imagedata diffmk:change="added" fileref="images/reference/reference_24.png"></imagedata>
+                            </imageobject>
+                        </mediaobject>
+                    </figure>
+                    
+                </listitem>
+                <listitem diffmk:change="added"><para diffmk:change="added"><diffmk:wrapper diffmk:change="added">The second page is specific for each of the output message formats:</diffmk:wrapper></para>
+                    <itemizedlist diffmk:change="added">
+                        <listitem diffmk:change="added"><para diffmk:change="added"><diffmk:wrapper diffmk:change="added">If the </diffmk:wrapper><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">CSV</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added"> output message type was selected at
+                            the previous step the second wizard page will be the following :</diffmk:wrapper></para>
+                            <figure diffmk:change="added" float="0">
+                                <title diffmk:change="added"><diffmk:wrapper diffmk:change="added">CSV:The second page of Apply Template Wizard</diffmk:wrapper></title>
+                                <mediaobject diffmk:change="added">
+                                    <imageobject diffmk:change="added">
+                                        <imagedata diffmk:change="added" fileref="images/reference/reference_25.png"></imagedata>
+                                    </imageobject>
+                                </mediaobject>
+                            </figure> 
+                            <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">The wizard page includes the next options to adjust:</diffmk:wrapper></para>
+                            
+                            <table diffmk:change="added">
+                                <title diffmk:change="added"><diffmk:wrapper diffmk:change="added">Apply Template Wizard. Second Page Options if CSV output format is selected.</diffmk:wrapper></title>   
+                                <tgroup cols="3" diffmk:change="added">
+                                    <colspec align="left" colnum="1" colwidth="1*" diffmk:change="added"></colspec>
+                                    <colspec colnum="2" colwidth="3*" diffmk:change="added"></colspec>
+                                    <colspec align="left" colnum="3" colwidth="1*" diffmk:change="added"></colspec>
+                                    <thead diffmk:change="added">
+                                        <row diffmk:change="added">
+                                            <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Option</diffmk:wrapper></entry>									
+                                            <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Description</diffmk:wrapper></entry>
+                                            <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Default</diffmk:wrapper></entry>
+                                        </row>
+                                    </thead>
+                                    <tbody diffmk:change="added">
+                                        <row diffmk:change="added">
+                                            <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Fields</diffmk:wrapper></entry>
+                                            <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Comma separated list of CSV record field names.</diffmk:wrapper></entry>
+                                            <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Empty</diffmk:wrapper></entry>
+                                        </row> 
+                                        
+                                        <row diffmk:change="added">
+                                            <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Separator Character</diffmk:wrapper></entry>
+                                            <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Field separator character in the output message.</diffmk:wrapper></entry>
+                                            <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">,</diffmk:wrapper></entry>
+                                        </row> 
+                                        
+                                        <row diffmk:change="added">
+                                            <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Quote Character</diffmk:wrapper></entry>
+                                            <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Quote character in the output message.</diffmk:wrapper></entry>
+                                            <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">"</diffmk:wrapper></entry>
+                                        </row> 
+                                        
+                                        <row diffmk:change="added">
+                                            <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Output Field name</diffmk:wrapper></entry>
+                                            <entry diffmk:change="added"><diffmk:wrapper diffmk:change="added">Click the checkbox if you want the output csv message also include field names.</diffmk:wrapper></entry>
+                                            <entry diffmk:change="added"></entry>
+                                        </row> 
+                                        
+                                    </tbody>
+                                </tgroup>
+                            </table>
+                        </listitem>
+                        <listitem diffmk:change="added">
+                            <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">The following second wizard page will appear 
+                                if </diffmk:wrapper><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">XML</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added"> output message type was selected at
+                                the previous step:</diffmk:wrapper></para>
+                            <figure diffmk:change="added" float="0">
+                                <title diffmk:change="added"><diffmk:wrapper diffmk:change="added">Apply Template Wizard. Second Page Options if XML output format is selected.</diffmk:wrapper></title>
+                                <mediaobject diffmk:change="added">
+                                    <imageobject diffmk:change="added">
+                                        <imagedata diffmk:change="added" fileref="images/reference/reference_22.png"></imagedata>
+                                    </imageobject>
+                                </mediaobject>
+                            </figure>
+                            <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">Here you should firstly select XSD or Sample XML format of output template and then
+                                click </diffmk:wrapper><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Browse File System</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added">
+                                or </diffmk:wrapper><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Browse Workspace</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added"> button depending on what 
+                                browse type you want to use.For example, if you click </diffmk:wrapper><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Browse Workspace</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added">
+                                the following view will appear:
+                            </diffmk:wrapper></para>
+                            <figure diffmk:change="added" float="0">
+                                <title diffmk:change="added"><diffmk:wrapper diffmk:change="added">Browse Workspace</diffmk:wrapper></title>
+                                <mediaobject diffmk:change="added">
+                                    <imageobject diffmk:change="added">
+                                        <imagedata diffmk:change="added" fileref="images/reference/reference_18.png"></imagedata>
+                                    </imageobject>
+                                </mediaobject>
+                            </figure>
+                            <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">In the workspace you should select the template you 
+                                want to use and click </diffmk:wrapper><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Ok</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added">.
+                            </diffmk:wrapper></para>
+                            <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">If you selected XSD format after adjusting the template path you should click Load button: 
+                            </diffmk:wrapper></para> 
+                            <figure diffmk:change="added" float="0">
+                                <title diffmk:change="added"><diffmk:wrapper diffmk:change="added">Load Button</diffmk:wrapper></title>
+                                <mediaobject diffmk:change="added">
+                                    <imageobject diffmk:change="added">
+                                        <imagedata diffmk:change="added" fileref="images/reference/reference_19.png"></imagedata>
+                                    </imageobject>
+                                </mediaobject>
+                            </figure>
+                            <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">After that it is necessary to select in the </diffmk:wrapper><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Select Root Element
+                            </diffmk:wrapper></property><diffmk:wrapper diffmk:change="added"> the root node for the template and click </diffmk:wrapper><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Finish</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added">.</diffmk:wrapper></para>
+                            <figure diffmk:change="added" float="0">
+                                <title diffmk:change="added"><diffmk:wrapper diffmk:change="added">Load Button</diffmk:wrapper></title>
+                                <mediaobject diffmk:change="added">
+                                    <imageobject diffmk:change="added">
+                                        <imagedata diffmk:change="added" fileref="images/reference/reference_20.png"></imagedata>
+                                    </imageobject>
+                                </mediaobject>
+                            </figure>                           
+                            <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">If you have chosen Sample XML option after selecting
+                                the template xml file destination you should only
+                                click </diffmk:wrapper><property diffmk:change="added" moreinfo="none"><diffmk:wrapper diffmk:change="added">Finish</diffmk:wrapper></property><diffmk:wrapper diffmk:change="added">: 
+                            </diffmk:wrapper></para>
+                            <figure diffmk:change="added" float="0">
+                                <title diffmk:change="added"><diffmk:wrapper diffmk:change="added">Load Button</diffmk:wrapper></title>
+                                <mediaobject diffmk:change="added">
+                                    <imageobject diffmk:change="added">
+                                        <imagedata diffmk:change="added" fileref="images/reference/reference_23.png"></imagedata>
+                                    </imageobject>
+                                </mediaobject>
+                            </figure>
+                        </listitem>
+                    </itemizedlist>
+                </listitem>
+            </orderedlist>
+        </section>
+        
+    </section>
+    
+</chapter>
+
+	
+<chapter xml:base="file:///home/vchukhutsina/repos/ochik_jboss/smooks/docs/reference/en-US/summary.xml">
+    <?dbhtml filename="summary.html"?>
+    <title>Summary</title>
+    <para>In conclusion, with this document you know all the capabilities of Smooks Tools and could easily start with them.
+        The chapters above walked you through the steps on how to create and configure some XML to JAVA mapping project.     
+        If you have questions or suggestions concerned both the documentation and tools behavior,
+        you are welcome to JBoss Tools Users forum.
+        Please, use Jira to report bugs and requests on documentation.</para>
+    
+    <section>
+        <title>Other relevant resources on the topic</title>
+        <para>All JBoss Developer Studio/JBoss Tools release documentation you can find at
+            <ulink url="http://docs.jboss.org/tools">http://docs.jboss.org/tools</ulink> in the corresponding release directory.
+        </para>   
+        <para>The latest documentation builds are available at <ulink url="http://download.jboss.org/jbosstools/nightly-docs">http://download.jboss.org/jbosstools/nightly-docs</ulink>. </para>
+<para><diffmk:wrapper diffmk:change="changed">
+    For more information about Smooks technology please visit
+                </diffmk:wrapper><ulink url="http://www.smooks.org/mediawiki/index.php?title=Main_Page"><diffmk:wrapper diffmk:change="changed">
+                Smooks Technology Home Page</diffmk:wrapper></ulink>
+</para>
+        <para diffmk:change="added"><diffmk:wrapper diffmk:change="added">You can find a set of screencasts on Smooks tools technology </diffmk:wrapper><ulink diffmk:change="added" url="http://community.jboss.org/wiki/JBossTools-SmooksEditor"><diffmk:wrapper diffmk:change="added">here</diffmk:wrapper></ulink><diffmk:wrapper diffmk:change="added">.</diffmk:wrapper></para>
+    </section>
+</chapter>
+
+</book>

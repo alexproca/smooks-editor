@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter id="introduction">
+	<?dbhtml filename="introduction.html"?>
+	<chapterinfo>
+		<keywordset>
+			<keyword>JBoss Tools</keyword>
+			<keyword>Smooks</keyword>
+			<keyword>JBDS</keyword>
+		</keywordset>
+	</chapterinfo>
+	<title>Introduction</title>
+	<para>This chapter gives you a short introduction to Smooks, Smooks tools and its installation.</para>
+	<para>First, have a look at the key features of Smooks tools:</para>
+	<section>
+		<title>Key Features of Smooks Tools</title>
+		<para>The table below provides you with a list of the key features integrated in Smooks tools.</para>
+		<table>
+			
+			<title>Key Functionality for Smooks Tools</title>
+			<tgroup cols="3">
+				
+				<colspec colnum="1" align="left" colwidth="2*"/>
+				<colspec colnum="2" colwidth="4*"/>
+				<colspec colnum="3" align="left" colwidth="2*"/>
+				
+				<thead>
+					<row>
+						<entry>Feature</entry>
+						<entry>Benefit</entry>
+						<entry>Chapter</entry>
+					</row>
+				</thead>
+				
+				<tbody>
+					
+					<row>
+						<entry>
+							<para>Smooks Configuration File Wizard</para>
+						</entry>
+						<entry>
+							<para>Smooks tools allows you to create and edit the Smooks configuration file for Java2Java data transformation.</para>
+						</entry>
+						<entry>
+							<xref linkend="config_file_wizzard"/>
+						</entry>
+					</row>
+					
+					<row>
+						<entry>
+							<para>Smooks Editor</para>
+						</entry>
+						<entry>
+							<para>Smooks Editor helps configure the created Smooks configuration file.</para>
+						</entry>
+						<entry>
+							<xref linkend="process_tab"/>
+						</entry>
+					</row>
+				
+				</tbody>
+			
+			</tgroup>
+		</table>
+		
+	
+	
+	</section>
+	
+	
+	
+	<section>
+		<title>What is Smooks?</title>
+		
+		<para>
+			<property>Smooks</property> is a Java Framework/Engine for processing XML and non XML
+			data (CSV, EDI, Java, JSON etc). It provides: </para>
+		<para/>
+		<para>
+			<orderedlist numeration="upperroman" inheritnum="inherit">
+				<listitem>
+					<para>
+						<emphasis role="bold">Transformation</emphasis>: Perform a wide range of
+						Data Transforms. Supports many different Source and Result types
+						-XML/CSV/EDI/Java/JSON to XML/CSV/EDI/Java/JSON.</para>
+				</listitem>
+				<listitem>
+					<para>
+						<emphasis role="bold">Java Binding</emphasis>: Bind into a Java Object
+						Model from any data source (CSV, EDI, XML, Java, JSON etc). </para>
+				</listitem>
+				
+				<listitem>
+					<para>
+						<emphasis role="bold">Huge Message Processing</emphasis>: Process huge
+						messages (GBs) - Split, Transform and Route message fragments to JMS, File,
+						Database etc destinations. Route multiple message formats to multiple
+						destinations in a single pass over a message. </para>
+				</listitem>
+				
+				<listitem>
+					<para>
+						<emphasis role="bold">Message Enrichment</emphasis>: Enrich a message with
+						data from a Database, or other Datasources. </para>
+				</listitem>
+				
+				<listitem>
+					<para>
+						<emphasis role="bold">Combine</emphasis>: Combine the above features in
+						different ways e.g. add Message Enrichment as part of a Splitting and
+						Routing process. </para>
+				</listitem>
+			</orderedlist>
+		</para>
+		<figure>
+			<title>Smooks</title>
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="images/introduction/introduction1.png" scale="90"/>
+				</imageobject>
+			</mediaobject>
+		</figure>
+		<para> For more informations about <property>Smooks</property>, please visit the <ulink url="http://www.smooks.org">Smooks official site</ulink>.</para>
+	</section>
+	<section>
+		<title>What is Smooks Tools?</title>
+		
+		<para>Smooks tools is a set of graphical tools, based on Eclipse, for editing Smooks configuration files.</para>
+		<figure>
+			<title>Smooks Form editor</title>
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="images/introduction/introduction2.png" scale="90"/>
+				</imageobject>
+			</mediaobject>
+		</figure>
+		<!-- <para>The easiest way to use the Smooks Configuration Editor is to create a project
+			(Java project, an ESB project, etc.), right-click on it and select <property>New -> Other</property>
+			to open the New wizard. Drill into <property>Smooks -> Smooks Configuration File</property>
+			and continue through the wizard.
+			Once the file is created, it will open in the Smooks Configuration Editor.</para> -->
+	</section>
+	<section>
+		<title>Adding Smooks jars</title>
+		
+		<para>During your development, you probably will be required to include additional Smooks jars to your project. This can be achieved with the following steps:</para>
+		<itemizedlist>
+			<listitem>
+				<para>If it doesn't yet exist, create the folder named "lib" inside your project.
+				Copy all the Smooks jars you need to include into the <emphasis><property>lib</property>
+					</emphasis> directory.
+			</para>
+			</listitem>
+			<listitem>
+				<para>Right-click (or Control-click on Mac OS) on the project and select <guilabel>Properties.</guilabel></para>
+			</listitem>
+			<listitem>
+				<para>Select the <guilabel>Java Build Path</guilabel> item in the Properties list, then the <guilabel>Libraries tab</guilabel>, and click the <guibutton>Add JARs</guibutton> button.
+					</para>
+			</listitem>
+			<listitem>
+				<para>In the Jar Selection dialog, select all the jars in the "lib" directory you want to include and click the <guibutton>OK</guibutton> button.</para>
+			</listitem>
+			<listitem>
+				<para>
+				Now you should see all the jars included to your project hierarchy. </para>
+			</listitem>
+		</itemizedlist>
+		
+		<!-- <para>The easiest way to use the Smooks Configuration Editor is to create a project
+			(Java project, an ESB project, etc.), right-click on it and select <property>New -> Other</property>
+			to open the New wizard. Drill into <property>Smooks -> Smooks Configuration File</property>
+			and continue through the wizard.
+			Once the file is created, it will open in the Smooks Configuration Editor.</para> -->
+	</section>
+	<!-- <section>
+		<title>How to install Smooks dev tools?</title>
+
+		<para> The Smooks tools was included by the <property>JBoss Tools</property> since 3.0.0
+			Beta1 version. You can download the <property>JBoss Tools</property> from <ulink
+				url="http://jboss.org/tools/download.html">JBoss download site</ulink>.</para>
+		<para> Smooks tools (<property>JBoss Tools</property>) run with the latest Eclipse and
+			other required plug-ins (GEF, EMF, etc.).</para>
+		<para> You should download the latest IDE for Java EE developers from <ulink
+				url="http://www.eclipse.org/downloads/"> Eclipse site</ulink>. It contains many plug-ins (
+				GEF, EMF, etc. ) required by Smooks dev tools. </para>
+		<para>The Smooks Configuration depends on having all of the appropriate Smooks runtime jars in the path of the Eclipse Plug-in or Java Project in the Eclipse workspace.
+			
+			The easiest solution is to do the following:
+			<itemizedlist>
+				<listitem><para>1) Download the Smooks distribution from here: http://www.smooks.org/mediawiki/index.php?title=Downloads .
+					Grab the latest "ALL" distribution (as of today, it is the Smooks v.1.2.2 "ALL" distribution) and it will include binaries, examples, etc.</para></listitem>
+				<listitem><para>2) Extract files from the archive somewhere on your machine.</para></listitem>
+				<listitem><para>3) In your Eclipse workspace, copy the Smooks jars into a directory of your Eclipse plug-in or Java project named "lib".</para></listitem>
+				<listitem><para>4) For your Eclipse Plug-in or Java Project, right-click on the project and select Properties.</para></listitem>
+				<listitem><para>5) Select the "Java Build Path" item in the Properties list, select the Libraries tab, and click "Add JARs"
+				</para></listitem>
+				<listitem><para>6) In the Jar Selection dialog, select all the jars in the "lib" directory mentioned in step 3 and click <property>OK</property>.
+				</para></listitem>
+				<listitem><para>7) Click <property>OK</property> to close the Properties dialog. Now you should see a "Referenced Libraries" node that appeared in your project hierarchy in Eclipse.
+				</para></listitem>
+			</itemizedlist>
+	
+		</para>
+		<para>Now let's progress to more advanced topics.</para>
+	</section>
+	-->
+</chapter>

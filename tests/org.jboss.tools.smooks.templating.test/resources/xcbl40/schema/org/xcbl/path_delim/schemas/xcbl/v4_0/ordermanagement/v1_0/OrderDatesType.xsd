@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="OrderDatesType">
+        <xsd:annotation>
+            <xsd:documentation>is used to hold a list of the pertinent dates for the purchase
+        order dates will include validity dates, <!--code-->RequestedShipDate<!--/code-->, <!--code-->CancelByDates<!--/code-->,
+        among others. These dates act as defaults that may be overwritten at the item level or package level in the body of the message.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="RequestedShipByDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>is the date items in  the purchase order must be shipped from the
+        seller.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="RequestedDeliverByDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>is the date items in  the purchase order must be received by the buyer.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PromiseDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>is used mainly for confirming orders when a date was promised by
+        the supplier over the phone. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ValidityDates" type="core:ValidityDatesType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the dates between which the <!--code-->Order<!--/code--> is effective.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CancelByDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>is the date after which <!--code-->Order<!--/code--> should be cancelled.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfDateCoded" type="core:ListOfDateCodedType">
+                <xsd:annotation>
+                    <xsd:documentation>contains all other dates not for the <!--code-->Order<!--/code--> not  explicitly stated as the content of other elements.
+</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

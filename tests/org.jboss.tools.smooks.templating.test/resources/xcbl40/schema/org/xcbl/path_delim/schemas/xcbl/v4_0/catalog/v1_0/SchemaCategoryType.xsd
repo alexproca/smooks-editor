@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="SchemaCategoryType">
+        <xsd:annotation>
+            <xsd:documentation>contains a list of categories. One or more <!--code-->SchemaCategory<!--/code--> elements
+        are used to describe the contents of the Schema taxonomy. Should not be present if there
+        is a <!--code-->SchemaSource<!--/code--> element supplied to identify an external schema.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="CategoryID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is a schema-unique identification for the category.  The use
+        of this element is encouraged over the use of the <!--code-->CategoryID<!--/code--> attribute.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ParentCategoryRefList" type="ParentCategoryRefListType">
+                <xsd:annotation>
+                    <xsd:documentation>is a list of <!--code-->CatalogIDRefs<!--/code--> for schema categories which are proper
+        superclasses of this category, and from which this category inherits attributes. The use
+        of this element is encouraged over the use of the <!--code-->ParentCategoryRef<!--/code--> XML IDREFS
+        attribute. No value for this implies that this category is a sub-category of <!--code-->Product<!--/code-->.
+        Hence, ultimately, every category is a sub-category of <!--code-->Product<!--/code-->. NOTE: this is a multiple
+        inheritance model. The order of the categories establishes precedence, the list being
+        ordered in descending precedence. This is most important in determing which class an
+        undeclared <!--code-->ObjectAttribute<!--/code--> used in the <!--code-->CatalogData<!--/code--> section is added to.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="CategoryName" type="CategoryNameType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the name of the category as given by its
+        creator.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="ShortDescription" type="ShortDescriptionType">
+                <xsd:annotation>
+                    <xsd:documentation> is a short description of the category. There may be more
+        than one <!--code-->ShortDescription<!--/code--> element to allow for internationalized
+        content, which is effected by use of the <!--code-->xml:lang<!--/code--> attribute.
+        <!--code-->xml:lang<!--/code--> must contain a value that is a valid RFC 1766 language
+        code, and defaults to <!--code-->en<!--/code--> (for "English") if not present.
+        </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="LongDescription" type="LongDescriptionType">
+                <xsd:annotation>
+                    <xsd:documentation> is a long description of the category. There may be more
+        than one <!--code-->LongDescription<!--/code--> element to allow for internationalized
+        content, which is effected by use of the <!--code-->xml:lang<!--/code--> attribute.
+        <!--code-->xml:lang<!--/code--> must contain a value that is a valid RFC 1766 language
+        code. If not specified in <!--code-->DefaultLanguage<!--/code--> or in a specific
+        element, the value is assumed to be <!--code-->en<!--/code--> for "English."</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="CategoryAttribute" type="CategoryAttributeType">
+                <xsd:annotation>
+                    <xsd:documentation>is an attribute list definition.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

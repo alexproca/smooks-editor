@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="OrderConfirmationHeaderType">
+        <xsd:annotation>
+            <xsd:documentation>contains the header info of the <!--code-->OrderConfirmation<!--/code-->.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="SellerOrderConfirmationNumber" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is the document number issued by the seller of the <!--code-->OrderConfirmation<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="SellerOrderNumber" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is the purchase order number of the seller system. The <!--code-->OrderConfirmation<!--/code--> refers to a purchase order.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="OrderConfirmationIssueDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>is the issue date of the order confirmation. It is the date when the goods or services were provided.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OrderConfirmationType" type="OrderConfirmationTypeType">
+                <xsd:annotation>
+                    <xsd:documentation>is the type of the <!--code-->OrderConfirmation<!--/code--> (confirmation, return delivery).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Language" type="core:LanguageType">
+                <xsd:annotation>
+                    <xsd:documentation>is the language of the <!--code-->OrderConfirmation<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Currency" type="core:CurrencyType">
+                <xsd:annotation>
+                    <xsd:documentation>is the currency of the <!--code-->OrderConfirmation<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OrderConfirmationParty" type="OrderConfirmationPartyType">
+                <xsd:annotation>
+                    <xsd:documentation>holds all party information related to the <!--code-->OrderConfirmation<!--/code-->n.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OrderConfirmationAction" type="OrderConfirmationActionType">
+                <xsd:annotation>
+                    <xsd:documentation/>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OrderConfirmationHeaderShortDescription" type="core:AlphaNum40Type">
+                <xsd:annotation>
+                    <xsd:documentation>is the short description of the <!--code-->OrderConfirmation<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OrderConfirmationHeaderNote" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>describes any free form text pertinent to the entire document described by the <!--code-->OrderConfirmation<!--/code--> or to the <!--code-->OrderConfirmation<!--/code--> message itself. This element may contain notes or any other similar information that is not contained explicitly in another structure. You should not assume that the receiving application is capable of doing more than storing and/or displaying this information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfStructuredNote" type="core:ListOfStructuredNoteType">
+                <xsd:annotation>
+                    <xsd:documentation>contains one or more structured notes that allow you to provide
+        notes that are more than a simple free-text field. Such notes may include the
+        message text, or this text may be referenced with an external identifier or a
+        URL. An agency may be specified, and is needed in the case where an ID has been
+        provided for a note that is either included in-line or referenced. This field
+        is often used to include references to centrally stored clauses in contracts
+        that are required to appear within business documents.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfNameValueSet" type="core:ListOfNameValueSetType">
+                <xsd:annotation>
+                    <xsd:documentation/>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfAttachment" type="core:ListOfAttachmentType">
+                <xsd:annotation>
+                    <xsd:documentation>is a container that holds one or more Attachment elements.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

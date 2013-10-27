@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="OrderStatusResultType">
+        <xsd:annotation>
+            <xsd:documentation>is the root element that holds the <!--code-->OrderStatusResult<!--/code--> response to an <!--code-->OrderStatusRequest<!--/code-->.
+       This element occurs once within the document.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="OrderStatusResultHeader" type="OrderStatusResultHeaderType">
+                <xsd:annotation>
+                    <xsd:documentation>holds all <!--code-->OrderStatusResult<!--/code--> header-level information. This
+        element occurs once within the document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="ListOfOrderStatusResultDetail" type="ListOfOrderStatusResultDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a list of line items for the <!--code-->OrderStatusResult<!--/code-->
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

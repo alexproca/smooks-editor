@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:creature xmlns:ns0="http://www.example.org/creature/">
+    <person>
+        <name first="${firstName!?string}" last="${lastName!?string}">
+            <male>${male!?string}</male>            
+        </name>        
+        <address>${address!?string}</address>        
+        <age>${age!?string}</age>        
+    </person>    
+</ns0:creature>

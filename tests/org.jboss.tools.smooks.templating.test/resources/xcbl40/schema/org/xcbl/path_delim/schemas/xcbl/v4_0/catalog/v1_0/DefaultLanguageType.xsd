@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" elementFormDefault="qualified">
+
+<xsd:import schemaLocation="../../externalschemas/xml.xsd" namespace="http://www.w3.org/XML/1998/namespace"/>
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="DefaultLanguageType">
+        <xsd:annotation>
+            <xsd:documentation>contains the attribute <!--code-->xml:lang<!--/code--> indicating the language that should be assumed for the catalogdocument (and subsequent documents targeting this catalog, if it is not respecified) when it is not specified explicitly on a particular element.  The value of <!--code-->xml:lang<!--/code--> must be a valid RFC 1766 language code.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:attribute ref="xml:lang" use="optional" default="en"/>
+    </xsd:complexType>
+</xsd:schema>

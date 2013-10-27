@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<smooks-graphics-ext
+	xmlns="http://www.jboss.org/jbosstools/smooks/smooks-graphics-ext.xsd">
+	<input type="java">
+		<param name="class">com.test.Clazz</param>
+	</input>
+	<input type="xml">
+		<param name="path">
+			/test/path/test.xml
+		</param>
+	</input>
+</smooks-graphics-ext>

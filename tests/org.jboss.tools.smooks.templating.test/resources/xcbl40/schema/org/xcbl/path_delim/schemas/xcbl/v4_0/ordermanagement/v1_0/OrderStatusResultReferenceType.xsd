@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="OrderStatusResultReferenceType">
+        <xsd:annotation>
+            <xsd:documentation>contains external references to the <!--code-->OrderStatusResult<!--/code--> that are important to the processing and use of
+    the <!--code-->OrderStatusResult<!--/code-->
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="BuyerReferenceNumber" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>holds the purchase order number assigned by the buyer.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="SellerReferenceNumber" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>holds the sellers order number.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="AccountCode" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>holds the unique identification assigned to the buyer by the
+    seller.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OtherReference" type="core:ListOfReferenceCodedType">
+                <xsd:annotation>
+                    <xsd:documentation>provides any other reference to the order.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="OrderDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>holds the date of the order.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="OrderStatusDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>holds the date of the result of the status request.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="OrderStatus" type="core:StatusType">
+                <xsd:annotation>
+                    <xsd:documentation>provides the status details.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PaymentStatusEvent" type="core:StatusType">
+                <xsd:annotation>
+                    <xsd:documentation>provides payment status information relating to the entire order.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ShipmentStatusEvent" type="core:ShipmentStatusEventType">
+                <xsd:annotation>
+                    <xsd:documentation>provides shipment status information relating to the entire order.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfOrderStatusResultItem" type="ListOfOrderStatusResultItemType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a list of line items for the <!--code-->OrderStatusResult<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

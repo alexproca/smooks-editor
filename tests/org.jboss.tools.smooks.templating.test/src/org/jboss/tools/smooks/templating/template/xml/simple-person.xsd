@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/simple-01/" targetNamespace="http://www.example.org/simple-01/">
+    
+    <element name="person" type="tns:person"></element>
+
+    <complexType name="person">
+    	<sequence>
+    		<element name="name" type="tns:name"></element>
+    		<element name="address" type="tns:address"></element>
+    		<element name="age" type="int" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="name">
+    	<choice>
+    		<element name="male" type="boolean"></element>
+    		<element name="female" type="boolean"></element>
+    	</choice>
+    	<attribute name="first" type="string" use="required"></attribute>
+    	<attribute name="last" type="tns:myString" use="required"></attribute>
+    </complexType>
+
+    <simpleType name="address">
+    	<restriction base="string"></restriction>
+    </simpleType>
+
+    <simpleType name="myString">
+    	<restriction base="string"></restriction>
+    </simpleType>
+</schema>

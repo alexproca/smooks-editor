@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/preordermanagement/v1_0/preordermanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/preordermanagement/v1_0/preordermanagement.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType name="AvailabilityToPromiseResponseCodeType">
+        <xsd:annotation>
+            <xsd:documentation>This code identifies the response or the status of the response.  This is a subset codelist
+derived from EDIFACT 1229 (Action request/notification description code) and X12 670 (Change or Response Type Code)
+</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Other">
+                <xsd:annotation>
+                    <xsd:documentation>Custom Code</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="NotAccepted">
+                <xsd:annotation>
+                    <xsd:documentation>Not Accepted</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AcceptedWithoutAmendment">
+                <xsd:annotation>
+                    <xsd:documentation>Accepted Without Amendment</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AcceptedWithAmendment">
+                <xsd:annotation>
+                    <xsd:documentation>Accepted With Amendment</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ResponseOpen">
+                <xsd:annotation>
+                    <xsd:documentation>No response has been given yet</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ResponseExists">
+                <xsd:annotation>
+                    <xsd:documentation>Response has been created</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="RequestRefused">
+                <xsd:annotation>
+                    <xsd:documentation>No Availability To Promise commitment possible</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ResponseAccepted">
+                <xsd:annotation>
+                    <xsd:documentation>Response is given and accepted by the initiating party</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ResponseRejected">
+                <xsd:annotation>
+                    <xsd:documentation>Response is given and rejected by the initiating party</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ResponseWithdrawn">
+                <xsd:annotation>
+                    <xsd:documentation>Response has been given but it is now cancelled</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/preordermanagement/v1_0/preordermanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/preordermanagement/v1_0/preordermanagement.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="AvailabilityCheckResultType">
+        <xsd:annotation>
+            <xsd:documentation>contains the resulting
+     response to an <!--code-->AvailabilityCheckRequest<!--/code--> for specific supplier items.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="AvailabilityCheckResultHeader" type="AvailabilityCheckResultHeaderType">
+                <xsd:annotation>
+                    <xsd:documentation>holds reference dates, supplier and buyer information, and any special
+      notes associated with the <!--code-->AvailabilityCheckResult<!--/code-->.
+        This element occurs once within the document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="ListOfAvailabilityCheckResultItemDetail" type="ListOfAvailabilityCheckResultItemDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a list of line items for the <!--code-->AvailabilityCheckResult<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

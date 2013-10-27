@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="ExternalItemRefType">
+        <xsd:annotation>
+            <xsd:documentation>is a reference to a piece of CatalogData in another catalog.
+        Can be either a ItemGUID (see below) or a triple of Catalog ID,
+        Catalog Provider, and Product ID.  Note: Unresolved references do not constitute an error.  Note: Circular references and recursive references are undefined, and should be considered an error.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:choice>
+            <xsd:sequence>
+                <xsd:element name="CatalogProviderIDRef" type="xsd:string">
+                    <xsd:annotation>
+                        <xsd:documentation>is the identification of the provider of the catalog that contains the item
+        being referenced and should be a GUID.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="CatalogIDRef" type="xsd:string">
+                    <xsd:annotation>
+                        <xsd:documentation>is the identification of the catalog that contains the item being referenced and should be an ID unique to a particular provider.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="ProductIDRef" type="xsd:string">
+                    <xsd:annotation>
+                        <xsd:documentation>is the identification of the item being referenced and must be unique within the catalog.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+            </xsd:sequence>
+            <xsd:element name="ItemGUID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is a registered globally unique identifier for an item in a catalog.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:choice>
+    </xsd:complexType>
+</xsd:schema>

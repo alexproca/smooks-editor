@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" elementFormDefault="qualified">
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="AttributeTypeType">
+        <xsd:annotation>
+            <xsd:documentation>provides the data type of the category's attribute. Has
+		ScalarType enumerated attribute that indicates whether this data
+		value is a String, an Integer, a Numeric
+		value (such as a floating point number), a Currency (an ISO
+		Currency Code), a Date, or an Enumeration. If an
+		Enumeration, AttributeType has a set of subelements
+		called EnumeratedValue which list the values of the enumeration.
+		Also optionally has MaxSize attribute which indicates the maximum
+		length of the string in characters.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="EnumeratedValue" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>provides a single, allowable value in an enumeration of such values.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="ScalarType" type="ScalarTypeCodeType" use="optional" default="String"/>
+        <xsd:attribute name="MaxSize" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+</xsd:schema>

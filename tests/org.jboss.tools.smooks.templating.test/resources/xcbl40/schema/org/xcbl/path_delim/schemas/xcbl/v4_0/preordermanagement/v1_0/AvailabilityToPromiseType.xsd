@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/preordermanagement/v1_0/preordermanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/preordermanagement/v1_0/preordermanagement.xsd" elementFormDefault="qualified">
+
+<xsd:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="../../externalschemas/xmldsig-core-schema.xsd"/>
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="AvailabilityToPromiseType">
+        <xsd:annotation>
+            <xsd:documentation>consists of
+       the request for availability to be sent from a buyer to a supplier or a number of suppliers.
+        The request for availability can also be received from an outside source by a supplier.
+        The request is used to determine when, where and how many of the
+       requested goods the supplier(s) can supply, in many cases
+       the request will be sent to existing suppliers only.
+     </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="AvailabilityToPromiseHeader" type="AvailabilityToPromiseHeaderType">
+                <xsd:annotation>
+                    <xsd:documentation>holds all <!--code-->AvailabilitytoPromise<!--/code--> header-level information. This
+        element occurs once within the document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="AvailabilityToPromiseDetail" type="AvailabilityToPromiseDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>contains line item details of the <!--code-->AvaiabilityToPromise<!--/code-->
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DigitalSignature" type="dgs:SignatureType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a digital signature for the document.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

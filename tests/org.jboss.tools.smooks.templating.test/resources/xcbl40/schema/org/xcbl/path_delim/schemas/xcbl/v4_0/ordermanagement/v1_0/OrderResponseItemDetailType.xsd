@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="OrderResponseItemDetailType">
+        <xsd:annotation>
+            <xsd:documentation>holds response information for a line item, any references for
+        that line item, and the relevant response to that line item. Applications will
+        be expected to return any line items with any changes and generally all of the
+        accepted line items as well. Any line item not present in this section that was
+        found in the original order will be assumed to be accepted as is.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="ItemDetailResponseCoded" type="core:DetailResponseCodeType">
+                <xsd:annotation>
+                    <xsd:documentation>is used to communicate the action taken by the seller on the item.  This is element is to be used by the seller to communicate if an item
+        has been accepted or rejected.  Values not relating specifically to the action taken on the item should not be used here.  This is the only place
+        that the seller's action on the item can be communicated.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ItemDetailResponseCodedOther" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is used to provide a non-standard <!--code-->DetailResponseTypeCode<!--/code-->. This element is
+        mandatory if the value of <!--code-->DetailResponseTypeCoded<!--/code--> is 'Other'. These codes should not
+        contain white space unless absolutely necessary.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ShipmentStatusEvent" type="core:ShipmentStatusEventType">
+                <xsd:annotation>
+                    <xsd:documentation>communicates any shipping status information pertaining to the entire item.  Only values pertaining the shipment specific
+        information should be used for the status code.
+        Shipment status pertaining to only part of the item should be communicated in the
+        <!--code-->ScheduleLine<!--/code--> element.  A seller can use this to inform the buyer that an item has been shipped.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PaymentStatusEvent" type="core:StatusType">
+                <xsd:annotation>
+                    <xsd:documentation>communicates any payment status information pertaining to the entire item.  Only values pertaining the payment specific
+        information should be used for the status code.
+        Payment status pertaining to only part of the item should be communicated in the
+        <!--code-->ScheduleLine<!--/code--> element.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PriceErrorInfo" type="core:ErrorInfoType">
+                <xsd:annotation>
+                    <xsd:documentation>is optional error information related to price.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="AvailabilityErrorInfo" type="core:ErrorInfoType">
+                <xsd:annotation>
+                    <xsd:documentation>is optional error information related to quantity.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfErrorInfo" type="core:ListOfErrorInfoType">
+                <xsd:annotation>
+                    <xsd:documentation>contains all other error information not explicitly stated as the content of other elements.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="TrackingURL" type="xsd:anyURI">
+                <xsd:annotation>
+                    <xsd:documentation>provides a URL for tracking the shipment of an item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfReferenceCoded" type="core:ListOfReferenceCodedType">
+                <xsd:annotation>
+                    <xsd:documentation>contains one or more elements containing information that can be
+        used to find further information elsewhere that are not explicitly stated in
+        another element.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="OriginalItemDetailWithChanges" type="OriginalItemDetailWithChangesType">
+                <xsd:annotation>
+                    <xsd:documentation>is used to make changes to a line item detail. Note: If a change
+					is made to a line item, the entire line item must be completely repeated
+					again. if this is not used, then either <!--code-->OriginalItemDetail<!--/code--> or <!--code-->ChangeOrderItemDetail<!--/code--> must be used.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LineItemNote" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>describes any free-form text pertinent to the line item described by the
+        <!--code-->OrderResponse<!--/code-->. This element may contain notes or any other similar information that
+        is not contained explicitly in another structure.  You should not assume that the receiving application is capable
+        of doing more than storing and/or displaying this information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfStructuredNote" type="core:ListOfStructuredNoteType">
+                <xsd:annotation>
+                    <xsd:documentation>contains one or more structured notes that allow you to provide
+        notes that are more than a simple free-text field. such notes may include the
+        message text, or this text may be referenced with an external identifier or a
+        URL. An agency may be specified, and is needed in the case where an ID has been
+        provided for a note that is either included in-line or referenced. This field
+        is often used to include references to centrally stored clauses in contracts
+        that are required to appear within business documents.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ListOfOrderResponseItemDetailType">
+        <xsd:annotation>
+            <xsd:documentation>contains  response information for one or more item details.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="OrderResponseItemDetail" type="OrderResponseItemDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>holds response information for a line item, any references for
+        that line item, and the relevant response to that line item. Applications will
+        be expected to return any line items with any changes and generally all of the
+        accepted line items as well. Any line item not present in this section that was
+        found in the original order will be assumed to be accepted as is.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:tns="http://www.example.org/creature/"
+	xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/creature/" xmlns:pref="http://www.example.org/simple-01/">
+	
+	<import schemaLocation="simple-person.xsd" namespace="http://www.example.org/simple-01/"></import>
+
+    <element name="creature" type="tns:animal"></element>
+    
+	<complexType name="dog">
+		<attribute name="name" type="string" use="required"></attribute>
+	</complexType>
+
+	<complexType name="animal">
+		<choice minOccurs="1" maxOccurs="1">
+			<element name="dog" type="tns:dog"></element>
+			<element name="person" type="pref:person"></element>
+			<element name="cat" type="tns:cat"></element>
+		</choice>
+	</complexType>
+
+
+	<simpleType name="cat">
+		<restriction base="pref:myString"></restriction>
+	</simpleType>
+</schema>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:person xmlns:ns0="http://www.example.org/simple-01/">
+    <name first="Tom" last="Fennelly">
+        <male>true</male>        
+    </name>    
+    <address>Ireland</address>    
+    <age>21</age>    
+</ns0:person>

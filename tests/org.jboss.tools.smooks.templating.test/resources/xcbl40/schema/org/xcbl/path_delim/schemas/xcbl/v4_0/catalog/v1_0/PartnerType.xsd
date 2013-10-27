@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="PartnerType">
+        <xsd:annotation>
+            <xsd:documentation>
+                <!--code-->Partner<!--/code--> has an optional <!--code-->PartnerID<!--/code--> attribute that is an XML ID.  Use of any XML ID or IDREF(S) is deprectated, including <!--code-->PartnerID<!--/code-->. Although the <!--code-->PartnerID<!--/code--> attribute is optional, an ID must be present as either the <!--code-->PartnerID<!--/code--> or in the <!--code-->Party<!--/code--> subelement.  The ID in the Party subelement takes precedence over the <!--code-->PartnerID<!--/code-->.   The <!--code-->Partner<!--/code--> subelement definition is shown in the table below.  </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="Action" type="ActionType">
+                <xsd:annotation>
+                    <xsd:documentation>defines the action to be taken on the partner identified.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Party" type="core:PartyType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies an entity doing business and the relevant information
+        pertaining to it.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="PartnerRelationship" type="PartnerRelationshipType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the role or roles of the partners.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ListOfPartnersType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="Partner" type="PartnerType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd"
+			xmlns:dgs="http://www.w3.org/2000/09/xmldsig#"
+			xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/preordermanagement/v1_0/preordermanagement.xsd"
+			targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/preordermanagement/v1_0/preordermanagement.xsd"
+			elementFormDefault="qualified">
+
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+<xsd:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="../../externalschemas/xmldsig-core-schema.xsd"/>
+
+<xsd:include schemaLocation="ATPCheckTypeCodeType.xsd"/>
+<xsd:include schemaLocation="ATPCheckTypeType.xsd"/>
+<xsd:include schemaLocation="ATPQuantitiesType.xsd"/>
+<xsd:include schemaLocation="ATPResponseType.xsd"/>
+<xsd:include schemaLocation="AvailabilityCheckRequestHeaderType.xsd"/>
+<xsd:include schemaLocation="AvailabilityCheckRequestItemDetailType.xsd"/>
+<xsd:include schemaLocation="AvailabilityCheckRequestType.xsd"/>
+<xsd:include schemaLocation="AvailabilityCheckResultHeaderType.xsd"/>
+<xsd:include schemaLocation="AvailabilityCheckResultItemDetailType.xsd"/>
+<xsd:include schemaLocation="AvailabilityCheckResultType.xsd"/>
+<xsd:include schemaLocation="AvailabilityDeliveryOptionCodeType.xsd"/>
+<xsd:include schemaLocation="AvailabilityDeliveryOptionType.xsd"/>
+<xsd:include schemaLocation="AvailabilityToPromiseBaseItemDetailType.xsd"/>
+<xsd:include schemaLocation="AvailabilityToPromiseDetailType.xsd"/>
+<xsd:include schemaLocation="AvailabilityToPromiseHeaderType.xsd"/>
+<xsd:include schemaLocation="AvailabilityToPromiseItemDetailType.xsd"/>
+<xsd:include schemaLocation="AvailabilityToPromisePurposeCodeType.xsd"/>
+<xsd:include schemaLocation="AvailabilityToPromisePurposeType.xsd"/>
+<xsd:include schemaLocation="AvailabilityToPromiseResponseBaseItemDetailType.xsd"/>
+<xsd:include schemaLocation="AvailabilityToPromiseResponseCodeType.xsd"/>
+<xsd:include schemaLocation="AvailabilityToPromiseResponseDetailType.xsd"/>
+<xsd:include schemaLocation="AvailabilityToPromiseResponseHeaderType.xsd"/>
+<xsd:include schemaLocation="AvailabilityToPromiseResponseItemDetailType.xsd"/>
+<xsd:include schemaLocation="AvailabilityToPromiseResponseType.xsd"/>
+<xsd:include schemaLocation="AvailabilityToPromiseType.xsd"/>
+<xsd:include schemaLocation="PriceCheckRequestHeaderType.xsd"/>
+<xsd:include schemaLocation="PriceCheckRequestItemDetailType.xsd"/>
+<xsd:include schemaLocation="PriceCheckRequestType.xsd"/>
+<xsd:include schemaLocation="PriceCheckResultHeaderType.xsd"/>
+<xsd:include schemaLocation="PriceCheckResultItemDetailType.xsd"/>
+<xsd:include schemaLocation="PriceCheckResultType.xsd"/>
+<xsd:include schemaLocation="QuotationRequestReferenceType.xsd"/>
+<xsd:include schemaLocation="QuoteBaseItemDetailType.xsd"/>
+<xsd:include schemaLocation="QuoteDetailType.xsd"/>
+<xsd:include schemaLocation="QuoteHeaderType.xsd"/>
+<xsd:include schemaLocation="QuoteItemDetailType.xsd"/>
+<xsd:include schemaLocation="QuotePartyType.xsd"/>
+<xsd:include schemaLocation="QuoteType.xsd"/>
+<xsd:include schemaLocation="QuoteTypeCodeType.xsd"/>
+<xsd:include schemaLocation="QuoteTypeType.xsd"/>
+<xsd:include schemaLocation="RequestForQuotationType.xsd"/>
+<xsd:include schemaLocation="RequestQuoteBaseItemDetailType.xsd"/>
+<xsd:include schemaLocation="RequestQuoteDateType.xsd"/>
+<xsd:include schemaLocation="RequestQuoteDetailType.xsd"/>
+<xsd:include schemaLocation="RequestQuoteHeaderType.xsd"/>
+<xsd:include schemaLocation="RequestQuoteItemDetailType.xsd"/>
+<xsd:include schemaLocation="RequestQuotePurposeCodeType.xsd"/>
+<xsd:include schemaLocation="RequestQuotePurposeType.xsd"/>
+<xsd:include schemaLocation="RequestQuoteReferenceType.xsd"/>
+
+<xsd:element name="AvailabilityCheckRequest" type="AvailabilityCheckRequestType"/>
+<xsd:element name="AvailabilityCheckResult" type="AvailabilityCheckResultType"/>
+<xsd:element name="AvailabilityToPromise" type="AvailabilityToPromiseType"/>
+<xsd:element name="AvailabilityToPromiseResponse" type="AvailabilityToPromiseResponseType"/>
+<xsd:element name="PriceCheckRequest" type="PriceCheckRequestType"/>
+<xsd:element name="PriceCheckResult" type="PriceCheckResultType"/>
+<xsd:element name="Quote" type="QuoteType"/>
+<xsd:element name="RequestForQuotation" type="RequestForQuotationType"/>
+
+</xsd:schema>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="OrderResponsePackageDetailType">
+        <xsd:annotation>
+            <xsd:documentation>contains response information for the package detail. This
+        includes a response code for the package detail and elements to repeat the
+        original <!--code-->PackageDetail<!--/code--> and to change the <!--code-->PackageDetail<!--/code-->.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="PackageDetailResponseCoded" type="core:DetailResponseCodeType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the response for the <!--code-->PackageDetail<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PackageDetailResponseCodedOther" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is used to provide a non-standard <!--code-->DetailResponseCode<!--/code-->.
+        This element is mandatory if the value of <!--code-->DetailResponseCoded<!--/code--> is
+        'Other'. These codes should not contain white space unless absolutely
+        necessary.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        	<xsd:element minOccurs="0" name="OriginalPackageDetailWithChanges" type="core:PackageDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>is used to make changes to the <!--code-->PackageDetail<!--/code-->. Note: If a change
+		is made to a package detail line, the entire package detail line must be
+		completed again to reflect the changes made.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PackageDetailNote" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains any free form text pertinent to the package. This
+        element may contain notes or any other similar information that is not
+        contained explicitly in another structure. You should not assume that the
+        receiving application is capable of doing more than storing and/or displaying
+        this information.. This could be used to explicitly state the changes that were made to
+        the <!--code-->PackageDetail<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ListOfOrderResponsePackageDetailType">
+        <xsd:annotation>
+            <xsd:documentation>holds response information for the package detail
+        information.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="OrderResponsePackageDetail" type="OrderResponsePackageDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>contains response information for the package detail. This
+        includes a response code for the package detail and elements to repeat the
+        original package detail and to change the package detail.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

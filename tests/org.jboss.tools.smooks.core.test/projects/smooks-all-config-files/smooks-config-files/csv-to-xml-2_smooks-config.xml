@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<smooks-resource-list xmlns="http://www.milyn.org/xsd/smooks-1.1.xsd"
+                      xmlns:csv="http://www.milyn.org/xsd/smooks/csv-1.2.xsd"
+                      xmlns:ftl="http://www.milyn.org/xsd/smooks/freemarker-1.1.xsd">
+
+    <!-- Use the SAX filter - more memory efficient and handle huge streams. -->
+    <params>
+        <param name="stream.filter.type">SAX</param>
+    </params>
+
+    <!--
+    Configure the CSV Reader to read the message and change it into a stream of SAX events.
+    Also binding each record into a Map so we can use it in a templating operation i.e. to transform each record (below).
+    -->
+    <csv:reader fields="firstname,lastname,gender,age,country" rootElementName="people" recordElementName="person">
+        <csv:singleBinding beanId="person" class="java.util.HashMap"/>
+    </csv:reader>
+
+    <!-- Apply a FreeMarker template to each CSV record, generating a different XML structure based on the gender value... -->
+    <ftl:freemarker applyOnElement="person">
+        <ftl:template><!--
+        <#if person.gender == "Male">
+            <male age="${person.age}"><name><fn>${person.firstname}</fn><ln>${person.lastname}</ln></name><nationality>${person.country}</nationality></male>
+        <#else>
+            <female age="${person.age}"><name><fn>${person.firstname}</fn><ln>${person.lastname}</ln></name><nationality>${person.country}</nationality></female>
+        </#if>-->
+        </ftl:template>
+        <ftl:use>
+            <ftl:inline directive="replace"/>
+        </ftl:use>
+    </ftl:freemarker>
+
+</smooks-resource-list>

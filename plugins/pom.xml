@@ -1,0 +1,16 @@
+<project
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.jboss.tools.smooks</groupId>
+	<artifactId>plugins</artifactId>
+	<name>smooks.plugins</name>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<modules>
+		<module>org.jboss.tools.smooks.core</module>
+		<module>org.jboss.tools.smooks.runtime</module>
+		<module>org.jboss.tools.smooks.templating</module>
+		<module>org.jboss.tools.smooks.ui</module>
+	</modules>
+</project>
+	

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="ProductAttachmentType">
+        <xsd:annotation>
+            <xsd:documentation>allows the catalog creator to attach files of any type to the
+        product description, and contains relevant information.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="AttachmentURL" type="xsd:anyURI">
+                <xsd:annotation>
+                    <xsd:documentation>gives the URL of the attached file, used by the processing application to retrieve the attachment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="AttachmentPurpose" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>indicates the purpose of the attached file. This is not a coded
+        value, and so will generally be displayed by the processing application for the
+        edification of the user.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="AttachmentMIMEType" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>supplies the MIME type of the attached file, to enable the processing application to display the correct behavior based on the type of the file.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="ShortDescription" type="ShortDescriptionType">
+                <xsd:annotation>
+                    <xsd:documentation>gives a single short description of the attachment. This takes an
+        <!--code-->xml:lang<!--/code--> attribute, which must contain a valid code according to
+        RFC 1766. If not specified in <!--code-->DefaultLanguage<!--/code--> or in a specific
+        element, the value is assumed to be <!--code-->en<!--/code--> for "English."</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="LongDescription" type="LongDescriptionType">
+                <xsd:annotation>
+                    <xsd:documentation>is a long description of the attachment. There may be more than
+        one <!--code-->LongDescription<!--/code--> element to allow for internationalized
+        content, which is effected by use of the <!--code-->xml:lang<!--/code--> attribute.
+        <!--code-->xml:lang<!--/code--> must contain a value that is a valid RFC 1766 language
+        code. If not specified in <!--code-->DefaultLanguage<!--/code--> or in a specific
+        element, the value is assumed to be <!--code-->en<!--/code--> for "English."</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

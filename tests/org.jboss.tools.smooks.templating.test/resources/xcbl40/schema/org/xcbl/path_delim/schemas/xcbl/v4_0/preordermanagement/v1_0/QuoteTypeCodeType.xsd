@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/preordermanagement/v1_0/preordermanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/preordermanagement/v1_0/preordermanagement.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType name="QuoteTypeCodeType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Accept">
+                <xsd:annotation>
+                    <xsd:documentation>Accept</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Decline">
+                <xsd:annotation>
+                    <xsd:documentation>Decline</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AlternateBid">
+                <xsd:annotation>
+                    <xsd:documentation>AlternateBid</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="BestAndFinal">
+                <xsd:annotation>
+                    <xsd:documentation>BestAndFinal</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="BidWithoutException">
+                <xsd:annotation>
+                    <xsd:documentation>BidWithoutException</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="BidWithoutExceptionRequestForInformation">
+                <xsd:annotation>
+                    <xsd:documentation>Bid Without Exception and Request For Information</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="RequestForTimeExtension">
+                <xsd:annotation>
+                    <xsd:documentation>RequestForTimeExtension</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DeclinedToQuote">
+                <xsd:annotation>
+                    <xsd:documentation>DeclinedToQuote</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OneOfMultiple">
+                <xsd:annotation>
+                    <xsd:documentation>One of Multiple</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Replacement">
+                <xsd:annotation>
+                    <xsd:documentation>Replacement</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="UnableToQuote">
+                <xsd:annotation>
+                    <xsd:documentation>UnableToQuote</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AcceptWithChanges">
+                <xsd:annotation>
+                    <xsd:documentation>AcceptWithChanges</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Other">
+                <xsd:annotation>
+                    <xsd:documentation>CustomCode</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

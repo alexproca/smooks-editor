@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" elementFormDefault="qualified">
+
+<xsd:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="../../externalschemas/xmldsig-core-schema.xsd"/>
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="ChangeOrderType">
+        <xsd:annotation>
+            <xsd:documentation>ChangeOrder allows a requisitioner or buyer to initiate a change to
+        an already existing order. A seller uses the OrderResponse
+        document to accept or reject an order or a changed order.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="ChangeOrderHeader" type="ChangeOrderHeaderType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the header information of the
+        <!--code-->OrderChange<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ChangeOrderDetail" type="ChangeOrderDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>is an optional section providing a list of line items. This list
+        can only include those which were changed, the entire line item list, or no
+        line items at all. This should be used in accordance with the
+        <!--code-->OrderHeaderPurpose<!--/code--> selected in the <!--code-->ChangeOrderHeader<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ChangeOrderSummary" type="ChangeOrderSummaryType">
+                <xsd:annotation>
+                    <xsd:documentation>is the summary section for the <!--code-->ChangeOrder<!--/code-->. This
+        contains the same information as the <!--code-->OrderSummary<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DigitalSignature" type="dgs:SignatureType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a digital signature for the document.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

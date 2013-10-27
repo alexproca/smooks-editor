@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="OrderRequestType">
+        <xsd:annotation>
+            <xsd:documentation>comprises ordering information that is a result
+          of a buyer's inquiry to purchase. A supplier initiates an <!--code-->OrderRequest<!--/code--> to a
+          requisitioner that is a result of a buyer's inquiry into a purchase of the
+          supplier's goods. The requisitioner's approval of this <!--code-->OrderRequest<!--/code--> results in
+          the creation of a purchase order. There is not a response to the <!--code-->OrderRequest<!--/code-->.
+          Any changes to the <!--code-->OrderRequest<!--/code--> will be represented in the <!--code-->Order<!--/code-->.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="OrderRequestHeader" type="OrderRequestHeaderType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the header information of the
+          <!--code-->OrderRequest<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OrderRequestDetail" type="OrderDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>is the container element to hold line item and package item
+          details.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OrderRequestSummary" type="OrderSummaryType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the summary information of the <!--code-->OrderRequest<!--/code-->,
+          typically totals of numerical fields.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

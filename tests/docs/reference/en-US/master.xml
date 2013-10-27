@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+"http://www.docbook.org/xml/4.3/docbookx.dtd"
+
+[
+<!ENTITY introduction SYSTEM "introduction.xml">  
+<!ENTITY tasks SYSTEM "tasks.xml">
+<!ENTITY references SYSTEM "references.xml">
+<!ENTITY summary SYSTEM "summary.xml">
+]>
+<book>
+
+	<bookinfo>
+
+		<title>Smooks Developer Tools Reference Guide</title>
+			<corpauthor>
+				<inlinemediaobject>
+					<imageobject role="fo">
+						<imagedata format="PNG" fileref="images/jbosstools_logo.png" />
+					</imageobject>	
+					<imageobject role="html">
+						<imagedata/>
+					</imageobject>	
+				</inlinemediaobject>           
+			</corpauthor>
+		<author>
+			<firstname>Xue(Dart)</firstname>
+			<surname>Peng</surname>
+		</author>
+		<copyright>
+			<year>2009,2010</year>
+			<holder>JBoss by Red Hat</holder>
+		</copyright>
+		<releaseinfo>
+			Version: 1.1.1.GA
+         </releaseinfo>
+
+		<abstract>
+			<title/>
+			<para>
+				<ulink
+					url="http://download.jboss.org/jbosstools/nightly-docs/en/smooks/pdf/Smooks_Reference_Guide.pdf">PDF version</ulink>
+			</para>
+		</abstract>
+
+
+	</bookinfo>
+	<toc/>
+	&introduction;
+	&tasks;
+	&references;
+	&summary;
+</book>    

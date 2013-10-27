@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/preordermanagement/v1_0/preordermanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/preordermanagement/v1_0/preordermanagement.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType name="RequestQuotePurposeCodeType">
+        <xsd:annotation>
+            <xsd:documentation>This code identifies the purpose of the RequestforQuotation message. This is a subset code list derived from EDIFACT 1225 (Message function, coded) and X12 353 (Transaction set purpose code) and 587 (Acknowledgement type code)</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="core:PurposeCodeType">
+            <xsd:enumeration value="Original">
+                <xsd:annotation>
+                    <xsd:documentation>Refers to the initial transmission of the message.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Cancellation">
+                <xsd:annotation>
+                    <xsd:documentation>Indicates that a previous transmission of the message is to be cancelled.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Replace">
+                <xsd:annotation>
+                    <xsd:documentation>Indicates that this transmission is to replace a previous message.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Confirmation">
+                <xsd:annotation>
+                    <xsd:documentation>Indicates that this transmission is to confirm details of a previous message.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Duplicate">
+                <xsd:annotation>
+                    <xsd:documentation>Indicates that this transmission is a duplicate of a previously generated message.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Other">
+                <xsd:annotation>
+                    <xsd:documentation>Custom code</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

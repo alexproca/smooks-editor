@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="CatalogSchemaType">
+        <xsd:annotation>
+            <xsd:documentation>holds optional, creator-configured information about the structure of products in the
+        catalog.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="SchemaName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>The <!--code-->SchemaName<!--/code--> is a set of categories used for products in
+        this catalog. The schema was created by a buyer, a supplier or "other" (such as
+        a marketplace or manufacturer): this is the name assigned to that schema by its
+        creator. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="SchemaVersion" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation>is the version number for the catalog schema used for products in this catalog</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="SchemaStandard" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is the taxonomy standard that this catalog may be based upon or is a
+        subset of, e.g. UNSPSC or eClass. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ValidateAttributes" type="ValidateAttributesType">
+                <xsd:annotation>
+                    <xsd:documentation>is an element whose presence indicates that the category
+        attributes should be validated. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="ShortDescription" type="ShortDescriptionType">
+                <xsd:annotation>
+                    <xsd:documentation>is a short description of the schema. There may be more than
+        one <!--code-->ShortDescription<!--/code--> element to allow for internationalized
+        content, which is effected by use of the <!--code-->xml:lang<!--/code--> attribute.
+        <!--code-->xml:lang<!--/code--> must contain a value that is a valid RFC 1766 language
+        code. If not specified in <!--code-->DefaultLanguage<!--/code--> or in a specific
+        element, the value is assumed to be <!--code-->en<!--/code--> for "English".</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="LongDescription" type="LongDescriptionType">
+                <xsd:annotation>
+                    <xsd:documentation>is a long description of the schema. There may be more than
+        one <!--code-->LongDescription<!--/code--> element to allow for internationalized
+        content, which is effected by use of the <!--code-->xml:lang<!--/code--> attribute.
+        <!--code-->xml:lang<!--/code--> must contain a value that is a valid RFC 1766 language
+        code.If not specified in <!--code-->DefaultLanguage<!--/code--> or in a specific element,
+        the value is assumed to be <!--code-->en<!--/code--> for "English" </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="SchemaSource" type="xsd:anyURI">
+                <xsd:annotation>
+                    <xsd:documentation>is a URL to an external schema. This external schema should
+        either be a <!--code-->ProductCatalog<!--/code--> document containing a schema or a
+        <!--code-->CatalogSchema<!--/code--> document. Use of an external
+        <!--code-->SchemaSource<!--/code--> is necessary to validate <!--code-->Product<!--/code-->
+        instances when <!--code-->ExternalCategory<!--/code--> is used on a <!--code-->Product<!--/code-->
+        in lieu of a <!--code-->SchemaCategoryRef<!--/code--> on <!--code-->Product<!--/code-->. Note that
+        if this element is present in the <!--code-->CatalogSchema<!--/code-->, no
+        <!--code-->SchemaCategory<!--/code--> element(s) should be present in the
+        <!--code-->CatalogSchema<!--/code-->, and <!--code-->SchemaCategoryRef<!--/code--> should not be
+        used on any of the <!--code-->Products<!--/code--> in the document. This element is
+        useful when a supplier or other catalog provider is providing data that needs
+        to be validated against someone else's (such as the net market maker's) schema.
+        </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="SchemaURN" type="xsd:anyURI">
+                <xsd:annotation>
+                    <xsd:documentation>is a URN identifying the schema defined in this element.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ExtensionToSchemasURN" type="xsd:anyURI">
+                <xsd:annotation>
+                    <xsd:documentation/>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="SchemaCategory" type="SchemaCategoryType">
+                <xsd:annotation>
+                    <xsd:documentation>is a list of categories. Should not be present if there is a
+        <!--code-->SchemaSource<!--/code--> element supplied to identify an external
+        schema.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="Type" type="BuyerSupplierCodeType" use="optional" default="Supplier">
+            <xsd:annotation>
+                <xsd:documentation>
+            contains a code to identify the type of the schema:Supplier,Buyer, or Other. (Supplier is the default)</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+</xsd:schema>

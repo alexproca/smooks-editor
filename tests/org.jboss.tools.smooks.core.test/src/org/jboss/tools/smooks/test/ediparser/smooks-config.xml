@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<smooks-resource-list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.milyn.org/xsd/smooks-1.1.xsd" xmlns:edi="http://www.milyn.org/xsd/smooks/edi-1.2.xsd"
+	xmlns:jb="http://www.milyn.org/xsd/smooks/javabean-1.2.xsd"
+	xmlns:g="http://www.jboss.org/jbosstools/smooks/smooks-graphics-ext.xsd">
+	<params>
+		<param name="stream.filter.type">SAX</param>
+		<param name="inputType">input.edi</param>
+		<param name="input.edi" type="input.type.actived">Workspace://javabean_test/src/example/input-message.edi
+		</param>
+	</params>
+	<abstract-reader  xsi:type="edi:reader" encoding="UTF-8"
+		mappingModel="platform:/plugin/org.jboss.tools.smooks.core.test/projects/smooks-all-config-files/smooks-mapping-files/edi-to-xml-order-mapping.xml" />
+	<jb:bean beanId="a" class="example.A">
+		<jb:value data="a" property="name" />
+		<jb:wiring beanIdRef="a" property="b" />
+	</jb:bean>
+	
+</smooks-resource-list>

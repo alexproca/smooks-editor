@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="ActionType">
+        <xsd:annotation>
+            <xsd:documentation>specifies the action to be taken by the application processing the product description.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:attribute name="Value" type="core:ActionValueCodeType" use="optional" default="Add">
+            <xsd:annotation>
+                <xsd:documentation>
+            indicates the action to be taken: <!--code-->Add<!--/code-->,
+        <!--code-->Update<!--/code-->, <!--code-->Replace<!--/code-->, or <!--code-->Delete<!--/code-->. When no <!--code-->Action<!--/code--> is
+        present a default is assumed of <!--code-->Add<!--/code-->in the
+        <!--code-->CatalogHeader<!--/code-->.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/preordermanagement/v1_0/preordermanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/preordermanagement/v1_0/preordermanagement.xsd" elementFormDefault="qualified">
+
+<xsd:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="../../externalschemas/xmldsig-core-schema.xsd"/>
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="RequestForQuotationType">
+        <xsd:annotation>
+            <xsd:documentation> consists of the request for a quotation to be sent
+    from the buyer to the supplier.  The document outlines the requirements regarding the details
+    for a request for quotation sent directly between the two parties.  The request can be used
+    to request goods or services. The requests are based on the terms and conditions defined
+    either in a previous purchasing agreement or in the request itself. The request can be used
+    to determine the availability of goods from existing suppliers where price will not be a deciding
+    factor. The RequestForQuotation defined here allows for delivery information to be built into
+    the request.  All schedule requirements relating to shipping and release authorization will be
+    handled by the ShippingSchedule document. The response to the request (a quote)
+    can be used as the basis for a purchase order by the buyer if appropriate.
+</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="RequestQuoteHeader" type="RequestQuoteHeaderType">
+                <xsd:annotation>
+                    <xsd:documentation>holds all <!--code-->RequestForQuotation<!--/code--> header-level information.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="RequestQuoteDetail" type="RequestQuoteDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the line level and packaging detail information for the
+                    <!--code-->RequestForQuotation<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DigitalSignature" type="dgs:SignatureType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a digital signature for the document.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

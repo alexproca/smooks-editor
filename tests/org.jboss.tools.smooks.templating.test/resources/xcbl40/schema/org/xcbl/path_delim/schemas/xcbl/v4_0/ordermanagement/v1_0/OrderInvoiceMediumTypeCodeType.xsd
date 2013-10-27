@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType name="OrderInvoiceMediumTypeCodeType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Other">
+                <xsd:annotation>
+                    <xsd:documentation>Custom Code</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Circuitswitching">
+                <xsd:annotation>
+                    <xsd:documentation>A process that, on demand, connects two or more data terminal equipment and permits the exclusive use of a data circuit between them until the connection is released (ISO).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SITA">
+                <xsd:annotation>
+                    <xsd:documentation>Communications number assigned by Societe Internationale de Telecommunications Aeronautiques (SITA).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ARINC">
+                <xsd:annotation>
+                    <xsd:documentation>Communications number assigned by Aeronautical Radio Inc.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Courier">
+                <xsd:annotation>
+                    <xsd:documentation>A communication channel identifying a courier.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CableAddress">
+                <xsd:annotation>
+                    <xsd:documentation/>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="EDITransmission">
+                <xsd:annotation>
+                    <xsd:documentation>Number identifying the service and service user.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ElectronicMail">
+                <xsd:annotation>
+                    <xsd:documentation>Exchange of mail by electronic means.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Extension">
+                <xsd:annotation>
+                    <xsd:documentation>Telephone extension.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="FileTransferAccessMethod">
+                <xsd:annotation>
+                    <xsd:documentation>According to ISO.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TeleFax">
+                <xsd:annotation>
+                    <xsd:documentation>Device used for transmitting and reproducing fixed graphic material (as printing) by means of signals over telephone lines or other electronic transmission media.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="GEISMailbox">
+                <xsd:annotation>
+                    <xsd:documentation>General Electric Information Service</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="IBMInformationExchange">
+                <xsd:annotation>
+                    <xsd:documentation/>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InternalMail">
+                <xsd:annotation>
+                    <xsd:documentation>Internal mail address/number.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Mail">
+                <xsd:annotation>
+                    <xsd:documentation>Postal service document delivery.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PostBoxNo">
+                <xsd:annotation>
+                    <xsd:documentation/>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PacketSwitching">
+                <xsd:annotation>
+                    <xsd:documentation>The process of routing and transferring data by means of addressed packets so that a channel is occupied only during the transmission; upon completion of the transmission the channel is made available for the transfer of other packets (ISO).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SWIFT">
+                <xsd:annotation>
+                    <xsd:documentation>Communications address assigned by Society for Worldwide Interbank Financial Telecommunications s.c.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Telephone">
+                <xsd:annotation>
+                    <xsd:documentation>Voice/data transmission by telephone.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Telegraph">
+                <xsd:annotation>
+                    <xsd:documentation>Text transmission via telegraph.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Telex">
+                <xsd:annotation>
+                    <xsd:documentation>Transmission of text/data via telex.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TeleMail">
+                <xsd:annotation>
+                    <xsd:documentation>Transmission of text/data via telemail.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TeleText">
+                <xsd:annotation>
+                    <xsd:documentation>Transmission of text/data via teletext.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TWX">
+                <xsd:annotation>
+                    <xsd:documentation>Communication service involving Teletypewriter machines connected by wire or electronic transmission media. Teletypewriter machines are the devices used to send and receive signals and produce hardcopy from them.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="X.400">
+                <xsd:annotation>
+                    <xsd:documentation>CCITT Message handling system.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="NotRequired">
+                <xsd:annotation>
+                    <xsd:documentation/>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="IsReplacementType">
+        <xsd:annotation>
+            <xsd:documentation>Indicates that this is a complete replacement for an existing catalog's Schema and Products-Pricing's are unaffected by this flag (see the PriceCatalog <!--code-->Action<!--/code--> sub-element for how to effect bulk deletions of Pricings).The independence between Product and Pricing replacement is a feature enabling a new set of Product information to be added without needing to restate all the pricing information.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:complexType>
+</xsd:schema>

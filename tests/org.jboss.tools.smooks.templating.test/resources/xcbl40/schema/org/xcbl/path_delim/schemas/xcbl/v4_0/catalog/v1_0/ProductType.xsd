@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="ProductType">
+        <xsd:annotation>
+            <xsd:documentation>contains all attributes associated with a product.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="Action" type="ActionType">
+                <xsd:annotation>
+                    <xsd:documentation>describes the action to be taken by an application processing the catalog, for the specific product.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="ProductID" type="ProductIDType">
+                <xsd:annotation>
+                    <xsd:documentation>is a unique identifier of the product.The optional <!--code-->Type<!--/code--> attribute indicates whether the <!--code-->ProductID<!--/code--> was created by a buyer, a supplier or "other" (such as a marketplace).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="BaseProductNumber" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is the value to return as the product identifier.  If not supplied, this defaults to
+        the value of the <!--code-->ProductID<!--/code--> element.  This is only useful to suppliers which use a
+        double or triple of values to uniquely identify a product - the ID, an ID extension, and
+        a unit of measurement.  Suppliers which have a single unique ID for each and every product they offer can
+        ignore this element.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="SchemaCategoryRefList" type="SchemaCategoryRefListType">
+                <xsd:annotation>
+                    <xsd:documentation>is a list of references to the schema categories of which this product is an instance
+        of.  The use of this element is encouraged over the use of the <!--code-->SchemaCategoryRef<!--/code--> attribute. NOTE: this is a multiple inheritance model. The order of the categories establishes precedence, the list being ordered in descending precedence. This is most important in determining which class an undeclared ObjectAttribute used in the <!--code-->CatalogData<!--/code--> section is added to.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ProductIDExtension" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>acts as an auxiliary of <!--code-->ProductID<!--/code-->, providing further
+        distinctions between items that have the same value for
+        <!--code-->ProductID<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="ExternalItemRef" type="ExternalItemRefType">
+                <xsd:annotation>
+                    <xsd:documentation>is a reference to a piece of CatalogData in another catalog.
+        Can be either a ItemGUID (see below) or a triple of CatalogID,
+        CatalogProvider, ProductID</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ProductIDStandard" type="ProductIDStandardType">
+                <xsd:annotation>
+                    <xsd:documentation>indicates the agency whose product identification scheme is being
+        used in <!--code-->ProductID<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="ProductName" type="ProductNameType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the name of the product. Multilanguage support is
+        provided by potentially having multiple <!--code-->AttributeName<!--/code--> elements,
+        each of which has an <!--code-->xml:lang<!--/code--> attribute. <!--code-->xml:lang<!--/code-->
+        must contain a value that is a valid RFC 1766 language code. If not specified
+        in <!--code-->DefaultLanguage<!--/code--> or in a specific element, the value is assumed
+        to be <!--code-->en<!--/code--> for "English."</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="UOM" type="core:UOMType">
+                <xsd:annotation>
+                    <xsd:documentation>represents orderable unit of measure of the product. Contains xCBL element <!--code-->UOM<!--/code--> to represent ISO unit of measure code. Describes what unit of measure the LotSize sub-element is expressed in.  Defaults to EA (each). </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ComparableUOM" type="core:UOMType">
+                <xsd:annotation>
+                    <xsd:documentation>is analogous to the notion of a base UOM and is included to enable comparisions
+        of this product's pricings with other, similar, products.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ComparableUOMConversionFactor" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation>is the number of <!--code-->ComparableUOM<!--/code--> per <!--code-->UOM<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Manufacturer" type="ManufacturerType">
+                <xsd:annotation>
+                    <xsd:documentation>supplies the name of the manufacturer or a reference to a
+        manufacturer partner in the ListOfPartners. If a value is supplied in the
+        <!--code-->PartnerRef<!--/code--> attribute, the string content of the element will
+        typically be ignored by the application or treated as secondary.  Deprecate use of PartnerRef .</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ManuPartNumber" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>holds the manufacturer's part number.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LeadTime" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation>provides the lead time required when ordering the product
+        described. Time is expressed in number of days unless otherwise specified in
+        <!--code-->LeadTimeUOM<!--/code-->. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LeadTimeUOM" type="core:UOMType">
+                <xsd:annotation>
+                    <xsd:documentation>supplies the time unit of measure for the product's lead time.
+        </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ValidFrom" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>gives an inclusive date that the product and its price begin to
+        be available/applicable. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ValidUntil" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>gives the date on which the product and its price are no longer
+        applicable.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CountryOfOrigin" type="core:CountryType">
+                <xsd:annotation>
+                    <xsd:documentation>holds an ISO Country Code indicating the country in which the
+        goods described originated. This is typically important in a consideration of
+        purchasing goods from overseas, because of import/export laws, etc.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="MinOrder" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation>indicates the minimum order. That is, the Minimum number of <!--code-->LotSize<!--/code--> x UOM's of ProductID purchasable (e.g., LotSize = 6, UOM = EA, MinOrder = 1, have to buy at least 6 of item). A value of 1 (one) is the default. The <!--code-->ProductPrice<!--/code--> MinimumQuantity takes precedence over this value.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LotSize" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation>indicates the granularity possible with orders with respect to <!--code-->Product<!--/code--> <!--code-->UOM<!--/code-->. If <!--code-->Product<!--/code--> <!--code-->UOM<!--/code--> has a value of EA, and <!--code-->LotSize<!--/code--> has a value of 5, then ordering 1 of this Product, is effectively order 5 EA of whatever's offered-essentially, the offering is a 5-pack, ordering one is ordering one 5-pack.  Defaults to 1.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="ShortDescription" type="ShortDescriptionType">
+                <xsd:annotation>
+                    <xsd:documentation>is a short description of the product. There may be more than one
+        <!--code-->ShortDescription<!--/code-->(s) of the product.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="LongDescription" type="LongDescriptionType">
+                <xsd:annotation>
+                    <xsd:documentation>is a long description of the product. There may be more than one
+        <!--code-->Long description(s)<!--/code--> of the product.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="CatalogContract" type="CatalogContractType">
+                <xsd:annotation>
+                    <xsd:documentation>is the contract information. The Type attribute indicates whether the <!--code-->Contract<!--/code--> is buyer contract, supplier contract or "other".</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="ProductAttachment" type="ProductAttachmentType">
+                <xsd:annotation>
+                    <xsd:documentation>allows the catalog creator to include references to files of any type to the product description, and contains relevant information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="RelatedProduct" type="RelatedProductType">
+                <xsd:annotation>
+                    <xsd:documentation>holds a reference to another product, using its product identifier, to establish a relationship between them, and to indicate the type of relationship.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="ObjectAttribute" type="ObjectAttributeType">
+                <xsd:annotation>
+                    <xsd:documentation>are additional attributes of products not built into the elements described above.  NOTE: this is a multiple inheritance model. The order of the categories establishes precedence, the list being ordered in descending precedence. This is most important in determining which class an undeclared ObjectAttribute used here (in the <!--code-->CatalogData<!--/code--> section) is added to.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="Type" type="ProductTypeCodedType" use="optional" default="Good">
+            <xsd:annotation>
+                <xsd:documentation>
+            provides a distinction between goods and services
+        as these are described in the <!--code-->Product<!--/code--> element.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+</xsd:schema>

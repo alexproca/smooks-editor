@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd"
+			xmlns:dgs="http://www.w3.org/2000/09/xmldsig#"
+			xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd"
+			targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd"
+			elementFormDefault="qualified">
+
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+<xsd:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="../../externalschemas/xmldsig-core-schema.xsd"/>
+
+<xsd:include schemaLocation="AccountAssignmentType.xsd"/>
+<xsd:include schemaLocation="BaseItemDetailType.xsd"/>
+<xsd:include schemaLocation="ChangeOrderDetailType.xsd"/>
+<xsd:include schemaLocation="ChangeOrderHeaderType.xsd"/>
+<xsd:include schemaLocation="ChangeOrderItemDetailType.xsd"/>
+<xsd:include schemaLocation="ChangeOrderNumberType.xsd"/>
+<xsd:include schemaLocation="ChangeOrderPackageDetailType.xsd"/>
+<xsd:include schemaLocation="ChangeOrderSummaryType.xsd"/>
+<xsd:include schemaLocation="ChangeOrderType.xsd"/>
+<xsd:include schemaLocation="ContractAndSystemReferenceType.xsd"/>
+<xsd:include schemaLocation="ItemDetailType.xsd"/>
+<xsd:include schemaLocation="ItemStatusType.xsd"/>
+<xsd:include schemaLocation="OrderConfirmationActionCodeType.xsd"/>
+<xsd:include schemaLocation="OrderConfirmationActionType.xsd"/>
+<xsd:include schemaLocation="OrderConfirmationDetailReferencesType.xsd"/>
+<xsd:include schemaLocation="OrderConfirmationDetailType.xsd"/>
+<xsd:include schemaLocation="OrderConfirmationHeaderType.xsd"/>
+<xsd:include schemaLocation="OrderConfirmationItemDetailType.xsd"/>
+<xsd:include schemaLocation="OrderConfirmationPartyType.xsd"/>
+<xsd:include schemaLocation="OrderConfirmationResponseDetailType.xsd"/>
+<xsd:include schemaLocation="OrderConfirmationResponseHeaderType.xsd"/>
+<xsd:include schemaLocation="OrderConfirmationResponsePartyType.xsd"/>
+<xsd:include schemaLocation="OrderConfirmationResponseType.xsd"/>
+<xsd:include schemaLocation="OrderConfirmationType.xsd"/>
+<xsd:include schemaLocation="OrderConfirmationTypeCodeType.xsd"/>
+<xsd:include schemaLocation="OrderConfirmationTypeType.xsd"/>
+<xsd:include schemaLocation="OrderDatesType.xsd"/>
+<xsd:include schemaLocation="OrderDetailType.xsd"/>
+<xsd:include schemaLocation="OrderHeaderType.xsd"/>
+<xsd:include schemaLocation="OrderInvoiceMediumTypeCodeType.xsd"/>
+<xsd:include schemaLocation="OrderNumberType.xsd"/>
+<xsd:include schemaLocation="OrderPartyType.xsd"/>
+<xsd:include schemaLocation="OrderReferencesType.xsd"/>
+<xsd:include schemaLocation="OrderRequestHeaderType.xsd"/>
+<xsd:include schemaLocation="OrderRequestNumberType.xsd"/>
+<xsd:include schemaLocation="OrderRequestPartyType.xsd"/>
+<xsd:include schemaLocation="OrderRequestType.xsd"/>
+<xsd:include schemaLocation="OrderResponseDetailType.xsd"/>
+<xsd:include schemaLocation="OrderResponseDocTypeCodeType.xsd"/>
+<xsd:include schemaLocation="OrderResponseHeaderType.xsd"/>
+<xsd:include schemaLocation="OrderResponseItemDetailType.xsd"/>
+<xsd:include schemaLocation="OrderResponseNumberType.xsd"/>
+<xsd:include schemaLocation="OrderResponsePackageDetailType.xsd"/>
+<xsd:include schemaLocation="OrderResponseSummaryType.xsd"/>
+<xsd:include schemaLocation="OrderResponseType.xsd"/>
+<xsd:include schemaLocation="OrderStatusEventCodeType.xsd"/>
+<xsd:include schemaLocation="OrderStatusItemType.xsd"/>
+<xsd:include schemaLocation="OrderStatusReferenceType.xsd"/>
+<xsd:include schemaLocation="OrderStatusRequestDetailType.xsd"/>
+<xsd:include schemaLocation="OrderStatusRequestHeaderType.xsd"/>
+<xsd:include schemaLocation="OrderStatusRequestType.xsd"/>
+<xsd:include schemaLocation="OrderStatusResultDetailType.xsd"/>
+<xsd:include schemaLocation="OrderStatusResultHeaderType.xsd"/>
+<xsd:include schemaLocation="OrderStatusResultItemType.xsd"/>
+<xsd:include schemaLocation="OrderStatusResultReferenceType.xsd"/>
+<xsd:include schemaLocation="OrderStatusResultType.xsd"/>
+<xsd:include schemaLocation="OrderSummaryType.xsd"/>
+<xsd:include schemaLocation="OrderType.xsd"/>
+<xsd:include schemaLocation="OriginalItemDetailWithChangesType.xsd"/>
+<xsd:include schemaLocation="ResponseBaseItemDetailType.xsd"/>
+<xsd:include schemaLocation="ResponseDeliveryDetailType.xsd"/>
+<xsd:include schemaLocation="SplitQuantityType.xsd"/>
+
+<xsd:element name="ChangeOrder" type="ChangeOrderType"/>
+<xsd:element name="Order" type="OrderType"/>
+<xsd:element name="OrderRequest" type="OrderRequestType"/>
+<xsd:element name="OrderResponse" type="OrderResponseType"/>
+<xsd:element name="OrderConfirmation" type="OrderConfirmationType"/>
+<xsd:element name="OrderConfirmationResponse" type="OrderConfirmationResponseType"/>
+<xsd:element name="OrderStatusRequest" type="OrderStatusRequestType"/>
+<xsd:element name="OrderStatusResult" type="OrderStatusResultType"/>
+
+</xsd:schema>

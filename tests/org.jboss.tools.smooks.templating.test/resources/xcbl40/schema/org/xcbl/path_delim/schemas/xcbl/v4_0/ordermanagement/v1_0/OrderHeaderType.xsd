@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="OrderHeaderType">
+        <xsd:annotation>
+            <xsd:documentation>contains the header information of the order.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="OrderNumber" type="OrderNumberType">
+                <xsd:annotation>
+                    <xsd:documentation>is the unique number assigned to the <!--code-->Order<!--/code-->, typically according to the system that generated the <!--code-->Order<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="OrderIssueDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>holds a time stamp provided by the application that created the
+                    <!--code-->Order<!--/code--> document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OrderReferences" type="OrderReferencesType">
+                <xsd:annotation>
+                    <xsd:documentation>contains external references to the <!--code-->Order<!--/code--> that are important to the processing and use of the <!--code-->Order<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ReleaseNumber" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is the element used if the purchase order is a release against
+                    the document specified in the <!--code-->ContractReference<!--/code--> under the order
+                    reference.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Purpose" type="core:PurposeType">
+                <xsd:annotation>
+                    <xsd:documentation>is used to communicate the purpose of the <!--code-->Order<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="RequestedResponse" type="core:RequestedResponseType">
+                <xsd:annotation>
+                    <xsd:documentation>specifies the type of acknowledgment requested by the buyer from
+                    the seller.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OrderType" type="core:OrderTypeType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the type of <!--code-->Order<!--/code--> being transmitted.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="OrderCurrency" type="core:CurrencyType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the default currency of the <!--code-->Order<!--/code-->, which when used at
+                    the header level may be overwritten at the lower level within the
+                    structure.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="TaxAccountingCurrency" type="core:CurrencyType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the tax accounting currency for the <!--code-->Order<!--/code--> if different
+                    than the <!--code-->OrderCurrency<!--/code--> .</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="OrderLanguage" type="core:LanguageType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the language of the <!--code-->Order<!--/code-->. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="OrderTaxReference" type="core:TaxReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the default tax information for the <!--code-->Order<!--/code-->
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OrderInvoiceMediumTypeCoded" type="OrderInvoiceMediumTypeCodeType">
+                <xsd:annotation>
+                    <xsd:documentation>is used to describe the type of invoice required for this
+                    <!--code-->Order<!--/code-->. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OrderInvoiceMediumTypeCodedOther" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is used to provide a non-standard
+                    <!--code-->OrderInvoiceMediumTypeCode<!--/code-->. This element is mandatory if the value
+                    of <!--code-->OrderInvoiceMediumTypeCoded<!--/code--> is 'Other'. These codes should not
+                    contain white space unless absolutely necessary.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OrderDates" type="OrderDatesType">
+                <xsd:annotation>
+                    <xsd:documentation>is used to hold a list of the pertinent dates for the
+                    <!--code-->Order<!--/code--> - dates include validity dates, <!--code-->RequestedShipDate<!--/code-->,
+                    <!--code-->CancelByDates<!--/code-->, among others. These dates apply to the entire
+                    order, acting as defaults and that may be overwritten at the item level or
+                    package level in the body of the message.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PartialShipmentAllowed" type="xsd:boolean">
+                <xsd:annotation>
+                    <xsd:documentation>is a flag that indicates whether less than the entirety of the order can be shipped.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="OrderParty" type="OrderPartyType">
+                <xsd:annotation>
+                    <xsd:documentation>holds information on the parties for the <!--code-->Order<!--/code-->, including unique
+                    ID's and address information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PartLocation" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is used when a supplier has multiple warehouses.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfTransportRouting" type="core:ListOfTransportRoutingType">
+                <xsd:annotation>
+                    <xsd:documentation>provides information on the movement of the goods including
+                    carrier, equipment and service level instructions. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="OrderTermsOfDelivery" type="core:TermsOfDeliveryType">
+                <xsd:annotation>
+                    <xsd:documentation>defines the terms of delivery for the <!--code-->Order<!--/code-->. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OrderHeaderPrice" type="core:ListOfPriceType">
+                <xsd:annotation>
+                    <xsd:documentation>is the pricing information for the <!--code-->Order<!--/code-->. This is the default price and can be overwritten
+                    at the item level.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OrderPaymentInstructions" type="core:PaymentInstructionsType">
+                <xsd:annotation>
+                    <xsd:documentation>holds the payment instructions for the
+                    <!--code-->Order<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OrderAllowancesOrCharges" type="core:ListOfAllowOrChargeType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the allowances and/or charges for the whole
+                    <!--code-->Order<!--/code-->. These may include goods and shipping charges. Additional
+                    allowance or charges may be present at lower levels of the <!--code-->Order<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="RoundTripInformation" type="core:RoundTripInformationType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies information specific to the round trip order process for the entire order.
+                    This element should only be used if the ordering process for this entire order is round trip.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OrderHeaderNote" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>describes any free form text pertinent to the entire document
+                    described by the <!--code-->Order<!--/code--> or to the <!--code-->Order<!--/code--> message
+                    itself. This element may contain notes or any other similar information that is
+                    not contained explicitly in another structure. You should not assume that the
+                    receiving application is capable of doing more than storing and/or displaying
+                    this information. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="SpecialHandling" type="core:SpecialHandlingType">
+                <xsd:annotation>
+                    <xsd:documentation>descibes any special handling conditions that apply to the enitre order.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfStructuredNote" type="core:ListOfStructuredNoteType">
+                <xsd:annotation>
+                    <xsd:documentation>contains one or more structured notes that allow you to provide
+                    notes that are more than a simple free-text field. such notes may include the
+                    message text, or this text may be referenced with an external identifier or a
+                    URL. An agency may be specified, and is needed in the case where an ID has been
+                    provided for a note that is either included in-line or referenced. This field
+                    is often used to include references to centrally stored clauses in contracts
+                    that are required to appear within business documents.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfNameValueSet" type="core:ListOfNameValueSetType">
+                <xsd:annotation>
+                    <xsd:documentation>is used to hold sets of name value pairs.  The use of this element should
+                    be limited to the support of previous versions of xCBL.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OrderHeaderAttachments" type="core:ListOfAttachmentType">
+                <xsd:annotation>
+                    <xsd:documentation>holds a list of attachments applicable to the entire
+                    <!--code-->Order<!--/code-->, or a large part of the consignment it describes. This
+                    information is not specific to a particular line item or package unless
+                    specifically noted.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

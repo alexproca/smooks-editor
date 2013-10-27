@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="javabean12"
+    nsURI="http://www.milyn.org/xsd/smooks/javabean-1.2.xsd" nsPrefix="javabean">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="Smooks Java Binding Configuration"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="BeanType" eSuperTypes="smooks-1.1.ecore#//ElementVisitor">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="bean_._type"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="group" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="group"/>
+        <details key="name" value="group:2"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" upperBound="-1"
+        eType="#//ValueType" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&#xA;&#x9;            Basic &quot;value&quot; based binding configuration.&#xA;&#x9;            &lt;p/>&#xA;&#x9;            This binding type is used to bind data from the source message event stream.&#xA;&#x9;        "/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="value"/>
+        <details key="namespace" value="##targetNamespace"/>
+        <details key="group" value="#group:2"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="wiring" upperBound="-1"
+        eType="#//WiringType" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&#xA;      &#x9;&#x9;&#x9;Wiring based binding configuration.&#xA;      &#x9;&#x9;&#x9;&lt;p/>&#xA;      &#x9;&#x9;&#x9;This binding type is used to &quot;wire&quot; beans together.&#xA;      &#x9;&#x9;"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="wiring"/>
+        <details key="namespace" value="##targetNamespace"/>
+        <details key="group" value="#group:2"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" upperBound="-1"
+        eType="#//ExpressionType" volatile="true" transient="true" derived="true"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Expression based Configuration"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="expression"/>
+        <details key="namespace" value="##targetNamespace"/>
+        <details key="group" value="#group:2"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="beanId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&#xA;                                The ID under which the created bean is&#xA;                                to be bound in the bean context.&#xA;                            "/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="beanId"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;The fully qualified bean Class name.&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="class"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="createOnElement" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;The Source data event stream element&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;event to use to control the timing of&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;the creating.&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;p/>&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Think of this as the element path (in&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;the Source data) used to control&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;creation of the bean instance(s).&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;h3>Example&lt;/h3>&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;If this attribute value is set to&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;order/orderItem&quot;, an instance of the&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;class (specified in the &quot;class&quot;&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute) will be created when an&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;element event for the element&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;orderItem&quot; (with a parent element of&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;order&quot;) is encountered in the Source&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;data event stream. The created bean&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;instance will then be bound into the&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;bean context under the specified&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;beanId&quot;.&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;p/>&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;If the createOnElement is not set then&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;no bean will be created. The existing&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;bean in the bean context will be used to&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;do the value binding, expression binding&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;and the object wiring on.&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="createOnElement"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="createOnElementNS" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Namespace control for the&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;createOnElement&quot; attribute.&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="createOnElementNS"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="extendLifecycle" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Defines if this bindings bean wiring may still wire&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;beans after the element is processed. This enables&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;flat XML support.&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;The default value can be set with the global-parameter 'bean-population.default.extend.lifecycle'.&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Default the value is 'false'.&#xA;        &#x9;&#x9;&#x9;&#x9;&#x9;"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="extendLifecycle"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DecodeParamType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="decodeParam_._type"/>
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value=":0"/>
+        <details key="kind" value="simple"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The name of the parameter."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="name"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Javabean12DocumentRoot">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value=""/>
+      <details key="kind" value="mixed"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mixed" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="elementWildcard"/>
+        <details key="name" value=":mixed"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="xMLNSPrefixMap" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry"
+        transient="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="xmlns:prefix"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="xSISchemaLocation" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry"
+        transient="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="xsi:schemaLocation"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bean" upperBound="-2" eType="#//BeanType"
+        volatile="true" transient="true" derived="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&#xA;&#x9;&#x9;&#x9;&#x9;Javabean Bindings Configuration.&#xA;&#x9;&#x9;&#x9;&#x9;&lt;h3>Bean Instance Creation&lt;/h3>&#xA;&#x9;&#x9;&#x9;&#x9;Instances of the class specified in the&#xA;&#x9;&#x9;&#x9;&#x9;&quot;class&quot; attribute are created and bound into&#xA;&#x9;&#x9;&#x9;&#x9;the bean context under the ID specified by&#xA;&#x9;&#x9;&#x9;&#x9;the &quot;beanId&quot; attribute. The bean instance is&#xA;&#x9;&#x9;&#x9;&#x9;created (and bound) when the element event&#xA;&#x9;&#x9;&#x9;&#x9;specified in the &quot;createOnElement&quot; attribute&#xA;&#x9;&#x9;&#x9;&#x9;is encountered in the Source data event&#xA;&#x9;&#x9;&#x9;&#x9;stream (see also &quot;createOnElementNS&quot;).&#xA;&#x9;&#x9;&#x9;&#x9;&lt;h3>Bean Property/Member Population&lt;/h3>&#xA;&#x9;&#x9;&#x9;&#x9;Bean property/member population is&#xA;&#x9;&#x9;&#x9;&#x9;controlled by the binding sub-elements&#xA;&#x9;&#x9;&#x9;&#x9;nested inside this element. Use your IDE to&#xA;&#x9;&#x9;&#x9;&#x9;discover these elements.&#xA;&#x9;&#x9;&#x9;"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="bean"/>
+        <details key="namespace" value="##targetNamespace"/>
+        <details key="affiliation" value="http://www.milyn.org/xsd/smooks-1.1.xsd#abstract-resource-config"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="decodeParam" upperBound="-2"
+        eType="#//DecodeParamType" volatile="true" transient="true" derived="true"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&#xA;                 Data Decode Parameter.&#xA;                 &lt;p/>&#xA;                 Some decoders may require parameters in order to complete the decoding process e.g. the&#xA;                 &lt;a href=&quot;http://milyn.codehaus.org/javadoc/smooks/org/milyn/javabean/decoders/DateDecoder.html&quot;>DateDecoder&lt;/a>.&#xA;                 These parameters can be specified by adding &amp;lt;decodeParam&amp;gt; sub-elements to the &amp;lt;value&amp;gt;&#xA;                 binding element. Review the Decoder's Javadoc for details of the custom parameters.&#xA;                 &lt;p/>&#xA;                 &lt;u>Example:&lt;/u>&#xA;&lt;pre>&#xA;&amp;lt;jb:value property=&quot;date&quot; data=&quot;header/date&quot; decoder=&quot;&lt;a href=&quot;http://milyn.codehaus.org/javadoc/smooks/org/milyn/javabean/decoders/DateDecoder.html&quot;>Date&lt;/a>&quot;&amp;gt;&#xA;    &amp;lt;jb:decodeParam name=&quot;format&quot;&amp;gt;EEE MMM dd HH:mm:ss z yyyy&amp;lt;/jb:decodeParam&amp;gt;&#xA;    &amp;lt;jb:decodeParam name=&quot;locale-language&quot;&amp;gt;en&amp;lt;/jb:decodeParam&amp;gt;&#xA;    &amp;lt;jb:decodeParam name=&quot;locale-country&quot;&amp;gt;IE&amp;lt;/jb:decodeParam&amp;gt;&#xA;&amp;lt;/jb:value&amp;gt;&#xA;&lt;/pre>&#xA;             "/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="decodeParam"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" upperBound="-2"
+        eType="#//ExpressionType" volatile="true" transient="true" derived="true"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Expression based Configuration"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="expression"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="result" upperBound="-2"
+        eType="#//ResultType" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="result"/>
+        <details key="namespace" value="##targetNamespace"/>
+        <details key="affiliation" value="http://www.milyn.org/xsd/smooks-1.1.xsd#abstract-resource-config"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" upperBound="-2"
+        eType="#//ValueType" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&#xA;&#x9;            Basic &quot;value&quot; based binding configuration.&#xA;&#x9;            &lt;p/>&#xA;&#x9;            This binding type is used to bind data from the source message event stream.&#xA;&#x9;        "/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="value"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="wiring" upperBound="-2"
+        eType="#//WiringType" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&#xA;      &#x9;&#x9;&#x9;Wiring based binding configuration.&#xA;      &#x9;&#x9;&#x9;&lt;p/>&#xA;      &#x9;&#x9;&#x9;This binding type is used to &quot;wire&quot; beans together.&#xA;      &#x9;&#x9;"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="wiring"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExpressionType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="expression_._type"/>
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value=":0"/>
+        <details key="kind" value="simple"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="execOnElement" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&#xA;                                The Source data event stream element event to use to control the execution of the expression&#xA;                                and binding of the result.&#xA;                                &lt;p/>&#xA;                                Think of this as the element path (in the Source data) used to control execution of the&#xA;                                expression.&#xA;                                &lt;h3>Example&lt;/h3>&#xA;                                If this attribute value is set to &quot;order/orderItem&quot;, the expression will be executed (and&#xA;                                the result bound to the target property) when an &quot;end&quot; element event (&quot;visitAfter&quot;)&#xA;                                for the element &quot;orderItem&quot; (with a parent element of &quot;order&quot;) is encountered in the&#xA;                                Source data event stream.&#xA;                            "/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="execOnElement"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="execOnElementNS" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Namespace control for the &quot;execOnElement&quot; attribute.&#xA;                            "/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="execOnElementNS"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initVal" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Initial value for the property."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="initVal"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="property" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The class property to which the expression evaluation result&#xA;                                is to be bound. Not needed when binding to a Collection.&#xA;                                &lt;p/>&#xA;                                The property attribute does not need to be specified when the &quot;class&quot; type on the parent &quot;bindings&quot; element&#xA;                                is a List/Array or Map.  In the case of a List/Array, the bean is simply added.  In the case of Map, the&#xA;                                element name (from the element specified in the &quot;data&quot; attribute) is used.&#xA;                            "/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="property"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="setterMethod" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&#xA;&#x9;&#x9;        &#x9;&#x9;&#x9;&#x9;The class method which is called to bind the data&#xA;&#x9;&#x9;        &#x9;&#x9;&#x9;&#x9;to the object. Not needed when binding to a Collection.&#xA;&#x9;&#x9;        &#x9;&#x9;&#x9;&#x9;&lt;p/>&#xA;                                The setterMethod attribute does not need to be specified when the &quot;class&quot; type on the parent &quot;bindings&quot; element&#xA;                                is a List/Array or Map.  In the case of a List/Array, the bean is simply added.  In the case of Map, the&#xA;                                element name (from the element specified in the &quot;data&quot; attribute) is used.&#xA;&#x9;&#x9;        &#x9;&#x9;&#x9;"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="setterMethod"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResultType" eSuperTypes="smooks-1.1.ecore#//ElementVisitor">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="result_._type"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="retainBeans" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Comma separated list of beanIds to be retained in the Bean context."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="retainBeans"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="value_._type"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="decodeParam" upperBound="-1"
+        eType="#//DecodeParamType" containment="true" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&#xA;                 Data Decode Parameter.&#xA;                 &lt;p/>&#xA;                 Some decoders may require parameters in order to complete the decoding process e.g. the&#xA;                 &lt;a href=&quot;http://milyn.codehaus.org/javadoc/smooks/org/milyn/javabean/decoders/DateDecoder.html&quot;>DateDecoder&lt;/a>.&#xA;                 These parameters can be specified by adding &amp;lt;decodeParam&amp;gt; sub-elements to the &amp;lt;value&amp;gt;&#xA;                 binding element. Review the Decoder's Javadoc for details of the custom parameters.&#xA;                 &lt;p/>&#xA;                 &lt;u>Example:&lt;/u>&#xA;&lt;pre>&#xA;&amp;lt;jb:value property=&quot;date&quot; data=&quot;header/date&quot; decoder=&quot;&lt;a href=&quot;http://milyn.codehaus.org/javadoc/smooks/org/milyn/javabean/decoders/DateDecoder.html&quot;>Date&lt;/a>&quot;&amp;gt;&#xA;    &amp;lt;jb:decodeParam name=&quot;format&quot;&amp;gt;EEE MMM dd HH:mm:ss z yyyy&amp;lt;/jb:decodeParam&amp;gt;&#xA;    &amp;lt;jb:decodeParam name=&quot;locale-language&quot;&amp;gt;en&amp;lt;/jb:decodeParam&amp;gt;&#xA;    &amp;lt;jb:decodeParam name=&quot;locale-country&quot;&amp;gt;IE&amp;lt;/jb:decodeParam&amp;gt;&#xA;&amp;lt;/jb:value&amp;gt;&#xA;&lt;/pre>&#xA;             "/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="decodeParam"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&#xA;                        The Source data event stream element event defining the data to be bound.&#xA;                        &lt;p/>&#xA;                        Think of this as the element path (in the Source data) to the data.&#xA;                        &lt;h3>Examples&lt;/h3>&#xA;                        &lt;ul>&#xA;                            &lt;li>&#xA;                                &lt;b>Element Text Data:&lt;/b>&#xA;                                &quot;order/orderid&quot;&#xA;                            &lt;/li>&#xA;                            &lt;li>&#xA;                                &lt;b>Element Attribute Data:&lt;/b>&#xA;                                &quot;order/header/@date&quot;&#xA;                            &lt;/li>&#xA;                        &lt;/ul>&#xA;                    "/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="data"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataNS" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The namespace for the &quot;data&quot; selector (see &quot;data&quot; attribute).&#xA;                    "/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="dataNS"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="decoder" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&#xA;                        Data Decoder.&#xA;                        &lt;p/>&#xA;                        This attribute specifies the&#xA;                        &lt;a href=&quot;http://milyn.codehaus.org/javadoc/smooks/org/milyn/javabean/DataDecoder.html&quot;>DataDecoder&lt;/a>&#xA;                        to be used to decode the data (see &quot;data&quot; attribute) before setting it on the target bean&#xA;                        property(see &quot;property&quot; attribute).&#xA;                        &lt;p/>&#xA;                        Smooks contains decoders for all of the main data types (Long, Integer etc). In these cases,&#xA;                        just specify the decoder as being &quot;Long&quot;, &quot;Integer&quot;, &quot;Date&quot; etc i.e. no need to specify the fully qualified&#xA;                        &lt;a href=&quot;http://milyn.codehaus.org/javadoc/smooks/org/milyn/javabean/DataDecoder.html&quot;>DataDecoder&lt;/a>&#xA;                        class name. The fully qualified class name is only required for custom&#xA;                        &lt;a href=&quot;http://milyn.codehaus.org/javadoc/smooks/org/milyn/javabean/DataDecoder.html&quot;>DataDecoder&lt;/a>&#xA;                        implementations.&#xA;&#xA;                        &lt;h3>Primitive Types&lt;/h3>&#xA;                        Smooks does not define special decoders for any of the primitive types. To decode a&#xA;                        primitive property type, just specify the Object equivalent decoder e.g. specify &quot;Integer&quot; for &quot;int&quot;,&#xA;                        &quot;Double&quot; for &quot;double&quot; etc etc.&#xA;&#xA;                        &lt;h3>Decode Parameters&lt;/h3>&#xA;                        Some decoders may require parameters in order to complete the decoding process e.g. the&#xA;                        &lt;a href=&quot;http://milyn.codehaus.org/javadoc/smooks/org/milyn/javabean/decoders/DateDecoder.html&quot;>DateDecoder&lt;/a>.&#xA;                        These parameters can be specified by adding &amp;lt;decodeParam&amp;gt; sub-elements to the &amp;lt;value&amp;gt;&#xA;                        binding element. Review the Decoder's Javadoc for details of the custom parameters.&#xA;                        &lt;p/>&#xA;                        &lt;u>Example:&lt;/u>&#xA;&lt;pre>&#xA;    &amp;lt;jb:value property=&quot;date&quot; data=&quot;header/date&quot; decoder=&quot;&lt;a href=&quot;http://milyn.codehaus.org/javadoc/smooks/org/milyn/javabean/decoders/DateDecoder.html&quot;>Date&lt;/a>&quot;&amp;gt;&#xA;        &amp;lt;jb:decodeParam name=&quot;format&quot;&amp;gt;EEE MMM dd HH:mm:ss z yyyy&amp;lt;/jb:decodeParam&amp;gt;&#xA;        &amp;lt;jb:decodeParam name=&quot;locale-language&quot;&amp;gt;en&amp;lt;/jb:decodeParam&amp;gt;&#xA;        &amp;lt;jb:decodeParam name=&quot;locale-country&quot;&amp;gt;IE&amp;lt;/jb:decodeParam&amp;gt;&#xA;    &amp;lt;/jb:value&amp;gt;&#xA;&lt;/pre>&#xA;&#xA;                        &lt;h3>Custom Data Decoding&lt;/h3>&#xA;                        For custom data decoding, implement the&#xA;                        &lt;a href=&quot;http://milyn.codehaus.org/javadoc/smooks/org/milyn/javabean/DataDecoder.html&quot;>&#xA;                            DataDecoder&#xA;                        &lt;/a>&#xA;                        interface and specify the decoder using the fully qualified class name of the new&#xA;                        implementation.&#xA;                    "/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="decoder"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="default" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The default data value, where a null/empty data String is returned&#xA;                        for the data element.&#xA;                    "/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="default"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="property" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The class property to which the decoded data is to be bound.&#xA;                        &lt;p/>&#xA;                        The property attribute does not need to be specified when the &quot;class&quot; type on the parent &quot;bindings&quot; element&#xA;                        is a List/Array or Map.  In the case of a List/Array, the bean is simply added.  In the case of Map, the&#xA;                        element name (from the element specified in the &quot;data&quot; attribute) is used.&#xA;                    "/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="property"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="setterMethod" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&#xA;        &#x9;&#x9;&#x9;&#x9;The class method which is called to bind the data&#xA;        &#x9;&#x9;&#x9;&#x9;to the object. Not needed when binding to a Collection.&#xA;        &#x9;&#x9;&#x9;&#x9;&lt;p/>&#xA;                        The setterMethod attribute does not need to be specified when the &quot;class&quot; type on the parent &quot;bindings&quot; element&#xA;                        is a List/Array or Map.  In the case of a List/Array, the bean is simply added.  In the case of Map, the&#xA;                        element name (from the element specified in the &quot;data&quot; attribute) is used.&#xA;        &#x9;&#x9;&#x9;"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="setterMethod"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WiringType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="wiring_._type"/>
+      <details key="kind" value="empty"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="beanIdRef" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&#xA;        &#x9;&#x9;&#x9;&#x9;The beanId of the bean to be wired into the&#xA;        &#x9;&#x9;&#x9;&#x9;specified bean &quot;property&quot; (or List).&#xA;        &#x9;&#x9;&#x9;"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="beanIdRef"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="property" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&#xA;        &#x9;&#x9;&#x9;&#x9;The class property to which the bean (specified&#xA;        &#x9;&#x9;&#x9;&#x9;by &quot;beanIdRef&quot;) is to be bound.&#xA;        &#x9;&#x9;&#x9;&#x9;&lt;p/>&#xA;        &#x9;&#x9;&#x9;&#x9;The property attribute does not need to be&#xA;        &#x9;&#x9;&#x9;&#x9;specified when the &quot;class&quot; type on the parent&#xA;        &#x9;&#x9;&#x9;&#x9;&quot;bindings&quot; element is a List/Array or Map. In&#xA;        &#x9;&#x9;&#x9;&#x9;the case of a List/Array, the bean is simply&#xA;        &#x9;&#x9;&#x9;&#x9;added. In the case of Map, the element name&#xA;        &#x9;&#x9;&#x9;&#x9;(from the element specified in the &quot;data&quot;&#xA;        &#x9;&#x9;&#x9;&#x9;attribute) is used.&#xA;        &#x9;&#x9;&#x9;"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="property"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="setterMethod" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&#xA;        &#x9;&#x9;&#x9;&#x9;The class method which is called to bind the data&#xA;        &#x9;&#x9;&#x9;&#x9;to the object. Not needed when binding to a Collection.&#xA;        &#x9;&#x9;&#x9;&#x9;&lt;p/>&#xA;                        The setterMethod attribute does not need to be specified when the &quot;class&quot; type on the parent &quot;bindings&quot; element&#xA;                        is a List/Array or Map.  In the case of a List/Array, the bean is simply added.  In the case of Map, the&#xA;                        element name (from the element specified in the &quot;data&quot; attribute) is used.&#xA;        &#x9;&#x9;&#x9;"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="setterMethod"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="wireOnElement" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&#xA;        &#x9;&#x9;&#x9;&#x9;The Source data event stream element event to&#xA;        &#x9;&#x9;&#x9;&#x9;use to control when the bean needs to be wired&#xA;        &#x9;&#x9;&#x9;&#x9;or when the cartridge needs to register a&#xA;        &#x9;&#x9;&#x9;&#x9;listener for the bean to be wired.&#xA;        &#x9;&#x9;&#x9;"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="wireOnElement"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="wireOnElementNS" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//AnyURI">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&#xA;        &#x9;&#x9;&#x9;&#x9;Namespace control for the &quot;wireOnElement&quot;&#xA;        &#x9;&#x9;&#x9;&#x9;attribute.&#xA;        &#x9;&#x9;&#x9;"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="wireOnElementNS"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

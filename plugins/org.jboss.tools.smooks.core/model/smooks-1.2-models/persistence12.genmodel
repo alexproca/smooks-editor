@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/persistence12/src"
+    modelPluginID="persistence12" modelName="Persistence12" importerID="org.eclipse.emf.importer.ecore"
+    copyrightFields="false">
+  <foreignModel>persistence12.ecore</foreignModel>
+  <genPackages prefix="Persistence12" resource="XML" disposableProviderFactory="true"
+      ecorePackage="persistence12.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="persistence12.ecore#//OnNoResult">
+      <genEnumLiterals ecoreEnumLiteral="persistence12.ecore#//OnNoResult/NULLIFY"/>
+      <genEnumLiterals ecoreEnumLiteral="persistence12.ecore#//OnNoResult/EXCEPTION"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="persistence12.ecore#//ParameterType">
+      <genEnumLiterals ecoreEnumLiteral="persistence12.ecore#//ParameterType/POSITIONAL"/>
+      <genEnumLiterals ecoreEnumLiteral="persistence12.ecore#//ParameterType/NAMED"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="persistence12.ecore#//OnNoResultObject"/>
+    <genDataTypes ecoreDataType="persistence12.ecore#//ParameterTypeObject"/>
+    <genClasses ecoreClass="persistence12.ecore#//DecoderParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//DecoderParameter/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//DecoderParameter/name"/>
+    </genClasses>
+    <genClasses ecoreClass="persistence12.ecore#//Deleter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Deleter/beanId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Deleter/dao"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Deleter/deleteBefore"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Deleter/deletedBeanId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Deleter/deleteOnElement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Deleter/deleteOnElementNS"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Deleter/name"/>
+    </genClasses>
+    <genClasses ecoreClass="persistence12.ecore#//Persistence12DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Persistence12DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference persistence12.ecore#//Persistence12DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference persistence12.ecore#//Persistence12DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference persistence12.ecore#//Persistence12DocumentRoot/deleter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference persistence12.ecore#//Persistence12DocumentRoot/flusher"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference persistence12.ecore#//Persistence12DocumentRoot/inserter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference persistence12.ecore#//Persistence12DocumentRoot/locator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference persistence12.ecore#//Persistence12DocumentRoot/updater"/>
+    </genClasses>
+    <genClasses ecoreClass="persistence12.ecore#//ExpressionParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//ExpressionParameter/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//ExpressionParameter/execOnElement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//ExpressionParameter/execOnElementNS"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//ExpressionParameter/name"/>
+    </genClasses>
+    <genClasses ecoreClass="persistence12.ecore#//Flusher">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Flusher/dao"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Flusher/flushBefore"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Flusher/flushOnElement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Flusher/flushOnElementNS"/>
+    </genClasses>
+    <genClasses ecoreClass="persistence12.ecore#//Inserter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Inserter/beanId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Inserter/dao"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Inserter/insertBefore"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Inserter/insertedBeanId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Inserter/insertOnElement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Inserter/insertOnElementNS"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Inserter/name"/>
+    </genClasses>
+    <genClasses ecoreClass="persistence12.ecore#//Locator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Locator/query"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference persistence12.ecore#//Locator/params"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Locator/beanId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Locator/dao"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Locator/lookup"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Locator/lookupOnElement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Locator/lookupOnElementNS"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Locator/onNoResult"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Locator/uniqueResult"/>
+    </genClasses>
+    <genClasses ecoreClass="persistence12.ecore#//Parameters">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute persistence12.ecore#//Parameters/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference persistence12.ecore#//Parameters/value"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference persistence12.ecore#//Parameters/wiring"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference persistence12.ecore#//Parameters/expression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Parameters/type"/>
+    </genClasses>
+    <genClasses ecoreClass="persistence12.ecore#//Updater">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Updater/beanId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Updater/dao"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Updater/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Updater/updateBefore"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Updater/updatedBeanId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Updater/updateOnElement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//Updater/updateOnElementNS"/>
+    </genClasses>
+    <genClasses ecoreClass="persistence12.ecore#//ValueParameter">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference persistence12.ecore#//ValueParameter/decodeParam"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//ValueParameter/data"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//ValueParameter/dataNS"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//ValueParameter/decoder"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//ValueParameter/default"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//ValueParameter/index"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//ValueParameter/name"/>
+    </genClasses>
+    <genClasses ecoreClass="persistence12.ecore#//WiringParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//WiringParameter/beanIdRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//WiringParameter/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//WiringParameter/wireOnElement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence12.ecore#//WiringParameter/wireOnElementNS"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Smooks" resource="XML" disposableProviderFactory="true" ecorePackage="smooks-1.1.ecore#/">
+    <genClasses image="false" ecoreClass="smooks-1.1.ecore#//AbstractReader">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smooks-1.1.ecore#//AbstractReader/targetProfile"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="smooks-1.1.ecore#//AbstractResourceConfig"/>
+    <genClasses ecoreClass="smooks-1.1.ecore#//ConditionsType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//ConditionsType/condition"/>
+    </genClasses>
+    <genClasses ecoreClass="smooks-1.1.ecore#//ConditionType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smooks-1.1.ecore#//ConditionType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smooks-1.1.ecore#//ConditionType/evaluator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smooks-1.1.ecore#//ConditionType/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smooks-1.1.ecore#//ConditionType/idRef"/>
+    </genClasses>
+    <genClasses ecoreClass="smooks-1.1.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute smooks-1.1.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference smooks-1.1.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference smooks-1.1.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference smooks-1.1.ecore#//DocumentRoot/abstractReader"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference smooks-1.1.ecore#//DocumentRoot/abstractResourceConfig"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//DocumentRoot/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//DocumentRoot/conditions"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference smooks-1.1.ecore#//DocumentRoot/elementVisitor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//DocumentRoot/features"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//DocumentRoot/handler"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//DocumentRoot/handlers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//DocumentRoot/import"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//DocumentRoot/param"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//DocumentRoot/params"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//DocumentRoot/profile"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//DocumentRoot/profiles"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//DocumentRoot/reader"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//DocumentRoot/resource"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//DocumentRoot/resourceConfig"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//DocumentRoot/setOff"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//DocumentRoot/setOn"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//DocumentRoot/smooksResourceList"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="smooks-1.1.ecore#//ElementVisitor">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//ElementVisitor/condition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smooks-1.1.ecore#//ElementVisitor/targetProfile"/>
+    </genClasses>
+    <genClasses ecoreClass="smooks-1.1.ecore#//FeaturesType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//FeaturesType/setOn"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//FeaturesType/setOff"/>
+    </genClasses>
+    <genClasses ecoreClass="smooks-1.1.ecore#//HandlersType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//HandlersType/handler"/>
+    </genClasses>
+    <genClasses ecoreClass="smooks-1.1.ecore#//HandlerType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smooks-1.1.ecore#//HandlerType/class"/>
+    </genClasses>
+    <genClasses ecoreClass="smooks-1.1.ecore#//ImportType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//ImportType/param"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smooks-1.1.ecore#//ImportType/file"/>
+    </genClasses>
+    <genClasses ecoreClass="smooks-1.1.ecore#//ParamsType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//ParamsType/param"/>
+    </genClasses>
+    <genClasses ecoreClass="smooks-1.1.ecore#//ParamType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smooks-1.1.ecore#//ParamType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smooks-1.1.ecore#//ParamType/type"/>
+    </genClasses>
+    <genClasses ecoreClass="smooks-1.1.ecore#//ProfilesType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//ProfilesType/profile"/>
+    </genClasses>
+    <genClasses ecoreClass="smooks-1.1.ecore#//ProfileType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smooks-1.1.ecore#//ProfileType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smooks-1.1.ecore#//ProfileType/baseProfile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smooks-1.1.ecore#//ProfileType/subProfiles"/>
+    </genClasses>
+    <genClasses ecoreClass="smooks-1.1.ecore#//ReaderType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//ReaderType/handlers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//ReaderType/features"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//ReaderType/params"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smooks-1.1.ecore#//ReaderType/class"/>
+    </genClasses>
+    <genClasses ecoreClass="smooks-1.1.ecore#//ResourceConfigType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//ResourceConfigType/resource"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//ResourceConfigType/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//ResourceConfigType/param"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smooks-1.1.ecore#//ResourceConfigType/selector"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smooks-1.1.ecore#//ResourceConfigType/selectorNamespace"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smooks-1.1.ecore#//ResourceConfigType/targetProfile"/>
+    </genClasses>
+    <genClasses ecoreClass="smooks-1.1.ecore#//ResourceType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smooks-1.1.ecore#//ResourceType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smooks-1.1.ecore#//ResourceType/type"/>
+    </genClasses>
+    <genClasses ecoreClass="smooks-1.1.ecore#//SetOffType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smooks-1.1.ecore#//SetOffType/feature"/>
+    </genClasses>
+    <genClasses ecoreClass="smooks-1.1.ecore#//SetOnType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smooks-1.1.ecore#//SetOnType/feature"/>
+    </genClasses>
+    <genClasses ecoreClass="smooks-1.1.ecore#//SmooksResourceListType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//SmooksResourceListType/params"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//SmooksResourceListType/conditions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smooks-1.1.ecore#//SmooksResourceListType/profiles"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute smooks-1.1.ecore#//SmooksResourceListType/abstractReaderGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference smooks-1.1.ecore#//SmooksResourceListType/abstractReader"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute smooks-1.1.ecore#//SmooksResourceListType/abstractResourceConfigGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference smooks-1.1.ecore#//SmooksResourceListType/abstractResourceConfig"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smooks-1.1.ecore#//SmooksResourceListType/defaultConditionRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smooks-1.1.ecore#//SmooksResourceListType/defaultSelector"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smooks-1.1.ecore#//SmooksResourceListType/defaultSelectorNamespace"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smooks-1.1.ecore#//SmooksResourceListType/defaultTargetProfile"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Common" resource="XML" disposableProviderFactory="true" ecorePackage="common.ecore#/">
+    <genClasses image="false" ecoreClass="common.ecore#//AbstractAnyType">
+      <genOperations ecoreOperation="common.ecore#//AbstractAnyType/getCDATA"/>
+      <genOperations ecoreOperation="common.ecore#//AbstractAnyType/setCDATA">
+        <genParameters ecoreParameter="common.ecore#//AbstractAnyType/setCDATA/cdata"/>
+      </genOperations>
+      <genOperations ecoreOperation="common.ecore#//AbstractAnyType/getStringValue"/>
+      <genOperations ecoreOperation="common.ecore#//AbstractAnyType/setStringValue">
+        <genParameters ecoreParameter="common.ecore#//AbstractAnyType/setStringValue/stringValue"/>
+      </genOperations>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

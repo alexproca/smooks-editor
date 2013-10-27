@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="ProductPriceType">
+        <xsd:annotation>
+            <xsd:documentation>gives a set of price information for the item. If there is more
+        than one relevant price, repeat the element.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Amount" type="core:Decimal18_3Type">
+                <xsd:annotation>
+                    <xsd:documentation>supplies the price of the item as a decimal currency
+        amount.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PriceType" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>gives the type of price being supplied, based on the catalog
+        creator's or agreed-upon distinctions.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Currency" type="core:CurrencyType">
+                <xsd:annotation>
+                    <xsd:documentation>supplies an ISO Currency Code that overrides the default currency
+        for the catalog if supplied.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="UOM" type="core:UOMType">
+                <xsd:annotation>
+                    <xsd:documentation>gives an ISO unit of measure code. Defines the unit of measure
+        for the value in <!--code-->PriceBasisQuant<!--/code--> sub-element of <!--code-->ProductPrice<!--/code-->.
+        Must be exactly the same as the <!--code-->UOM<!--/code--> sub-element of <!--code-->Product<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="MinimumQuantity" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation>supplies the The minimum number of <!--code-->LotSize<!--/code--> x <!--code-->UOM<!--/code-->'s
+        that must be purchased for this pricing to be effective (where <!--code-->UOM<!--/code-->
+        is the <!--code-->Product<!--/code--> sub-element. If <!--code-->UOM<!--/code--> is Liter, and
+        <!--code-->LotSize<!--/code--> is 0.5, that would be 1/2 liters). A value of 0 (zero) is the
+        default and means there is no minimum order. If given, this value takes precedence
+        over the <!--code-->Product MinOrder<!--/code--> value.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ShortDescription" type="ShortDescriptionType">
+                <xsd:annotation>
+                    <xsd:documentation>gives a single short description of the price. This takes an
+        <!--code-->xml:lang<!--/code--> attribute, which must contain a valid code according to
+        RFC 1766. If not specified in <!--code-->DefaultLanguage<!--/code--> or in a specific
+        element, the value is assumed to be <!--code-->en<!--/code--> for "English."</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ValidFrom" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>gives an inclusive date on which the price becomes
+        applicable.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ValidUntil" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>gives the date on which the price ceases to be
+        applicable.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PriceBasisQuant" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation>holds the quantity that is the basis of the price. This enables one to
+        control the level of precision with which the price is expressed. Must be a number.
+        <!--code-->Amount / PriceBasisQuant<!--/code--> = price per 1 <!--code-->UOM<!--/code-->. That is, the
+        number of <!--code-->UOM<!--/code-->'s of the <!--code-->Product<!--/code--> the Amount will purchase.
+        It has no direct relationship to <!--code-->LotSize<!--/code-->: this doesn't specify the
+        "quanta" in which product can be ordered, just the "quanta" by which it's priced.
+        It defaults to 1 (one). For example, if the price is 5 for $10, this value would
+        be 5, the Amount is 10, and the <!--code-->UOM<!--/code--> is EA.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

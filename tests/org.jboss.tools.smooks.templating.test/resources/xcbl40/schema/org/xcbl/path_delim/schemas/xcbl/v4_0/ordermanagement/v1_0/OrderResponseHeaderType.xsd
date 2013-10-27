@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="OrderResponseHeaderType">
+        <xsd:annotation>
+            <xsd:documentation>contains the header information  of the OrderResponse.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="OrderResponseNumber" type="OrderResponseNumberType">
+                <xsd:annotation>
+                    <xsd:documentation>is the unique number that identifies the <!--code-->OrderResponse<!--/code-->, typically according to the system that generated the <!--code-->OrderResponse<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="OrderResponseIssueDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>holds a time stamp provided by the application that created the <!--code-->OrderResponse<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="OrderResponseDocTypeCoded" type="OrderResponseDocTypeCodeType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the type of <!--code-->OrderResponse<!--/code--> being sent.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OrderResponseDocTypeCodedOther" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is used to provide a non-standard <!--code-->OrderResponseDocTypeCode<!--/code-->.
+        This element is mandatory if the value of <!--code-->OrderResponseDocTypeCoded<!--/code--> is
+        'Other'. These codes should not contain white space unless absolutely
+        necessary.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="OrderReference" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>is the purchase order number that the <!--code-->OrderResponse<!--/code--> document is
+        referencing. This includes the number and the date of the purchase
+        order.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ChangeOrderReference" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>is used for tracking purposes only. If the document is in
+        response to a <!--code-->ChangeOrder<!--/code-->, the <!--code-->ChangeOrderResponse<!--/code--> document transmission can
+        be identified here.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="SellerParty" type="core:PartyType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the information for the party selling the goods.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="BuyerParty" type="core:PartyType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the information for the entity purchasing the goods.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="TrackingURL" type="xsd:anyURI">
+                <xsd:annotation>
+                    <xsd:documentation>provides a URL for tracking the shipment of the goods contained in an entire order.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfReferenceCoded" type="core:ListOfReferenceCodedType">
+                <xsd:annotation>
+                    <xsd:documentation>contains all other references for the <!--code-->OrderResponse<!--/code--> not explicitly stated as the content of other elements.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Purpose" type="core:PurposeType">
+                <xsd:annotation>
+                    <xsd:documentation>is used to communicate the purpose of the document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="ResponseType" type="core:ResponseTypeType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the action the seller has taken on the buyer's order.  This is used to communicate
+        whether the seller has accepted or rejected the buyer's order.  This is the only element that can be used to communicate this information, and
+        only values that communicate such information should be used.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ShipmentStatusEvent" type="core:ShipmentStatusEventType">
+                <xsd:annotation>
+                    <xsd:documentation>communicates any shipping status information pertaining to the entire order.  This element is used for informational purposes only, and
+        is used by the seller to communicate shipment specific status information to the buyer.  For instance, the seller can use this element to inform
+        the buyer that the order has already been shipped.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PaymentStatusEvent" type="core:StatusType">
+                <xsd:annotation>
+                    <xsd:documentation>communicates any payment status information pertaining to the entire order.  This element is used for informational purposes only, and
+        is used by the seller to communicate payment specific status information to the buyer.  For instance, the seller can use this element to inform
+        the buyer that an invoice has already been created for this order.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OriginalOrderHeaderWithChanges" type="OrderHeaderType">
+                <xsd:annotation>
+                    <xsd:documentation>is used to make any changes to the <!--code-->OrderHeader<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OrderResponseHeaderNote" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains any free form text pertinent to the entire <!--code-->OrderResponse<!--/code-->.
+         This element may contain notes or other similar information
+          that is not contained explicitly in another structure. You should not assume that the receiving application is
+          capable of doing more than storing and/or displaying this information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfStructuredNote" type="core:ListOfStructuredNoteType">
+                <xsd:annotation>
+                    <xsd:documentation>contains one or more structured notes that allow you to provide
+        notes that are more than a simple free-text field. such notes may include the
+        message text, or this text may be referenced with an external identifier or a
+        URL. An agency may be specified, and is needed in the case where an ID has been
+        provided for a note that is either included in-line or referenced. This field
+        is often used to include references to centrally stored clauses in contracts
+        that are required to appear within business documents.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

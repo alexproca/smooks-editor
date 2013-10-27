@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:people xmlns:ns0="http://www.example.org/people/">
+        <person>
+        <name first="Tom" last="Fennelly">
+            <male>true</male>            
+        </name>        
+        <address>Ireland</address>        
+        <age>6</age>        
+    </person>
+    <person>
+        <name first="Mike" last="Fennelly">
+            <male>true</male>            
+        </name>        
+        <address>Ireland</address>        
+        <age>5</age>        
+    </person>
+</ns0:people>

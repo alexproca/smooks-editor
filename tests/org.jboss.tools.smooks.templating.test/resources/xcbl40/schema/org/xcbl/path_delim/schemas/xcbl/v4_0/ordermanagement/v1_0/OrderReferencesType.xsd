@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="OrderReferencesType">
+        <xsd:annotation>
+            <xsd:documentation>defines the references for the <!--code-->Order<!--/code-->.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="AccountCode" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>is the unique identification assigned to the buyer by the seller.
+        This is used for reference purposes in the transaction. For example, Buyer
+        Company A has a standing account with Seller Company B, which is assigned the
+        identification of A-127654, therefore A-127654 would be the
+        AccountCode.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ContractReferences" type="core:ListOfContractType">
+                <xsd:annotation>
+                    <xsd:documentation>is an element that holds the contract number and contract type
+        for referencing a contract. This element can also be used to hold a reference to a standing order.
+        In this case do not use the <!--code-->ContractType<!--/code--> field.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="QuoteReference" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>refers to a Quote ID or Shopping Cart ID.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="RequisitionReference" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>references a requisition in an ERP system which created this order.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfCostCenter" type="core:ListOfCostCenterType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies all cost center information, and if applicable, the split to
+                    each different cost center for the entire order.  If a quantity is used to show the split, it is assumed to be the default
+                    quantity for each item on the order, and can be overwritten.  If a a percent or monetary amount is used, it is assumed to
+                    be in relation to the entire amount of the order, included any taxes, allowances, or charges.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OtherOrderReferences" type="core:ListOfReferenceCodedType">
+                <xsd:annotation>
+                    <xsd:documentation>is all other references to the <!--code-->Order<!--/code--> not explicitly
+        stated as the content of other elements. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ListOfOrderReferencesType">
+        <xsd:annotation>
+            <xsd:documentation>is a list of order references</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="OrderReferences" type="OrderReferencesType">
+                <xsd:annotation>
+                    <xsd:documentation>defines the references for the <!--code-->Order<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

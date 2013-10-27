@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:OrderStatusResult xmlns:ns0="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd">
+    <ns0:OrderStatusResultHeader>
+        <ns0:OrderStatusID>#required</ns0:OrderStatusID>        
+        <ns0:OrderStatusIssueDate>#required</ns0:OrderStatusIssueDate>        
+        <ns0:BuyerParty>
+            <ns1:PartyID xmlns:ns1="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd">
+                <ns1:Ident>#required</ns1:Ident>                
+            </ns1:PartyID>            
+        </ns0:BuyerParty>        
+        <ns0:SellerParty>
+            <ns1:PartyID xmlns:ns1="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd">
+                <ns1:Ident>#required</ns1:Ident>                
+            </ns1:PartyID>            
+        </ns0:SellerParty>        
+    </ns0:OrderStatusResultHeader>    
+    <ns0:ListOfOrderStatusResultDetail>
+        <ns0:OrderStatusResultDetail>
+            <ns0:OrderStatusResultReference>
+                <ns0:BuyerReferenceNumber>#required</ns0:BuyerReferenceNumber>                
+                <ns0:SellerReferenceNumber>#required</ns0:SellerReferenceNumber>                
+                <ns0:OrderDate>#required</ns0:OrderDate>                
+                <ns0:OrderStatusDate>#required</ns0:OrderStatusDate>                
+                <ns0:OrderStatus>
+                    <ns1:StatusEvent xmlns:ns1="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd">
+                        <ns1:StatusEventCoded>#required</ns1:StatusEventCoded>                        
+                    </ns1:StatusEvent>                    
+                </ns0:OrderStatus>                
+            </ns0:OrderStatusResultReference>            
+        </ns0:OrderStatusResultDetail>        
+    </ns0:ListOfOrderStatusResultDetail>    
+</ns0:OrderStatusResult>

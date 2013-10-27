@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/preordermanagement/v1_0/preordermanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/preordermanagement/v1_0/preordermanagement.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="AvailabilityCheckRequestHeaderType">
+        <xsd:annotation>
+            <xsd:documentation>holds reference dates, supplier and buyer information, and any special
+    notes associated with the <!--code-->AvailabilityCheckRequest<!--/code-->. This element occurs once within the document.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="AvailabilityCheckRequestID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains a reference number to identify the
+    <!--code-->AvailabilityCheckRequest<!--/code--> document.
+    This value can be used for internal audit purposes.
+    Possible values for the ID are GUIDs, internal tracking numbers,
+    or system generated document numbers.
+    This reference value should not be needed for document correlation
+    purposes since this is a synchronous transaction.
+    It is valid for the AvailabilityCheckRequestID &amp; the
+    AvailabilityCheckResultID from the <!--code-->AvailabilityCheckResult<!--/code-->
+    document to be the same value.
+    For applications that do not require this type of document identification,
+    a dummy value can be used as a default.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="AvailabilityCheckRequestIssueDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>indicates the date the <!--code-->AvailabilityCheckRequest<!--/code--> is
+    transmitted.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="SellerParty" type="core:PartyType">
+                <xsd:annotation>
+                    <xsd:documentation>holds information relating to the supplier who is the receiver of
+					the <!--code-->AvailabilityCheckRequest<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="SellerIDReferenceDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>holds the date of the supplier ID reference.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="BuyerParty" type="core:PartyType">
+                <xsd:annotation>
+                    <xsd:documentation>holds information relating to the buyer who is the initiator of
+    the <!--code-->AvailabilityCheckRequest<!--/code-->.  This includes unique ID's and address information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="BuyerIDReferenceDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>holds the date of the buyer ID reference.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="AccountCode" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>holds the account code for the buyer.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="ShipToParty" type="core:PartyType">
+                <xsd:annotation>
+                    <xsd:documentation>holds the address details of the delivery party. If different
+					delivery parties are involved in this request then they will be specified at
+					the line item level within the detail section of the <!--code-->AvailabilityCheckRequest<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="AvailabilityCheckRequestLanguage" type="core:LanguageType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the language for the
+    <!--code-->AvailabilityCheckRequest<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="AvailabilityCheckRequestNote" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains any free-form text pertinent to the entire
+    <!--code-->AvailabilityCheckRequest<!--/code-->. This element may contain notes or any other similar information that
+    is not contained explicitly in another structure. It should not be assumed that the receiving application is capable of
+    doing more than storing and/or displaying this information</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfStructuredNote" type="core:ListOfStructuredNoteType">
+                <xsd:annotation>
+                    <xsd:documentation>contains one or more structured notes that allow you to provide
+			        notes that are more than a simple free-text field. such notes may include the
+			        message text, or this text may be referenced with an external identifier or a
+			        URL. An agency may be specified, and is needed in the case where an ID has been
+			        provided for a note that is either included in-line or referenced. This field
+			        is often used to include references to centrally stored clauses in contracts
+			        that are required to appear within business documents.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfAttachment" type="core:ListOfAttachmentType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a list of attachments applicable to the entire <!--code-->AvailabilityCheckRequest<!--/code-->. The
+					information is not specific to a particular line item unless specifically noted.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

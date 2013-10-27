@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<smooks-resource-list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.milyn.org/xsd/smooks-1.1.xsd" xmlns:json="http://www.milyn.org/xsd/smooks/json-1.2.xsd"
+	default-selector="/root/order-item/">
+	<params>
+		<param name="stream.filter.type">SAX</param>
+		<param name="inputType">input.json</param>
+		<param name="input.json" type="input.type.actived">Workspace://test/src/json.jsn</param>
+	</params>
+	<abstract-reader xsi:type="json:reader"
+		arrayElementName="element" encoding="UTF-8" keyWhitspaceReplacement="-"
+		rootName="root">
+		<json:keyMap>
+			<json:key from="date&amp;time" to="timeanddate" />
+		</json:keyMap>
+	</abstract-reader>
+</smooks-resource-list>

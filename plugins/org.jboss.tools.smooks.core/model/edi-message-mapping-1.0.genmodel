@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.jboss.tools.smooks.model/src"
+    modelPluginID="org.jboss.tools.smooks.model" modelName="Edi-message-mapping-1"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>edi-message-mapping-1.0.ecore</foreignModel>
+  <genPackages prefix="Edi" resource="XML" disposableProviderFactory="true" ecorePackage="edi-message-mapping-1.0.ecore#/">
+    <genClasses ecoreClass="edi-message-mapping-1.0.ecore#//Component">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edi-message-mapping-1.0.ecore#//Component/subComponent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi-message-mapping-1.0.ecore#//Component/required"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi-message-mapping-1.0.ecore#//Component/truncatable"/>
+    </genClasses>
+    <genClasses ecoreClass="edi-message-mapping-1.0.ecore#//Delimiters">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi-message-mapping-1.0.ecore#//Delimiters/component"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi-message-mapping-1.0.ecore#//Delimiters/field"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi-message-mapping-1.0.ecore#//Delimiters/segment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi-message-mapping-1.0.ecore#//Delimiters/subComponent"/>
+    </genClasses>
+    <genClasses ecoreClass="edi-message-mapping-1.0.ecore#//Description">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi-message-mapping-1.0.ecore#//Description/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi-message-mapping-1.0.ecore#//Description/version"/>
+    </genClasses>
+    <genClasses ecoreClass="edi-message-mapping-1.0.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute edi-message-mapping-1.0.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edi-message-mapping-1.0.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference edi-message-mapping-1.0.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edi-message-mapping-1.0.ecore#//DocumentRoot/edimap"/>
+    </genClasses>
+    <genClasses ecoreClass="edi-message-mapping-1.0.ecore#//EdiMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edi-message-mapping-1.0.ecore#//EdiMap/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edi-message-mapping-1.0.ecore#//EdiMap/delimiters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edi-message-mapping-1.0.ecore#//EdiMap/segments"/>
+    </genClasses>
+    <genClasses ecoreClass="edi-message-mapping-1.0.ecore#//Field">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edi-message-mapping-1.0.ecore#//Field/component"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi-message-mapping-1.0.ecore#//Field/required"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi-message-mapping-1.0.ecore#//Field/truncatable"/>
+    </genClasses>
+    <genClasses ecoreClass="edi-message-mapping-1.0.ecore#//MappingNode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi-message-mapping-1.0.ecore#//MappingNode/xmltag"/>
+    </genClasses>
+    <genClasses ecoreClass="edi-message-mapping-1.0.ecore#//Segment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edi-message-mapping-1.0.ecore#//Segment/field"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edi-message-mapping-1.0.ecore#//Segment/segment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi-message-mapping-1.0.ecore#//Segment/maxOccurs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi-message-mapping-1.0.ecore#//Segment/minOccurs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi-message-mapping-1.0.ecore#//Segment/segcode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi-message-mapping-1.0.ecore#//Segment/truncatable"/>
+    </genClasses>
+    <genClasses ecoreClass="edi-message-mapping-1.0.ecore#//Segments">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference edi-message-mapping-1.0.ecore#//Segments/segment"/>
+    </genClasses>
+    <genClasses ecoreClass="edi-message-mapping-1.0.ecore#//SubComponent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute edi-message-mapping-1.0.ecore#//SubComponent/required"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Common" resource="XML" disposableProviderFactory="true" ecorePackage="common.ecore#/">
+    <genClasses image="false" ecoreClass="common.ecore#//AbstractAnyType">
+      <genOperations ecoreOperation="common.ecore#//AbstractAnyType/getCDATA"/>
+      <genOperations ecoreOperation="common.ecore#//AbstractAnyType/setCDATA">
+        <genParameters ecoreParameter="common.ecore#//AbstractAnyType/setCDATA/cdata"/>
+      </genOperations>
+      <genOperations ecoreOperation="common.ecore#//AbstractAnyType/getStringValue"/>
+      <genOperations ecoreOperation="common.ecore#//AbstractAnyType/setStringValue">
+        <genParameters ecoreParameter="common.ecore#//AbstractAnyType/setStringValue/stringValue"/>
+      </genOperations>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

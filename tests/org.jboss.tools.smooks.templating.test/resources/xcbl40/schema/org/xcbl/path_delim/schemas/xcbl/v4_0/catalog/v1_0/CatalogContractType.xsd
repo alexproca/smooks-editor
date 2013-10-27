@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="CatalogContractType">
+        <xsd:annotation>
+            <xsd:documentation>contains information to identify the buyer's or supplier's
+        contract, and the item identification in terms of that contract.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="CatalogContractID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>holds the reference to the contract, typically as a contract number.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="CatalogContractItemID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>holds the contract's reference to the item, also typically a number.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="Type" type="BuyerSupplierCodeType" use="optional" default="Buyer">
+            <xsd:annotation>
+                <xsd:documentation>
+            identifies whether the contract information refers to a buyer's
+        contract, a supplier's contract, or some other contract. "Other" is not used
+        here to refer to a custom value (that is, there is no string field to contain a
+        custom value.) If needed, this additional information should form part of the
+        contract number information supplied in
+        <!--code-->CatalogContractID<!--/code-->.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+</xsd:schema>

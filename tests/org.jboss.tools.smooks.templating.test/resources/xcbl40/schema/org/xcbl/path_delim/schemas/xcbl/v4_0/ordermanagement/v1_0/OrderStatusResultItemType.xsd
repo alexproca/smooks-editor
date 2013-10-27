@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="OrderStatusResultItemType">
+        <xsd:annotation>
+            <xsd:documentation>contains the identifying and descriptive
+     information for the line items in <!--code-->OrderStatusResult<!--/code-->.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="LineItemNum" type="core:LineItemNumType">
+                <xsd:annotation>
+                    <xsd:documentation>is a set of numbers uniquely identifying the line item for the
+					number. In the case where the seller's system splits a line item number into 2
+					line items, the buyer item number will remain the same for both line items, but
+					the seller item number will be different.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LineItemType" type="core:LineItemTypeType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies whether the line item is a component group (consists of other line items),
+					a typical line item, or a textual line item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ParentItemNumber" type="core:LineItemNumberReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the line item that groups this and other line items.
+					This is done using <!--code-->LineItemNumberReference<!--/code-->, which specifies the number of the
+					parent line item and whether this reference is the Buyer or Seller's number.
+					<!--code-->LineItemNumberReference<!--/code--> is a string content model of datatype integer that
+					contains an attribute to specify whether the <!--code-->ParentItemNumber<!--/code--> is a Seller or Buyer
+					number, with the default being Buyer. This value references the parent item
+					represented a group.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ItemIdentifiers" type="core:ItemIdentifiersType">
+                <xsd:annotation>
+                    <xsd:documentation>details all of the part numbers assigned to the item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="QuantityLeftToRecieve" type="core:QuantityType">
+            	<xsd:annotation>
+                	<xsd:documentation>is the quantity of the item that is left to be recieved</xsd:documentation>
+              	</xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OrderedQuantity" type="core:QuantityType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the quantity of the item originally ordered.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" name="ItemStatus" type="ItemStatusType">
+                <xsd:annotation>
+                    <xsd:documentation>provides information about the status of the line item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+      		<xsd:element minOccurs="0" name="MaxBackOrderQuantity" type="core:QuantityType">
+                <xsd:annotation>
+                    <xsd:documentation>specifies the maximum quantity of an item that a customer will
+					allow to be back ordered.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="BaseItemReferences" type="core:BaseItemReferencesType">
+                <xsd:annotation>
+                    <xsd:documentation>contains all reference information for the item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ListOfOrderStatusResultItemType">
+        <xsd:annotation>
+            <xsd:documentation>contains a list of line items for the <!--code-->OrderStatusResult<!--/code-->.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="OrderStatusResultItem" type="OrderStatusResultItemType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the identifying and descriptive
+     information for the line items in <!--code-->OrderStatusResult<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

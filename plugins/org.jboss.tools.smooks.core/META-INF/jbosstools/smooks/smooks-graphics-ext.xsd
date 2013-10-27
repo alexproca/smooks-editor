@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+	targetNamespace="http://www.jboss.org/jbosstools/smooks/smooks-graphics-ext.xsd"
+	elementFormDefault="qualified"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:ext="http://www.jboss.org/jbosstools/smooks/smooks-graphics-ext.xsd" xmlns:smooks="http://www.milyn.org/xsd/smooks-1.1.xsd">
+
+
+	<xs:import namespace="http://www.milyn.org/xsd/smooks-1.1.xsd"></xs:import>
+	<xs:annotation>
+		<xs:documentation xml:lang="en">
+			Smooks Graphics Editor Extention File Schema
+		</xs:documentation>
+	</xs:annotation>
+
+	<xs:element  name="smooks-graphics-ext" substitutionGroup="smooks:abstract-resource-config">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="smooks:abstract-resource-config">
+					<xs:sequence>
+						<xs:element ref="ext:input" minOccurs="0" maxOccurs="unbounded"></xs:element>
+						<xs:element ref="ext:graph" minOccurs="0" maxOccurs="1"></xs:element>
+					</xs:sequence>
+					<xs:attribute name="inputType" type="xs:string"></xs:attribute>
+					<xs:attribute name="outputType" type="xs:string"></xs:attribute>
+					<xs:attribute name="platformVersion"
+						type="xs:string">
+					</xs:attribute>
+					<xs:attribute name="name" type="xs:string"></xs:attribute>
+					<xs:attribute name="author" type="xs:string"></xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="input">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ext:param" minOccurs="0"
+					maxOccurs="unbounded">
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="type" type="xs:string"></xs:attribute>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="param">
+
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="type" type="xs:string" />
+					<xs:attribute name="name" type="xs:string">
+					</xs:attribute>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+
+
+	<xs:element name="graph">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ext:figure" maxOccurs="unbounded"
+					minOccurs="0">
+				</xs:element>
+				<xs:element ref="ext:connection" minOccurs="0"
+					maxOccurs="unbounded">
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="figure">
+		<xs:complexType>
+			<xs:attribute name="id" type="xs:string"></xs:attribute>
+			<xs:attribute name="x" type="xs:string"></xs:attribute>
+			<xs:attribute name="y" type="xs:string"></xs:attribute>
+			<xs:attribute name="width" type="xs:string"></xs:attribute>
+			<xs:attribute name="height" type="xs:string"></xs:attribute>
+			<xs:attribute name="parentFigureId" type="xs:string"></xs:attribute>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="connection">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ext:source" minOccurs="1"
+					maxOccurs="1">
+				</xs:element>
+				<xs:element ref="ext:target" minOccurs="1"
+					maxOccurs="1">
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:string"></xs:attribute>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="source" type="xs:string"></xs:element>
+
+	<xs:element name="target" type="xs:string"></xs:element>
+</xs:schema>

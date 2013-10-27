@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="SupplierAccountType">
+        <xsd:annotation>
+            <xsd:documentation>links a supplier's ID for an account that a buyer may purchase against,
+        and the buyer's TPID.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="Action" type="ActionType">
+                <xsd:annotation>
+                    <xsd:documentation>indicates the the type of action to be performed on the supplier account.
+        Add, Replace, Update and Delete are acceptable values and no value implies the action is Add.
+        The extent of the update semantics is restricted to membership in this list.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="SupplierAccountID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is an identifier for referencing the prices defined under a particular purchasing agreement or contract.
+        NOTE: the ID is the key so there is only one association between a particular Buyer and
+        a particular <!--code-->SupplierAccountID<!--/code-->. NOTE: if the ID is not specified, it defaults
+        to the "NULL" id, which is also considered a unique ID (subsequent <!--code-->SupplierAccount<!--/code-->
+        entries with no ID are assumed to reference the same <!--code-->SupplierAccount<!--/code-->, even though
+        it is nameless). The "null" id was allowed primarily to accommodate the declaration of a
+        <!--code-->PriceCatalog<!--/code--> set as being the one available to anyone, as opposed to those
+        available via a negotiated agreement between the supplier and a particular buyer, in which
+        case a supplier account id would be established.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:choice>
+                <xsd:element name="BuyerIdentifier" type="core:IdentifierType">
+                    <xsd:annotation>
+                        <xsd:documentation>identifies the buyer.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="IsPublicAccount" type="IsPublicAccountType">
+                    <xsd:annotation>
+                        <xsd:documentation>is a empty element meaning that all prices in the
+        PriceCatalog(s) with PriceCatalogIDRef(s) are available to the public</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+            </xsd:choice>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="PriceCatalogIDRef" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>references a <!--code-->PriceCatalog<!--/code--> defined in the <!--code-->PricingInformation<!--/code-->
+        </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

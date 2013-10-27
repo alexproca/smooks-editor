@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/ordermanagement/v1_0/ordermanagement.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="OrderSummaryType">
+        <xsd:annotation>
+            <xsd:documentation>contains the summary information of the <!--code-->Order<!--/code-->, typically totals
+        of numerical fields.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="NumberOfLines" type="xsd:int">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the number of line items.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfTaxSummary" type="core:ListOfTaxSummaryType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the summary of the tax information specified within the
+          			<!--code-->Invoice<!--/code-->. This element is mandatory if tax elements occur in either
+          			the invoice header or any invoice detail item line. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="AllowOrChargeSummary" type="core:AllowOrChargeSummaryType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the summary amounts, for each category of the allowance or
+          			charge. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OrderSubTotal" type="core:MonetaryValueType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the sub total for all items on the order.
+                    This should be the sum of the sub totals of all items, not including taxes,
+                    allowances, or charges.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OrderTotal" type="core:MonetaryValueType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the total price for the entire order, including
+                    all taxes, allowances, and charges.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="TransportPackagingTotals" type="core:TransportPackagingTotalsType">
+                <xsd:annotation>
+                    <xsd:documentation>is a summary of transport and packaging information if included
+        in the <!--code-->Order<!--/code-->. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="SummaryNote" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains any free form text for the <!--code-->OrderSummary<!--/code-->. This element
+        may contain notes or any other similar information that is not contained
+        explicitly in another structure. You should not assume that the receiving
+        application is capable of doing more than storing and/or displaying this
+        information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

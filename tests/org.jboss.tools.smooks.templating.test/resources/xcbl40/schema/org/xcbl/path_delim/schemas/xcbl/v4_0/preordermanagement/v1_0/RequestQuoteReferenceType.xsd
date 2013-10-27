@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/preordermanagement/v1_0/preordermanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/preordermanagement/v1_0/preordermanagement.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="RequestQuoteReferenceType">
+        <xsd:annotation>
+            <xsd:documentation>contains a list of references for the request.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="ContractReference" type="core:ContractType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the contract number which the request is referencing.
+        </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="AccountNumber" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the buyers account code with the supplier.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PriceListNumber" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the reference number of the price list.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PriceListVersionNumber" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the version number of the price list.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="BuyersCatalogNumber" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the catalog number of the buyer.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OtherRequestQuoteReferences" type="core:ListOfReferenceCodedType">
+                <xsd:annotation>
+                    <xsd:documentation>lists any other references to the Request not documented by the
+        <!--code-->ContractReference<!--/code-->. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:creature xmlns:ns0="http://www.example.org/creature/">
+    <cat>${cat!?string}</cat>    
+</ns0:creature>

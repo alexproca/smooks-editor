@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd"
+			xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd"
+			targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/catalog/v1_0/catalog.xsd"
+			elementFormDefault="qualified">
+
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+<xsd:import schemaLocation="../../externalschemas/xml.xsd" namespace="http://www.w3.org/XML/1998/namespace"/>
+
+<!-- Include all Type Definitions -->
+<xsd:include schemaLocation="ActionType.xsd"/>
+<xsd:include schemaLocation="AttributeNameType.xsd"/>
+<xsd:include schemaLocation="AttributeValueType.xsd"/>
+<xsd:include schemaLocation="AttributeTypeType.xsd"/>
+<xsd:include schemaLocation="BuyerSupplierCodeType.xsd"/>
+<xsd:include schemaLocation="CatalogAudienceCodeType.xsd"/>
+<xsd:include schemaLocation="CatalogAudienceType.xsd"/>
+<xsd:include schemaLocation="CatalogContractType.xsd"/>
+<xsd:include schemaLocation="CatalogDataType.xsd"/>
+<xsd:include schemaLocation="CatalogHeaderType.xsd"/>
+<xsd:include schemaLocation="CatalogProviderType.xsd"/>
+<xsd:include schemaLocation="CatalogSchemaType.xsd"/>
+<xsd:include schemaLocation="CatalogSystemType.xsd"/>
+<xsd:include schemaLocation="CategoryAttributeType.xsd"/>
+<xsd:include schemaLocation="CategoryNameType.xsd"/>
+<xsd:include schemaLocation="DefaultLanguageType.xsd"/>
+<xsd:include schemaLocation="ExternalItemRefType.xsd"/>
+<xsd:include schemaLocation="IsPublicAccountType.xsd"/>
+<xsd:include schemaLocation="IsReplacementType.xsd"/>
+<xsd:include schemaLocation="IsRequiredType.xsd"/>
+<xsd:include schemaLocation="LongDescriptionType.xsd"/>
+<xsd:include schemaLocation="ManufacturerType.xsd"/>
+<xsd:include schemaLocation="ObjectAttributeType.xsd"/>
+<xsd:include schemaLocation="ParentCategoryRefListType.xsd"/>
+<xsd:include schemaLocation="PartnerRelationshipCodeType.xsd"/>
+<xsd:include schemaLocation="PartnerRelationshipType.xsd"/>
+<xsd:include schemaLocation="PartnerType.xsd"/>
+<xsd:include schemaLocation="PriceCatalogType.xsd"/>
+<xsd:include schemaLocation="PricingInformationType.xsd"/>
+<xsd:include schemaLocation="PricingType.xsd"/>
+<xsd:include schemaLocation="ProductAttachmentType.xsd"/>
+<xsd:include schemaLocation="ProductCatalogType.xsd"/>
+<xsd:include schemaLocation="ProductIDStandardCodeType.xsd"/>
+<xsd:include schemaLocation="ProductIDStandardType.xsd"/>
+<xsd:include schemaLocation="ProductIDType.xsd"/>
+<xsd:include schemaLocation="ProductNameType.xsd"/>
+<xsd:include schemaLocation="ProductPriceType.xsd"/>
+<xsd:include schemaLocation="ProductType.xsd"/>
+<xsd:include schemaLocation="ProductTypeCodedType.xsd"/>
+<xsd:include schemaLocation="RelatedProductType.xsd"/>
+<xsd:include schemaLocation="ScalarTypeCodeType.xsd"/>
+<xsd:include schemaLocation="SchemaCategoryRefListType.xsd"/>
+<xsd:include schemaLocation="SchemaCategoryType.xsd"/>
+<xsd:include schemaLocation="ShortDescriptionType.xsd"/>
+<xsd:include schemaLocation="SupplierAccountInformationType.xsd"/>
+<xsd:include schemaLocation="SupplierAccountType.xsd"/>
+<xsd:include schemaLocation="TargetTypeCodeType.xsd"/>
+<xsd:include schemaLocation="ValidateAttributesType.xsd"/>
+<xsd:include schemaLocation="VisibilityRulesType.xsd"/>
+
+<!-- Document Root Element Declarations -->
+<xsd:element name="ProductCatalog" type="ProductCatalogType"/>
+
+</xsd:schema>
