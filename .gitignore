@@ -1,4 +1,6 @@
 .idea/
+bin/
+*~
 *.iml
 target/
 *.log

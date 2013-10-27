@@ -185,8 +185,8 @@
 					You can use this in your plugins or their aggregator pom.xml files to set 
 					this for your plugins -->
 				<configuration>
-					<!-- <source>1.6</source> -->
-					<!-- <target>1.6</target> -->
+					<source>1.6</source>
+					<target>1.6</target>
 				</configuration>
 			</plugin>
 
