@@ -5,6 +5,7 @@
 	  <groupId>org.jboss.tools</groupId>
 	  <artifactId>org.jboss.tools.parent.pom</artifactId>
 	  <version>0.0.3-SNAPSHOT</version>
+	  <relativePath>../../parent/pom.xml</relativePath>
 	</parent>
 	<groupId>org.jboss.tools.smooks.tests</groupId>
 	<artifactId>org.jboss.tools.smooks.core.test</artifactId> 

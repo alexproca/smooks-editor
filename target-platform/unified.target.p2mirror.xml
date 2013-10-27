@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Download target platform" default="download.target.platform" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<target name="help">
+<echo>
+					Generated with useLatest = true
+					
+					---
+					
+					Use followStrict="true" to prevent downloading all
+					requirements not included in the target platform
+					or followStrict="false" to fetch everything
+
+					To run this script:
+
+					/abs/path/to/eclipse -vm /opt/jdk1.6.0/bin/java \
+					-nosplash -data /tmp/workspace -consolelog -application \
+					org.eclipse.ant.core.antRunner -f *.target.p2mirror.xml \
+					-Ddebug=true -DfollowStrict=true -DrepoDir=`pwd`/REPO/
+</echo>
+</target>
+<target name="init" unless="repoDir">
+<fail>Must set -DrepoDir=/abs/path/to/download/artifacts/</fail>
+</target>
+<target name="download.target.platform" depends="init" description="Download from target platform definition" if="repoDir">
+<property name="verbose" value="false"/>
+<property name="followStrict" value="false"/>
+<echo level="info">Download features/plugins into ${repoDir}</echo>
+<p2.mirror destination="file://${repoDir}" verbose="${verbose}">
+<slicingOptions includeFeatures="true" followStrict="${followStrict}"/>
+<source>
+<repository location="http://download.jboss.org/jbosstools/updates/target-platform_3.3.indigo/latest/"/>
+<repository location="http://download.jboss.org/jbosstools/updates/target-platform_3.3.indigo/latest/"/>
+</source>
+<iu id="org.maven.ide.eclipse.feature.feature.group" version=""/>
+<iu id="org.maven.ide.eclipse.wtp.feature.feature.group" version=""/>
+<iu id="javax.wsdl" version=""/>
+<iu id="org.apache.oro" version=""/>
+<iu id="org.jdom" version=""/>
+<iu id="org.mozilla.xulrunner.feature.feature.group" version=""/>
+<iu id="org.mozilla.xpcom.feature.feature.group" version=""/>
+<iu id="org.eclipse.tptp.platform.profile.server.feature.group" version=""/>
+<iu id="org.eclipse.tptp.platform.instrumentation.ui.feature.group" version=""/>
+<iu id="org.eclipse.tptp.platform.core.feature.group" version=""/>
+<iu id="org.eclipse.tptp.platform.jvmti.feature.group" version=""/>
+<iu id="org.eclipse.tptp.platform.trace.feature.group" version=""/>
+<iu id="org.eclipse.tptp.platform.xerces.feature.group" version=""/>
+<iu id="org.eclipse.tptp.platform.probekit.feature.group" version=""/>
+<iu id="org.eclipse.tptp.platform.commons.logging.feature.group" version=""/>
+<iu id="org.eclipse.tptp.platform.jakarta.log4j.feature.group" version=""/>
+<iu id="org.eclipse.emf.ecore.feature.group" version=""/>
+<iu id="org.eclipse.emf.feature.group" version=""/>
+<iu id="org.eclipse.emf.codegen.feature.group" version=""/>
+<iu id="org.eclipse.emf.common.feature.group" version=""/>
+<iu id="org.eclipse.emf.databinding.feature.group" version=""/>
+<iu id="org.eclipse.emf.codegen.ecore.feature.group" version=""/>
+<iu id="org.eclipse.emf.ecore.edit.feature.group" version=""/>
+<iu id="org.eclipse.emf.ecore.editor.feature.group" version=""/>
+<iu id="org.eclipse.emf.ecore.feature.group" version=""/>
+<iu id="org.eclipse.emf.edit.feature.group" version=""/>
+<iu id="org.eclipse.xsd.edit.feature.group" version=""/>
+<iu id="org.eclipse.xsd.feature.group" version=""/>
+<iu id="org.eclipse.swtbot.eclipse.feature.group" version=""/>
+<iu id="org.eclipse.swtbot.eclipse.gef.feature.group" version=""/>
+<iu id="org.eclipse.swtbot.ide.feature.group" version=""/>
+<iu id="org.eclipse.swtbot.eclipse.test.junit4.feature.group" version=""/>
+<iu id="org.eclipse.swtbot.feature.group" version=""/>
+<iu id="org.eclipse.birt.osgi.runtime.sdk.feature.group" version=""/>
+<iu id="org.eclipse.birt.feature.group" version=""/>
+<iu id="org.eclipse.birt.integration.wtp.feature.group" version=""/>
+<iu id="org.eclipse.birt.chart.feature.group" version=""/>
+<iu id="org.eclipse.birt.chart.integration.wtp.feature.group" version=""/>
+<iu id="com.ibm.icu.base.feature.group" version=""/>
+<iu id="org.eclipse.equinox.server.core.feature.group" version=""/>
+<iu id="org.eclipse.cvs.feature.group" version=""/>
+<iu id="org.eclipse.help.feature.group" version=""/>
+<iu id="org.eclipse.jdt.feature.group" version=""/>
+<iu id="org.eclipse.platform.feature.group" version=""/>
+<iu id="org.eclipse.platform.ide" version=""/>
+<iu id="org.eclipse.equinox.executable.feature.group" version=""/>
+<iu id="org.eclipse.platform.sdk" version=""/>
+<iu id="org.eclipse.pde.feature.group" version=""/>
+<iu id="org.eclipse.sdk.feature.group" version=""/>
+<iu id="org.eclipse.rcp.id" version=""/>
+<iu id="org.eclipse.rcp.sdk.id" version=""/>
+<iu id="org.eclipse.releng.tools.feature.group" version=""/>
+<iu id="org.eclipse.sdk.ide" version=""/>
+<iu id="org.eclipse.sdk.examples.feature.group" version=""/>
+<iu id="org.eclipse.sdk.examples.source.feature.group" version=""/>
+<iu id="org.eclipse.equinox.compendium.sdk.feature.group" version=""/>
+<iu id="org.eclipse.equinox.core.sdk.feature.group" version=""/>
+<iu id="org.eclipse.equinox.p2.discovery.feature.feature.group" version=""/>
+<iu id="org.eclipse.equinox.p2.user.ui.feature.group" version=""/>
+<iu id="org.eclipse.equinox.p2.sdk.feature.group" version=""/>
+<iu id="org.eclipse.equinox.serverside.sdk.feature.group" version=""/>
+<iu id="org.eclipse.equinox.sdk.feature.group" version=""/>
+<iu id="org.eclipse.equinox.weaving.sdk.feature.group" version=""/>
+<iu id="org.eclipse.equinox.server.jetty.feature.group" version=""/>
+<iu id="org.eclipse.equinox.server.p2.feature.group" version=""/>
+<iu id="org.eclipse.pde.api.tools.ee.fragments.feature.group" version=""/>
+<iu id="org.eclipse.equinox.p2.ui.admin.rcp.product" version=""/>
+<iu id="org.eclipse.equinox.server.servletbridge.feature.group" version=""/>
+<iu id="org.eclipse.equinox.server.simple.feature.group" version=""/>
+<iu id="org.eclipse.rcp.feature.group" version=""/>
+<iu id="org.eclipse.datatools.modelbase.feature.feature.group" version=""/>
+<iu id="org.eclipse.datatools.connectivity.feature.feature.group" version=""/>
+<iu id="org.eclipse.datatools.connectivity.oda.feature.feature.group" version=""/>
+<iu id="org.eclipse.datatools.connectivity.oda.designer.feature.feature.group" version=""/>
+<iu id="org.eclipse.datatools.connectivity.oda.designer.core.feature.feature.group" version=""/>
+<iu id="org.eclipse.datatools.enablement.feature.feature.group" version=""/>
+<iu id="org.eclipse.datatools.enablement.apache.derby.feature.feature.group" version=""/>
+<iu id="org.eclipse.datatools.enablement.hsqldb.feature.feature.group" version=""/>
+<iu id="org.eclipse.datatools.enablement.ibm.feature.feature.group" version=""/>
+<iu id="org.eclipse.datatools.enablement.jdbc.feature.feature.group" version=""/>
+<iu id="org.eclipse.datatools.enablement.jdt.feature.feature.group" version=""/>
+<iu id="org.eclipse.datatools.enablement.msft.feature.feature.group" version=""/>
+<iu id="org.eclipse.datatools.enablement.mysql.feature.feature.group" version=""/>
+<iu id="org.eclipse.datatools.enablement.oda.feature.feature.group" version=""/>
+<iu id="org.eclipse.datatools.enablement.oda.designer.feature.feature.group" version=""/>
+<iu id="org.eclipse.datatools.enablement.oracle.feature.feature.group" version=""/>
+<iu id="org.eclipse.datatools.enablement.postgresql.feature.feature.group" version=""/>
+<iu id="org.eclipse.datatools.enablement.sap.feature.feature.group" version=""/>
+<iu id="org.eclipse.datatools.enablement.sybase.feature.feature.group" version=""/>
+<iu id="org.eclipse.datatools.enablement.ingres.feature.feature.group" version=""/>
+<iu id="org.eclipse.datatools.enablement.sqlite.feature.feature.group" version=""/>
+<iu id="org.eclipse.datatools.sqldevtools.feature.feature.group" version=""/>
+<iu id="org.eclipse.datatools.sqldevtools.results.feature.feature.group" version=""/>
+<iu id="org.eclipse.datatools.sqldevtools.ddlgen.feature.feature.group" version=""/>
+<iu id="org.eclipse.datatools.sqldevtools.ddl.feature.feature.group" version=""/>
+<iu id="org.eclipse.datatools.sqldevtools.data.feature.feature.group" version=""/>
+<iu id="org.eclipse.datatools.sqldevtools.parsers.feature.feature.group" version=""/>
+<iu id="org.eclipse.datatools.sqldevtools.sqlbuilder.feature.feature.group" version=""/>
+<iu id="org.eclipse.datatools.sqldevtools.schemaobjecteditor.feature.feature.group" version=""/>
+<iu id="org.eclipse.datatools.intro.feature.group" version=""/>
+<iu id="org.eclipse.datatools.doc.user.feature.group" version=""/>
+<iu id="org.eclipse.datatools.common.doc.user.feature.group" version=""/>
+<iu id="org.eclipse.datatools.connectivity.doc.user.feature.group" version=""/>
+<iu id="org.eclipse.datatools.sqltools.doc.user.feature.group" version=""/>
+<iu id="org.eclipse.draw2d.feature.group" version=""/>
+<iu id="org.eclipse.gef.feature.group" version=""/>
+<iu id="org.eclipse.zest.feature.group" version=""/>
+<iu id="org.eclipse.uml2.feature.group" version=""/>
+<iu id="org.eclipse.rse.feature.group" version=""/>
+<iu id="org.eclipse.rse.ssh.feature.group" version=""/>
+<iu id="org.eclipse.rse.terminals.feature.group" version=""/>
+<iu id="org.eclipse.rse.telnet.feature.group" version=""/>
+<iu id="org.eclipse.rse.ftp.feature.group" version=""/>
+<iu id="org.eclipse.rse.local.feature.group" version=""/>
+<iu id="org.eclipse.rse.useractions.feature.group" version=""/>
+<iu id="org.eclipse.tm.terminal.feature.group" version=""/>
+<iu id="org.eclipse.tm.terminal.view.feature.group" version=""/>
+<iu id="org.eclipse.tm.terminal.telnet.feature.group" version=""/>
+<iu id="org.eclipse.tm.terminal.serial.feature.group" version=""/>
+<iu id="org.eclipse.tm.terminal.feature.group" version=""/>
+<iu id="org.eclipse.tm.terminal.ssh.feature.group" version=""/>
+<iu id="org.eclipse.jst.jee" version=""/>
+<iu id="org.eclipse.wst.common.frameworks" version=""/>
+<iu id="org.eclipse.wst.common.project.facet.ui" version=""/>
+<iu id="org.eclipse.jst.jee.web" version=""/>
+<iu id="org.eclipse.jst.common.fproj.enablement.jdt.feature.group" version=""/>
+<iu id="org.eclipse.jst.ws.axis2tools.feature.feature.group" version=""/>
+<iu id="org.eclipse.jst.ws.cxf.feature.feature.group" version=""/>
+<iu id="org.eclipse.jpt.feature.feature.group" version=""/>
+<iu id="org.eclipse.wst.common.fproj.feature.group" version=""/>
+<iu id="org.eclipse.jst.enterprise_ui.feature.feature.group" version=""/>
+<iu id="org.eclipse.wst.web_ui.feature.feature.group" version=""/>
+<iu id="org.eclipse.wst.xml_ui.feature.feature.group" version=""/>
+<iu id="org.eclipse.wst.xsl.feature.feature.group" version=""/>
+<iu id="org.eclipse.wst.jsdt.feature.feature.group" version=""/>
+<iu id="org.eclipse.jsf.feature.feature.group" version=""/>
+<iu id="org.eclipse.jst.ws.jaxws.dom.feature.feature.group" version=""/>
+<iu id="org.eclipse.jst.ws.jaxws.feature.feature.group" version=""/>
+<iu id="org.eclipse.jst.enterprise_core.feature.feature.group" version=""/>
+<iu id="org.eclipse.jst.server_adapters.ext.feature.feature.group" version=""/>
+<iu id="org.eclipse.jst.server_adapters.feature.feature.group" version=""/>
+<iu id="org.eclipse.jst.server_core.feature.feature.group" version=""/>
+<iu id="org.eclipse.jst.server_ui.feature.feature.group" version=""/>
+<iu id="org.eclipse.jst.web_ui.feature.feature.group" version=""/>
+<iu id="org.eclipse.jsf.feature.source.feature.group" version=""/>
+<iu id="org.eclipse.wst.xml.xpath2.processor.feature.feature.group" version=""/>
+<iu id="org.eclipse.jst.webpageeditor.feature.feature.group" version=""/>
+<iu id="org.eclipse.wst.ws_wsdl15.feature.feature.group" version=""/>
+<iu id="org.eclipse.wst.common_core.feature.feature.group" version=""/>
+<iu id="org.eclipse.wst.common_ui.feature.feature.group" version=""/>
+<iu id="org.eclipse.wst.server_adapters.feature.feature.group" version=""/>
+<iu id="org.eclipse.wst.server_core.feature.feature.group" version=""/>
+<iu id="org.eclipse.wst.server_ui.feature.feature.group" version=""/>
+<iu id="org.eclipse.wst.web_core.feature.feature.group" version=""/>
+<iu id="org.eclipse.wst.ws_ui.feature.feature.group" version=""/>
+<iu id="org.eclipse.wst.xml_core.feature.feature.group" version=""/>
+<iu id="com.google.gdt.eclipse.suite.e36.feature.feature.group" version=""/>
+<iu id="com.google.gwt.eclipse.sdkbundle.e36.feature.2.2.0.feature.group" version=""/>
+<iu id="org.drools.eclipse.feature.feature.group" version=""/>
+<iu id="org.drools.eclipse.task.feature.feature.group" version=""/>
+<iu id="org.guvnor.tools.feature.feature.group" version=""/>
+<iu id="org.mozilla.xulrunner.feature.feature.group" version=""/>
+<iu id="org.mozilla.xpcom.feature.feature.group" version=""/>
+</p2.mirror>
+</target>
+</project>

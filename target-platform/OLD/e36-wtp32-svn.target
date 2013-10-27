@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.6"?>
+
+<target includeMode="feature" name="e36-wtp32">
+<locations>
+<location includeAllPlatforms="false" includeMode="planner" type="InstallableUnit">
+<unit id="org.maven.ide.eclipse.feature.feature.group" version="0.10.0.20100209-0800"/>
+<repository location="http://m2eclipse.sonatype.org/sites/m2e/"/>
+</location>
+<location includeAllPlatforms="false" includeMode="planner" type="InstallableUnit">
+<unit id="org.eclipse.swtbot.eclipse.feature.group" version="2.0.0.568-dev-e36"/>
+<unit id="org.eclipse.swtbot.eclipse.gef.feature.group" version="2.0.0.568-dev-e36"/>
+<unit id="org.eclipse.swtbot.feature.group" version="2.0.0.568-dev-e36"/>
+<unit id="org.eclipse.swtbot.ide.feature.group" version="2.0.0.568-dev-e36"/>
+<unit id="org.eclipse.swtbot.eclipse.test.junit4.feature.group" version="2.0.0.568-dev-e36"/>
+<repository location="http://download.eclipse.org/technology/swtbot/helios/dev-build/update-site/"/>
+</location>
+<location includeAllPlatforms="false" includeMode="planner" type="InstallableUnit">
+<unit id="org.eclipse.birt.integration.wtp.feature.group" version="2.6.0.v20100617-1315-35-7w3121172802426"/>
+<unit id="org.eclipse.birt.osgi.runtime.sdk.feature.group" version="2.6.0.v20100427-57B-85wFdAHO16f8kRo1_ft1IUwD"/>
+<unit id="org.eclipse.birt.feature.group" version="2.6.0.v20100531-9gF727DGKb0yl9AwWxpmbo35PwQ_"/>
+<repository location="http://download.eclipse.org/birt/update-site/2.6/"/>
+</location>
+<!-- <location includeAllPlatforms="false" includeMode="planner" type="InstallableUnit">
+<repository location="http://download.eclipse.org/birt/update-site/2.6-interim/"/>
+</location> -->
+<location includeAllPlatforms="false" includeMode="planner" type="InstallableUnit">
+<unit id="org.maven.ide.eclipse.wtp.feature.feature.group" version="0.10.0.20100209-0800"/>
+<repository location="http://m2eclipse.sonatype.org/sites/m2e-extras/"/>
+<unit id="org.maven.ide.eclipse.sdk.feature.feature.group" version="0.10.0.20100209-0800"/>
+<unit id="org.maven.ide.eclipse.subclipse.feature.feature.group" version="0.10.0.20100209-0800"/>
+<unit id="org.maven.ide.eclipse.cvs.feature.feature.group" version="0.10.0.20100209-0800"/>
+<unit id="org.maven.ide.eclipse.scm.feature.feature.group" version="0.10.0.20100209-0800"/>
+<unit id="org.maven.ide.eclipse.temporary.mojos.feature.feature.group" version="0.10.0.20100209-0800"/>
+</location>
+<location includeAllPlatforms="false" includeMode="planner" type="InstallableUnit">
+<unit id="org.tmatesoft.svnkit.feature.group" version="1.3.3.6648"/>
+<unit id="com.sun.jna.feature.group" version="3.2.3"/>
+<repository location="http://eclipse.svnkit.com/1.3.x/"/>
+</location>
+<location includeAllPlatforms="false" includeMode="planner" type="InstallableUnit">
+<unit id="org.polarion.eclipse.team.svn.connector.svnkit15.feature.group" version="2.2.2.I20100512-1900"/>
+<unit id="org.polarion.eclipse.team.svn.connector.javahl15.feature.group" version="2.2.2.I20100512-1900"/>
+<unit id="org.polarion.eclipse.team.svn.connector.javahl15.win32.feature.group" version="2.2.2.I20100512-1900"/>
+<unit id="org.polarion.eclipse.team.svn.connector.feature.group" version="2.2.2.I20100512-1900"/>
+<unit id="org.polarion.eclipse.team.svn.connector.svnkit16.feature.group" version="2.2.2.I20100512-1900"/>
+<unit id="org.polarion.eclipse.team.svn.connector.javahl16.win32.feature.group" version="2.2.2.I20100512-1900"/>
+<unit id="org.polarion.eclipse.team.svn.connector.javahl.feature.group" version="2.2.2.I20100512-1900"/>
+<unit id="org.polarion.eclipse.team.svn.connector.javahl16.feature.group" version="2.2.2.I20100512-1900"/>
+<unit id="org.polarion.eclipse.team.svn.connector.javahl.win32.feature.group" version="2.2.2.I20100512-1900"/>
+<unit id="org.polarion.eclipse.team.svn.connector.svnkit.feature.group" version="2.2.2.I20100512-1900"/>
+<unit id="org.polarion.eclipse.team.svn.connector.source.feature.group" version="2.2.2.I20100512-1900"/>
+<repository location="http://www.polarion.org/projects/subversive/download/eclipse/2.0/update-site/"/>
+</location>
+<location includeAllPlatforms="false" includeMode="planner" type="InstallableUnit">
+<unit id="org.eclipse.team.svn.mylyn.feature.group" version="0.7.9.I20100512-1900"/>
+<unit id="org.eclipse.team.svn.source.feature.group" version="0.7.9.I20100512-1900"/>
+<unit id="org.eclipse.team.svn.feature.group" version="0.7.9.I20100512-1900"/>
+<unit id="org.eclipse.team.svn.resource.ignore.rules.jdt.feature.group" version="0.7.9.I20100512-1900"/>
+<unit id="org.eclipse.team.svn.revision.graph.feature.group" version="0.7.9.I20100512-1900"/>
+<unit id="org.eclipse.team.svn.nl1.feature.group" version="0.7.9.I20100512-1900"/>
+<repository location="http://download.eclipse.org/technology/subversive/0.7/update-site/"/>
+</location>
+<location includeAllPlatforms="false" includeMode="planner" type="InstallableUnit">
+<unit id="javax.wsdl" version="1.6.2.v201005080631"/>
+<repository location="http://download.eclipse.org/tools/orbit/downloads/drops/R20100519200754/updateSite/"/>
+</location>
+<location includeAllPlatforms="false" includeMode="planner" type="InstallableUnit">
+<unit id="org.eclipse.birt.feature.group" version="2.6.0.v20100531-9gF727DGKb0yl9AwWxpmbo35PwQ_"/>
+<unit id="org.eclipse.ecf.core.feature.group" version="3.3.0.v20100607-0607"/>
+<unit id="org.eclipse.datatools.sdk.feature.feature.group" version="1.8.0.v201005280400-7P9i0FDxNYrk4QYG-9qpz0N-vbEp"/>
+<unit id="org.eclipse.birt.osgi.runtime.sdk.feature.group" version="2.6.0.v20100427-57B-85wFdAHO16f8kRo1_ft1IUwD"/>
+<unit id="org.eclipse.emf.sdk.feature.group" version="2.6.0.v20100607-0756"/>
+<unit id="org.eclipse.pde.junit.runtime.standalone.feature.group" version="1.0.0.v20100526"/>
+<unit id="org.eclipse.pde.api.tools.ee.fragments.feature.group" version="1.0.0.v20100427-7C-7BF9JgLWLMBMMAMsLL"/>
+<unit id="org.eclipse.gef.sdk.feature.group" version="3.6.0.v20100519-2050-7G7R-A5WNc7QL_fXBGjRZPUUiKPJ"/>
+<unit id="org.eclipse.zest.sdk.feature.group" version="1.2.0.v20100519-2050-679-8COKLDAKOXIET_YWTacZM9XR"/>
+<unit id="org.eclipse.xsd.sdk.feature.group" version="2.6.0.v20100607-0756"/>
+<unit id="org.eclipse.jdt.feature.group" version="3.6.0.v20100526-0800-7z8XFUJFMTfCWGoVuHImpms9H155"/>
+<unit id="org.eclipse.wst.xml_ui.feature.feature.group" version="3.2.0.v201005241510-7H7AFUIDxumQGOb7ocjUR2Pvz-28"/>
+<unit id="org.eclipse.wst.jsdt.feature.feature.group" version="1.2.0.v201005270528-7C78FGDF9JgLWLMBWz-Ose6"/>
+<unit id="org.eclipse.tptp.platform.runtime.feature.group" version="4.7.0.v201005032111-7u84-8ksiNsksbQ6UTB7dcy3RUlT"/>
+<unit id="org.eclipse.jst.jsf.apache.trinidad.tagsupport.feature.feature.group" version="2.2.100.v20100526-208Z7w312114252964"/>
+<unit id="org.eclipse.jst.ws.axis2tools.feature.feature.group" version="1.1.100.v201005241530-78-FF0DZRDKDDePSKwHj"/>
+<unit id="org.eclipse.jst.ws.cxf.feature.feature.group" version="1.0.0.v201005241530-7H777BFAKlOiOX8lGdLp-67BD"/>
+<unit id="org.eclipse.jpt.feature.feature.group" version="2.3.0.v201005260000-7N7UEwFD3wTgbU_dxVnWV"/>
+<unit id="org.eclipse.jpt.eclipselink.feature.feature.group" version="2.3.0.v201005260000-7778BgBgJ9E99RIX999A"/>
+<unit id="org.eclipse.wst.common.fproj.feature.group" version="3.2.0.v201005290030-377A78s73533D5L355B"/>
+<unit id="org.eclipse.jst.common.fproj.enablement.jdt.feature.group" version="3.2.0.v201005241600-377A78s73533C6A6B39"/>
+<unit id="org.eclipse.jst.enterprise_ui.feature.feature.group" version="3.2.0.v201005241530-7b7GHTYFSK2W9kPaFClvz0O_NQmN"/>
+<unit id="org.eclipse.wst.web_ui.feature.feature.group" version="3.2.0.v201005241510-7O7CFb3EMf84nP-FHuc10NTz--M3"/>
+<unit id="org.eclipse.wst.xsl.feature.feature.group" version="1.1.0.v201005241600-7S7WFAKFIpS---NRIS1pbfYBUIQ"/>
+<unit id="org.eclipse.jsf.feature.feature.group" version="3.2.0.v20100526-7E7I-F9JgLWLMBYy3114"/>
+<unit id="org.eclipse.jpt.feature.feature.group" version="2.3.0.v201005260000-7N7UEwFD3wTgbU_dxVnWV"/>
+<unit id="org.eclipse.jpt.eclipselink.feature.feature.group" version="2.3.0.v201005260000-7778BgBgJ9E99RIX999A"/>
+<unit id="org.eclipse.jdt.feature.group" version="3.6.0.v20100526-0800-7z8XFUJFMTfCWGoVuHImpms9H155"/>
+<unit id="org.eclipse.gef.sdk.feature.group" version="3.6.0.v20100519-2050-7G7R-A5WNc7QL_fXBGjRZPUUiKPJ"/>
+<unit id="org.eclipse.emf.sdk.feature.group" version="2.6.0.v20100607-0756"/>
+<unit id="org.eclipse.ecf.core.feature.group" version="3.3.0.v20100607-0607"/>
+<unit id="org.eclipse.datatools.sdk.feature.feature.group" version="1.8.0.v201005280400-7P9i0FDxNYrk4QYG-9qpz0N-vbEp"/>
+<repository location="http://download.eclipse.org/releases/helios/"/>
+</location>
+<location includeAllPlatforms="false" includeMode="planner" type="InstallableUnit">
+<repository location="http://download.eclipse.org/rt/ecf/3.2/3.6/site.p2"/>
+</location>
+<location includeAllPlatforms="false" includeMode="planner" type="InstallableUnit">
+<repository location="http://download.eclipse.org/tptp/4.7.0/TPTP-4.7.0/repo/"/>
+</location>
+<location includeAllPlatforms="false" includeMode="planner" type="InstallableUnit">
+<unit id="org.eclipse.platform.ide" version="3.6.0.I20100603-1500"/>
+<repository location="http://download.eclipse.org/eclipse/updates/3.6/"/>
+</location>
+<!-- <location includeAllPlatforms="false" includeMode="planner" type="InstallableUnit">
+<repository location="http://download.eclipse.org/eclipse/updates/3.6milestones/"/>
+</location> -->
+<location includeAllPlatforms="false" includeMode="planner" type="InstallableUnit">
+<unit id="org.eclipse.emf.feature.group" version="2.6.0.v20100614-1136"/>
+<unit id="org.eclipse.emf.codegen.feature.group" version="2.6.0.v20100614-1136"/>
+<unit id="org.eclipse.emf.common.feature.group" version="2.6.0.v20100614-1136"/>
+<unit id="org.eclipse.emf.databinding.feature.group" version="1.2.0.v20100614-1136"/>
+<unit id="org.eclipse.emf.codegen.ecore.feature.group" version="2.6.0.v20100614-1136"/>
+<unit id="org.eclipse.emf.ecore.edit.feature.group" version="2.6.0.v20100614-1136"/>
+<unit id="org.eclipse.emf.ecore.editor.feature.group" version="2.6.0.v20100614-1136"/>
+<unit id="org.eclipse.emf.ecore.feature.group" version="2.6.0.v20100614-1136"/>
+<unit id="org.eclipse.emf.edit.feature.group" version="2.6.0.v20100614-1136"/>
+<unit id="org.eclipse.xsd.feature.group" version="2.6.0.v20100614-1136"/>
+<repository location="http://download.eclipse.org/modeling/emf/emf/updates/2.6/"/>
+</location>
+</locations>
+<targetJRE path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+</target>

@@ -1,0 +1,15 @@
+<project default="custom.build" name="jbosstools target platform pom.xml + site.xml generator">
+	<property name="targetFile" value="e361-wtp322.target" />
+
+	<target name="custom.build" depends="pom.xml, site.xml" />
+
+	<target name="pom.xml" description="use XSLT to generate a pom.xml from .target">
+		<echo level="verbose">Generate site/pom.xml from ${targetFile}</echo>
+		<xslt style="target2pomXml.xsl" in="${targetFile}" out="site/pom.xml" processor="trax" />
+	</target>
+
+	<target name="site.xml" description="use XSLT to generate a site.xml from .target">
+		<echo level="verbose">Generate site/site.xml from ${targetFile}</echo>
+		<xslt style="target2siteXml.xsl" in="${targetFile}" out="site/site.xml" processor="trax" />
+	</target>
+</project>
