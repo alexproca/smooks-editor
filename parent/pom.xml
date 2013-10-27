@@ -94,7 +94,11 @@
 				<version>${tychoVersion}</version>
 				<configuration>
 					<resolver>p2</resolver>
+					<pomDependencies>consider</pomDependencies>
 					<ignoreTychoRepositories>true</ignoreTychoRepositories>
+					<dependency-resolution>
+						<optionalDependencies>ignore</optionalDependencies>
+					</dependency-resolution>
 					<environments>
 						<environment>
 							<os>macosx</os>
@@ -209,10 +213,60 @@
 	<profiles>
 
 		<profile>
-			<id>jbosstools-nightly</id>
+			<id>internet-p2-sites</id>
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
+			<repositories>
+				<repository>
+					<id>webtools</id>
+					<url>http://download.eclipse.org/webtools/updates</url>
+					<layout>p2</layout>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
+					<releases>
+						<enabled>true</enabled>
+					</releases>
+				</repository>
+				<repository>
+					<id>gef</id>
+					<url>http://download.eclipse.org/tools/gef/updates-pre-3_8/releases/</url>
+					<layout>p2</layout>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
+					<releases>
+						<enabled>true</enabled>
+					</releases>
+				</repository>
+				<repository>
+					<id>emf</id>
+					<url>http://download.eclipse.org/modeling/emf/emf/updates/releases/</url>
+					<layout>p2</layout>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
+					<releases>
+						<enabled>true</enabled>
+					</releases>
+				</repository>
+				<repository>
+					<id>indigo</id>
+					<url>http://download.eclipse.org/releases/indigo/</url>
+					<layout>p2</layout>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
+					<releases>
+						<enabled>true</enabled>
+					</releases>
+				</repository>
+			</repositories>
+		</profile>
+
+		<profile>
+			<id>jbosstools-nightly</id>
 			<repositories>
 				<repository>
 					<id>jbosstools-nightly</id>
@@ -230,7 +284,7 @@
 		<profile>
 			<id>jbosstools-nightly-staging-composite</id>
 			<activation>
-				<activeByDefault>true</activeByDefault>
+				<activeByDefault>false</activeByDefault>
 			</activation>
 			<repositories>
 				<repository>
@@ -249,7 +303,7 @@
 		<profile>
 			<id>jboss-requirements-composite-mirror</id>
 			<activation>
-				<activeByDefault>true</activeByDefault>
+				<activeByDefault>false</activeByDefault>
 			</activation>
 			<repositories>
 				<repository>
@@ -272,7 +326,7 @@
 		<profile>
 			<id>unified.target</id>
 			<activation>
-				<activeByDefault>true</activeByDefault>
+				<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
 			</properties>
@@ -360,7 +414,7 @@
 		<profile>
 			<id>unified.site</id>
 			<activation>
-				<activeByDefault>true</activeByDefault>
+				<activeByDefault>false</activeByDefault>
 			</activation>
 			<repositories>
 				<repository>
@@ -388,7 +442,8 @@
 			<properties>
 				<!-- THE FOLLOWING LINE MUST NOT BE BROKEN BY AUTOFORMATTING -->
 				<systemProperties combine.children="append"> -d32
-					-Dosgi.arch=x86 -XstartOnFirstThread </systemProperties>
+					-Dosgi.arch=x86 -XstartOnFirstThread
+				</systemProperties>
 			</properties>
 		</profile>
 

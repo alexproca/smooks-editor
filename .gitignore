@@ -1,6 +1,10 @@
 .idea/
 bin/
 *~
+site/features/
+site/plugins/
+site/artifacts.jar
+site/content.jar
 *.iml
 target/
 *.log
