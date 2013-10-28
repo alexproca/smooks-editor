@@ -8,7 +8,7 @@
  * Contributors:
  *     Red Hat, Inc. - initial API and implementation
  ******************************************************************************/
-package org.jboss.tools.smooks.configuration.editors.uitls;
+package org.jboss.tools.smooks.configuration.editors.utils;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyListener;

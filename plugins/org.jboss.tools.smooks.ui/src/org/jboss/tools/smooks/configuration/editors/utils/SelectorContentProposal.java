@@ -8,60 +8,48 @@
  * Contributors:
  *     Red Hat, Inc. - initial API and implementation
  ******************************************************************************/
-package org.jboss.tools.smooks.configuration.editors.uitls;
+package org.jboss.tools.smooks.configuration.editors.utils;
 
 import org.eclipse.jface.fieldassist.IContentProposal;
+import org.jboss.tools.smooks.configuration.editors.IXMLStructuredObject;
 
 /**
  * @author Dart (dpeng@redhat.com)
  *
  */
-public class BindingsContextContentProposal implements IContentProposal {
-	
-	private int startIndex = 0;
-	
+public class SelectorContentProposal implements IContentProposal {
+
 	private String content = null;
+	private IXMLStructuredObject node;
 	
-	public static final int BINDINGS = 1;
 	
-	public static final int PROPERTIES = 2;
 	
-	public static final int WIRTINGS = 3;
-
-	public static final int EXPRESSIONS = 4;
-	
-	private int type = BINDINGS;
-
-	public BindingsContextContentProposal(int type , String content,int startIndex){
-		this.startIndex = startIndex;
-		this.content = content;
-		this.type = type;
+	public SelectorContentProposal(IXMLStructuredObject node){
+		this.node = node;
+		this.content = SmooksUIUtils.generateFullPath(node, "/"); //$NON-NLS-1$
 	}
 	
 	
 	/**
-	 * @return the type
+	 * @return the node
 	 */
-	public int getType() {
-		return type;
+	public IXMLStructuredObject getNode() {
+		return node;
 	}
-
 
 
 	/**
-	 * @param type the type to set
+	 * @param node the node to set
 	 */
-	public void setType(int type) {
-		this.type = type;
+	public void setNode(IXMLStructuredObject node) {
+		this.node = node;
 	}
-
 
 
 	/* (non-Javadoc)
 	 * @see org.eclipse.jface.fieldassist.IContentProposal#getContent()
 	 */
 	public String getContent() {
-		// TODO Auto-generated method stub
 		return content;
 	}
 
@@ -70,16 +58,15 @@ public class BindingsContextContentProposal implements IContentProposal {
 	 */
 	public int getCursorPosition() {
 		if(content != null){
-			return getContent().length() + startIndex ;
+			return content.length();
 		}
-		return startIndex;
+		return 0;
 	}
 
 	/* (non-Javadoc)
 	 * @see org.eclipse.jface.fieldassist.IContentProposal#getDescription()
 	 */
 	public String getDescription() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -87,23 +74,20 @@ public class BindingsContextContentProposal implements IContentProposal {
 	 * @see org.eclipse.jface.fieldassist.IContentProposal#getLabel()
 	 */
 	public String getLabel() {
-		String name = ""; //$NON-NLS-1$
-		if(type == BINDINGS){
-			name = "Bean"; //$NON-NLS-1$
-		}
-		if(type == PROPERTIES){
-			name = "Value Binding"; //$NON-NLS-1$
-		}
-		if(type == WIRTINGS){
-			name = "Bean Binding"; //$NON-NLS-1$
-		}
-		if(type == EXPRESSIONS){
-			name = "Expression Binding"; //$NON-NLS-1$
-		}
-		if(name.length() != 0 && content != null){
-			return content + " - ( " + name + " )"; //$NON-NLS-1$ //$NON-NLS-2$
-		}
-		return  content;
+		String content = this.getContent();
+//		if(content != null){
+//			String[] s = content.split("/");
+//			if(s != null && s.length > 4){
+//				String newContent = "";
+//				for(int i = s.length - 1; i > 4 ; i --){
+//					newContent = newContent + "/" + s[i];
+//				}
+//				newContent = "..." + newContent; 
+//				
+//				return newContent;
+//			}
+//		}
+		return content;
 	}
 
 }

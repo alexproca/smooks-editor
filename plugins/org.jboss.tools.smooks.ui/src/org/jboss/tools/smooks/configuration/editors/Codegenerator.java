@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
 public class Codegenerator {
-	String basePath = "/home/DartPeng/Work/eclipse/smooks-configuration-workspace/org.jboss.tools.smooks.ui/src/org/jboss/tools/smooks/configuration/editors/uitls/temp/"; //$NON-NLS-1$
+	String basePath = "/home/DartPeng/Work/eclipse/smooks-configuration-workspace/org.jboss.tools.smooks.ui/src/org/jboss/tools/smooks/configuration/editors/utils/temp/"; //$NON-NLS-1$
 	String tempContents = ""; //$NON-NLS-1$
 
 	public Codegenerator() {

@@ -20,7 +20,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.jboss.tools.smooks.configuration.editors.IXMLStructuredObject;
 import org.jboss.tools.smooks.configuration.editors.edireader12.EDIDataParser;
-import org.jboss.tools.smooks.configuration.editors.uitls.SmooksUIUtils;
+import org.jboss.tools.smooks.configuration.editors.utils.SmooksUIUtils;
 import org.jboss.tools.smooks.configuration.editors.xml.TagList;
 import org.jboss.tools.smooks.model.smooks.SmooksResourceListType;
 import org.jboss.tools.smooks.model.smooks.util.SmooksResourceFactoryImpl;

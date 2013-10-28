@@ -8,7 +8,7 @@
  * Contributors:
  *     Red Hat, Inc. - initial API and implementation
  ******************************************************************************/
-package org.jboss.tools.smooks.configuration.editors.uitls;
+package org.jboss.tools.smooks.configuration.editors.utils;
 
 import org.eclipse.jface.fieldassist.IContentProposal;
 import org.jboss.tools.smooks.configuration.editors.IXMLStructuredObject;

@@ -47,9 +47,9 @@ import org.jboss.tools.smooks.configuration.editors.javabean12.JavaBeanModel;
 import org.jboss.tools.smooks.configuration.editors.javabean12.JavaBeanModelFactory;
 import org.jboss.tools.smooks.configuration.editors.javabean12.JavabeanContentProvider;
 import org.jboss.tools.smooks.configuration.editors.javabean12.JavabeanlabelProvider;
-import org.jboss.tools.smooks.configuration.editors.uitls.JavaTypeFieldDialog;
-import org.jboss.tools.smooks.configuration.editors.uitls.ProjectClassLoader;
-import org.jboss.tools.smooks.configuration.editors.uitls.SmooksUIUtils;
+import org.jboss.tools.smooks.configuration.editors.utils.JavaTypeFieldDialog;
+import org.jboss.tools.smooks.configuration.editors.utils.ProjectClassLoader;
+import org.jboss.tools.smooks.configuration.editors.utils.SmooksUIUtils;
 
 /**
  * @author Dart

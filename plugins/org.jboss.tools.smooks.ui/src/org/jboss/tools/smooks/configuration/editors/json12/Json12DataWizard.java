@@ -28,7 +28,7 @@ import org.eclipse.ui.IWorkbench;
 import org.jboss.tools.smooks.SmooksModelUtils;
 import org.jboss.tools.smooks.configuration.editors.SmooksMultiFormEditor;
 import org.jboss.tools.smooks.configuration.editors.json12.Json12DataConfiguraitonWizardPage.KeyValueModel;
-import org.jboss.tools.smooks.configuration.editors.uitls.JsonInputDataParser;
+import org.jboss.tools.smooks.configuration.editors.utils.JsonInputDataParser;
 import org.jboss.tools.smooks.configuration.editors.wizard.IStructuredDataSelectionWizard;
 import org.jboss.tools.smooks.model.json12.Json12Factory;
 import org.jboss.tools.smooks.model.json12.Json12Package;

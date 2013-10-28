@@ -26,7 +26,7 @@ import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.ui.IEditorPart;
 import org.jboss.tools.smooks.configuration.editors.javabean12.JavaBeanModel;
-import org.jboss.tools.smooks.configuration.editors.uitls.SmooksUIUtils;
+import org.jboss.tools.smooks.configuration.editors.utils.SmooksUIUtils;
 import org.jboss.tools.smooks.editor.ISmooksModelProvider;
 import org.jboss.tools.smooks.gef.tree.command.GEFAdapterCommand;
 import org.jboss.tools.smooks.graphical.editors.SmooksGraphicalEditorPart;

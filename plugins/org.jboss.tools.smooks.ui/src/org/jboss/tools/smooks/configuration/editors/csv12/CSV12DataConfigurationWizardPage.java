@@ -42,7 +42,7 @@ import org.eclipse.swt.widgets.Item;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.Text;
-import org.jboss.tools.smooks.configuration.editors.uitls.SmooksUIUtils;
+import org.jboss.tools.smooks.configuration.editors.utils.SmooksUIUtils;
 import org.jboss.tools.smooks.model.csv12.CSV12Reader;
 import org.jboss.tools.smooks.model.csv12.impl.CSV12ReaderImpl;
 import org.jboss.tools.smooks.model.smooks.SmooksResourceListType;

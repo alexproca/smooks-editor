@@ -90,7 +90,7 @@ import org.eclipse.ui.forms.widgets.Section;
 import org.jboss.tools.smooks.configuration.editors.AttributeFieldEditPart;
 import org.jboss.tools.smooks.configuration.editors.IFilePathProcessor;
 import org.jboss.tools.smooks.configuration.editors.ModelPanelCreator;
-import org.jboss.tools.smooks.configuration.editors.uitls.SmooksUIUtils;
+import org.jboss.tools.smooks.configuration.editors.utils.SmooksUIUtils;
 import org.jboss.tools.smooks.configuration.editors.xml.TagList;
 import org.jboss.tools.smooks.configuration.editors.xml.TagObject;
 import org.jboss.tools.smooks.configuration.editors.xml.XMLStructuredDataContentProvider;

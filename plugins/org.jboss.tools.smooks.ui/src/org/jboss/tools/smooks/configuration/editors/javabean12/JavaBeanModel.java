@@ -29,7 +29,7 @@ import java.util.Properties;
 import java.util.Set;
 
 import org.jboss.tools.smooks.configuration.editors.IXMLStructuredObject;
-import org.jboss.tools.smooks.configuration.editors.uitls.JavaPropertyUtils;
+import org.jboss.tools.smooks.configuration.editors.utils.JavaPropertyUtils;
 
 /**
  * @author Dart Peng

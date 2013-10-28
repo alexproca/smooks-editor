@@ -11,7 +11,7 @@ import java.util.List;
 import org.eclipse.core.runtime.Assert;
 import org.jboss.tools.smooks.configuration.editors.IFieldMarker;
 import org.jboss.tools.smooks.configuration.editors.IXMLStructuredObject;
-import org.jboss.tools.smooks.configuration.editors.uitls.SmooksUIUtils;
+import org.jboss.tools.smooks.configuration.editors.utils.SmooksUIUtils;
 import org.jboss.tools.smooks.gef.model.AbstractSmooksGraphicalModel;
 import org.jboss.tools.smooks.graphical.editors.model.IValidatableModel;
 import org.jboss.tools.smooks.templating.template.CollectionMapping;

@@ -79,7 +79,7 @@ import org.jboss.tools.smooks.configuration.editors.SelectorCreationDialog;
 import org.jboss.tools.smooks.configuration.editors.javabean12.JavaBeanModel;
 import org.jboss.tools.smooks.configuration.editors.javabean12.JavabeanContentProvider;
 import org.jboss.tools.smooks.configuration.editors.javabean12.JavabeanlabelProvider;
-import org.jboss.tools.smooks.configuration.editors.uitls.SmooksUIUtils;
+import org.jboss.tools.smooks.configuration.editors.utils.SmooksUIUtils;
 import org.jboss.tools.smooks.configuration.editors.xml.XMLStructuredDataContentProvider;
 import org.jboss.tools.smooks.configuration.editors.xml.XMLStructuredDataLabelProvider;
 import org.jboss.tools.smooks.configuration.validate.ISmooksModelValidateListener;

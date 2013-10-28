@@ -30,9 +30,9 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.forms.widgets.FormToolkit;
-import org.jboss.tools.smooks.configuration.editors.uitls.IModelProcsser;
-import org.jboss.tools.smooks.configuration.editors.uitls.INumberParser;
-import org.jboss.tools.smooks.configuration.editors.uitls.SmooksUIUtils;
+import org.jboss.tools.smooks.configuration.editors.utils.IModelProcsser;
+import org.jboss.tools.smooks.configuration.editors.utils.INumberParser;
+import org.jboss.tools.smooks.configuration.editors.utils.SmooksUIUtils;
 import org.jboss.tools.smooks.editor.ISmooksModelProvider;
 import org.jboss.tools.smooks.model.common.AbstractAnyType;
 

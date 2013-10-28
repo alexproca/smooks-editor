@@ -9,7 +9,7 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.jboss.tools.smooks.configuration.editors.IXMLStructuredObject;
-import org.jboss.tools.smooks.configuration.editors.uitls.JsonInputDataParser;
+import org.jboss.tools.smooks.configuration.editors.utils.JsonInputDataParser;
 import org.jboss.tools.smooks.model.json12.Json12Reader;
 import org.jboss.tools.smooks.model.smooks.SmooksResourceListType;
 import org.jboss.tools.smooks.model.smooks.util.SmooksResourceFactoryImpl;

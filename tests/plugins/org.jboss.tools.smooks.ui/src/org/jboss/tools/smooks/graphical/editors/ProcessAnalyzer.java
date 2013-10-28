@@ -18,7 +18,7 @@ import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
 import org.jboss.tools.smooks.SmooksModelUtils;
-import org.jboss.tools.smooks.configuration.editors.uitls.SmooksUIUtils;
+import org.jboss.tools.smooks.configuration.editors.utils.SmooksUIUtils;
 import org.jboss.tools.smooks.graphical.editors.process.ProcessFactory;
 import org.jboss.tools.smooks.graphical.editors.process.ProcessType;
 import org.jboss.tools.smooks.graphical.editors.process.TaskType;

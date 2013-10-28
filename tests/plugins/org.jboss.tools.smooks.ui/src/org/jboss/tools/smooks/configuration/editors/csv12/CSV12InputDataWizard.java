@@ -23,7 +23,7 @@ import org.eclipse.ui.IWorkbench;
 import org.jboss.tools.smooks.SmooksModelUtils;
 import org.jboss.tools.smooks.configuration.editors.SmooksMultiFormEditor;
 import org.jboss.tools.smooks.configuration.editors.csv12.CSV12DataConfigurationWizardPage.FieldString;
-import org.jboss.tools.smooks.configuration.editors.uitls.JsonInputDataParser;
+import org.jboss.tools.smooks.configuration.editors.utils.JsonInputDataParser;
 import org.jboss.tools.smooks.configuration.editors.wizard.IStructuredDataSelectionWizard;
 import org.jboss.tools.smooks.model.csv12.CSV12Reader;
 import org.jboss.tools.smooks.model.csv12.Csv12Factory;

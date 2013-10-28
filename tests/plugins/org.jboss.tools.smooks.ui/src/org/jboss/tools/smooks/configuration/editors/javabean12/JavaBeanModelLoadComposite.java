@@ -51,7 +51,7 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.dialogs.SelectionDialog;
 import org.jboss.tools.smooks.configuration.SmooksConfigurationActivator;
 import org.jboss.tools.smooks.configuration.editors.GraphicsConstants;
-import org.jboss.tools.smooks.configuration.editors.uitls.ProjectClassLoader;
+import org.jboss.tools.smooks.configuration.editors.utils.ProjectClassLoader;
 
 /**
  * @author Dart Peng

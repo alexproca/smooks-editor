@@ -1,9 +1,9 @@
-package org.jboss.tools.smooks.configuration.editors.uitls;
+package org.jboss.tools.smooks.configuration.editors.utils;
 
 import org.eclipse.osgi.util.NLS;
 
 public class Messages extends NLS {
-	private static final String BUNDLE_NAME = "org.jboss.tools.smooks.configuration.editors.uitls.messages"; //$NON-NLS-1$
+	private static final String BUNDLE_NAME = "org.jboss.tools.smooks.configuration.editors.utils.messages"; //$NON-NLS-1$
 	public static String JavaTypeFieldDialog_CantOpenErrorMessage;
 	public static String JavaTypeFieldDialog_CantOpenErrorTitle;
 	public static String JavaTypeFieldDialog_SearchDialogTitle;

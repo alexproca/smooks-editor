@@ -36,7 +36,7 @@ import org.eclipse.ui.ide.IDE;
 import org.eclipse.ui.part.FileEditorInput;
 import org.jboss.tools.smooks.SmooksModelUtils;
 import org.jboss.tools.smooks.configuration.SmooksConfigurationActivator;
-import org.jboss.tools.smooks.configuration.editors.uitls.SmooksUIUtils;
+import org.jboss.tools.smooks.configuration.editors.utils.SmooksUIUtils;
 
 /**
  * @author DartPeng

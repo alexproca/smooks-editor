@@ -37,7 +37,7 @@ import org.jboss.tools.smooks.configuration.editors.AttributeFieldEditPart;
 import org.jboss.tools.smooks.configuration.editors.IFieldMarker;
 import org.jboss.tools.smooks.configuration.editors.ModelMultiChildrenTabelPanelCreator;
 import org.jboss.tools.smooks.configuration.editors.PropertyUICreator;
-import org.jboss.tools.smooks.configuration.editors.uitls.SmooksUIUtils;
+import org.jboss.tools.smooks.configuration.editors.utils.SmooksUIUtils;
 import org.jboss.tools.smooks.editor.ISmooksModelProvider;
 import org.jboss.tools.smooks.graphical.wizard.freemarker.Messages;
 import org.jboss.tools.smooks.model.csv12.Binding;

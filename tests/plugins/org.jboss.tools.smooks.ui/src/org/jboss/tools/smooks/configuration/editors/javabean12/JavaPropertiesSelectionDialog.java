@@ -39,10 +39,10 @@ import org.eclipse.swt.widgets.TableColumn;
 import org.jboss.tools.smooks.configuration.SmooksConfigurationActivator;
 import org.jboss.tools.smooks.configuration.editors.GraphicsConstants;
 import org.jboss.tools.smooks.configuration.editors.javabean12.Messages;
-import org.jboss.tools.smooks.configuration.editors.uitls.IFieldDialog;
-import org.jboss.tools.smooks.configuration.editors.uitls.IModelProcsser;
-import org.jboss.tools.smooks.configuration.editors.uitls.ProjectClassLoader;
-import org.jboss.tools.smooks.configuration.editors.uitls.SmooksUIUtils;
+import org.jboss.tools.smooks.configuration.editors.utils.IFieldDialog;
+import org.jboss.tools.smooks.configuration.editors.utils.IModelProcsser;
+import org.jboss.tools.smooks.configuration.editors.utils.ProjectClassLoader;
+import org.jboss.tools.smooks.configuration.editors.utils.SmooksUIUtils;
 
 /**
  * @author Dart (dpeng@redhat.com)

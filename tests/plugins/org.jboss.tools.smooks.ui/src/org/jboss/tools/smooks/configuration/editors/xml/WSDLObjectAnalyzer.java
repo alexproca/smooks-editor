@@ -37,7 +37,7 @@ import org.eclipse.wst.wsdl.util.WSDLParser;
 import org.eclipse.wst.wsdl.util.WSDLResourceImpl;
 import org.eclipse.xsd.XSDElementDeclaration;
 import org.eclipse.xsd.XSDSchema;
-import org.jboss.tools.smooks.configuration.editors.uitls.SmooksUIUtils;
+import org.jboss.tools.smooks.configuration.editors.utils.SmooksUIUtils;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 

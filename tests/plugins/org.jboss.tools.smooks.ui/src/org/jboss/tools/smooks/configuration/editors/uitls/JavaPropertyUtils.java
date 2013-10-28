@@ -1,4 +1,4 @@
-package org.jboss.tools.smooks.configuration.editors.uitls;
+package org.jboss.tools.smooks.configuration.editors.utils;
 
 import java.beans.IntrospectionException;
 import java.beans.Introspector;

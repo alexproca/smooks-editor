@@ -33,7 +33,7 @@ import javax.xml.transform.stream.StreamSource;
 
 import org.eclipse.core.resources.IResource;
 import org.jboss.tools.smooks.SmooksModelUtils;
-import org.jboss.tools.smooks.configuration.editors.uitls.SmooksUIUtils;
+import org.jboss.tools.smooks.configuration.editors.utils.SmooksUIUtils;
 import org.milyn.Smooks;
 import org.milyn.SmooksException;
 import org.milyn.container.ExecutionContext;

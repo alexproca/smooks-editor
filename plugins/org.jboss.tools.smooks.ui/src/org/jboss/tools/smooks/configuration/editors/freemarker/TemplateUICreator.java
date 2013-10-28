@@ -29,9 +29,9 @@ import org.jboss.tools.smooks.configuration.SmooksConstants;
 import org.jboss.tools.smooks.configuration.actions.OpenEditorEditInnerContentsAction;
 import org.jboss.tools.smooks.configuration.editors.AttributeFieldEditPart;
 import org.jboss.tools.smooks.configuration.editors.PropertyUICreator;
-import org.jboss.tools.smooks.configuration.editors.uitls.FieldAssistDisposer;
-import org.jboss.tools.smooks.configuration.editors.uitls.SmooksUIUtils;
-import org.jboss.tools.smooks.configuration.editors.uitls.TextTypeSwicher;
+import org.jboss.tools.smooks.configuration.editors.utils.FieldAssistDisposer;
+import org.jboss.tools.smooks.configuration.editors.utils.SmooksUIUtils;
+import org.jboss.tools.smooks.configuration.editors.utils.TextTypeSwicher;
 import org.jboss.tools.smooks.editor.ISmooksModelProvider;
 import org.jboss.tools.smooks.model.freemarker.FreemarkerPackage;
 

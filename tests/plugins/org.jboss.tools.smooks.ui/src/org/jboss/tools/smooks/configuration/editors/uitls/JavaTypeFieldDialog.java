@@ -8,7 +8,7 @@
  * Contributors:
  *     Red Hat, Inc. - initial API and implementation
  ******************************************************************************/
-package org.jboss.tools.smooks.configuration.editors.uitls;
+package org.jboss.tools.smooks.configuration.editors.utils;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
@@ -41,7 +41,7 @@ public class JavaTypeFieldDialog implements IFieldDialog {
 	}
 
 	/* (non-Javadoc)
-	 * @see org.jboss.tools.smooks.configuration.editors.uitls.IFieldDialog#open()
+	 * @see org.jboss.tools.smooks.configuration.editors.utils.IFieldDialog#open()
 	 */
 	public Object open(Shell shell) {
 		if (workspaceResource != null && workspaceResource instanceof IFile) {

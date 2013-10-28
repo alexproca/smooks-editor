@@ -25,9 +25,9 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
-import org.jboss.tools.smooks.configuration.editors.uitls.JavaPropertyUtils;
-import org.jboss.tools.smooks.configuration.editors.uitls.ProjectClassLoader;
-import org.jboss.tools.smooks.configuration.editors.uitls.SmooksUIUtils;
+import org.jboss.tools.smooks.configuration.editors.utils.JavaPropertyUtils;
+import org.jboss.tools.smooks.configuration.editors.utils.ProjectClassLoader;
+import org.jboss.tools.smooks.configuration.editors.utils.SmooksUIUtils;
 import org.jboss.tools.smooks.model.javabean12.Javabean12Package;
 
 /**
