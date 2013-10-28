@@ -15,8 +15,6 @@ import java.util.List;
 
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.IEditorPart;
-import org.jboss.tools.smooks.configuration.SmooksConfigurationActivator;
-import org.jboss.tools.smooks.configuration.editors.GraphicsConstants;
 import org.jboss.tools.smooks.gef.tree.editparts.TreeNodeEditPart;
 import org.jboss.tools.smooks.gef.tree.figures.TreeNodeFigure;
 import org.jboss.tools.smooks.gef.tree.model.TreeNodeModel;

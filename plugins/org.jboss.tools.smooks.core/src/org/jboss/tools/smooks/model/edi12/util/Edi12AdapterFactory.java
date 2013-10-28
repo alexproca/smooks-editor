@@ -10,14 +10,13 @@ package org.jboss.tools.smooks.model.edi12.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.xml.type.AnyType;
 import org.jboss.tools.smooks.model.common.AbstractAnyType;
-import org.jboss.tools.smooks.model.edi12.*;
+import org.jboss.tools.smooks.model.edi12.EDI12DocumentRoot;
+import org.jboss.tools.smooks.model.edi12.EDI12Reader;
+import org.jboss.tools.smooks.model.edi12.Edi12Package;
 import org.jboss.tools.smooks.model.smooks.AbstractReader;
 import org.jboss.tools.smooks.model.smooks.AbstractResourceConfig;
 

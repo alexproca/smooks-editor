@@ -12,10 +12,11 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.xml.type.AnyType;
 import org.jboss.tools.smooks.model.common.AbstractAnyType;
-import org.jboss.tools.smooks.model.edi12.*;
+import org.jboss.tools.smooks.model.edi12.EDI12DocumentRoot;
+import org.jboss.tools.smooks.model.edi12.EDI12Reader;
+import org.jboss.tools.smooks.model.edi12.Edi12Package;
 import org.jboss.tools.smooks.model.smooks.AbstractReader;
 import org.jboss.tools.smooks.model.smooks.AbstractResourceConfig;
 

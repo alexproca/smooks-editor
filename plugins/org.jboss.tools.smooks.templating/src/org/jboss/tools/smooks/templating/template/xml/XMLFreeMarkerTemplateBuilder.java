@@ -27,23 +27,26 @@ import java.util.Enumeration;
 
 import javax.xml.XMLConstants;
 
+import org.jboss.tools.smooks.templating.model.ModelBuilder;
+import org.jboss.tools.smooks.templating.model.ModelBuilder.ElementType;
+import org.jboss.tools.smooks.templating.model.ModelBuilderException;
+import org.jboss.tools.smooks.templating.model.ModelNodeResolver;
+import org.jboss.tools.smooks.templating.model.xml.XSDModelBuilder;
+import org.jboss.tools.smooks.templating.template.CollectionMapping;
+import org.jboss.tools.smooks.templating.template.Mapping;
+import org.jboss.tools.smooks.templating.template.TemplateBuilder;
+import org.jboss.tools.smooks.templating.template.ValueMapping;
+import org.jboss.tools.smooks.templating.template.exception.TemplateBuilderException;
+import org.jboss.tools.smooks.templating.template.freemarker.FreeMarkerTemplateBuilder;
+import org.jboss.tools.smooks.templating.template.util.FreeMarkerUtil;
+import org.milyn.xml.DomUtils;
+import org.milyn.xml.XmlUtil;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.jboss.tools.smooks.templating.model.ModelBuilder;
-import org.jboss.tools.smooks.templating.model.ModelBuilderException;
-import org.jboss.tools.smooks.templating.model.ModelNodeResolver;
-import org.jboss.tools.smooks.templating.model.ModelBuilder.ElementType;
-import org.jboss.tools.smooks.templating.model.xml.XSDModelBuilder;
-import org.jboss.tools.smooks.templating.template.*;
-import org.jboss.tools.smooks.templating.template.exception.TemplateBuilderException;
-import org.jboss.tools.smooks.templating.template.freemarker.FreeMarkerTemplateBuilder;
-import org.jboss.tools.smooks.templating.template.util.FreeMarkerUtil;
-import org.milyn.xml.DomUtils;
-import org.milyn.xml.XmlUtil;
 
 import freemarker.core.TemplateElement;
 import freemarker.template.Configuration;

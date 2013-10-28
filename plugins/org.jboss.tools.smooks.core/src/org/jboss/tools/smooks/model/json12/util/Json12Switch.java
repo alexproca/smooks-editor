@@ -9,13 +9,15 @@ package org.jboss.tools.smooks.model.json12.util;
 
 import java.util.List;
 
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.xml.type.AnyType;
 import org.jboss.tools.smooks.model.common.AbstractAnyType;
-import org.jboss.tools.smooks.model.json12.*;
+import org.jboss.tools.smooks.model.json12.Json12DocumentRoot;
+import org.jboss.tools.smooks.model.json12.Json12Package;
+import org.jboss.tools.smooks.model.json12.Json12Reader;
+import org.jboss.tools.smooks.model.json12.Key;
+import org.jboss.tools.smooks.model.json12.KeyMap;
 import org.jboss.tools.smooks.model.smooks.AbstractReader;
 import org.jboss.tools.smooks.model.smooks.AbstractResourceConfig;
 

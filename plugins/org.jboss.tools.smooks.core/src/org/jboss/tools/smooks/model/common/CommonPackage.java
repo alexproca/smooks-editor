@@ -8,7 +8,6 @@ package org.jboss.tools.smooks.model.common;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 
 /**

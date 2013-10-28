@@ -8,7 +8,6 @@ package org.jboss.tools.smooks.model.smooks;
 
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.jboss.tools.smooks.model.common.AbstractAnyType;
 

@@ -11,9 +11,9 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.xml.type.AnyType;
-import org.jboss.tools.smooks.model.common.*;
+import org.jboss.tools.smooks.model.common.AbstractAnyType;
+import org.jboss.tools.smooks.model.common.CommonPackage;
 
 /**
  * <!-- begin-user-doc -->

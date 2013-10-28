@@ -7,9 +7,7 @@
 package org.jboss.tools.smooks.model.javabean12;
 
 import org.eclipse.emf.common.util.EMap;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.util.FeatureMap;
 
 /**

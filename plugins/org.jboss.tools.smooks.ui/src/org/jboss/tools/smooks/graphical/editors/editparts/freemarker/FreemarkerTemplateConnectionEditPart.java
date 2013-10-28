@@ -25,7 +25,6 @@ import org.jboss.tools.smooks.configuration.editors.xml.TagObject;
 import org.jboss.tools.smooks.gef.model.AbstractSmooksGraphicalModel;
 import org.jboss.tools.smooks.gef.tree.command.DeleteConnectionCommand;
 import org.jboss.tools.smooks.gef.tree.editparts.TreeNodeConnectionEditPart;
-import org.jboss.tools.smooks.gef.tree.editpolicy.TreeNodeConnectionEditPolicy;
 import org.jboss.tools.smooks.gef.tree.editpolicy.TreeNodeEndpointEditPolicy;
 import org.jboss.tools.smooks.gef.tree.model.TreeNodeConnection;
 import org.jboss.tools.smooks.gef.tree.model.TreeNodeModel;

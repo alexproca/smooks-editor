@@ -12,10 +12,19 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.xml.type.AnyType;
 import org.jboss.tools.smooks.model.common.AbstractAnyType;
-import org.jboss.tools.smooks.model.medi.*;
+import org.jboss.tools.smooks.model.medi.Component;
+import org.jboss.tools.smooks.model.medi.Delimiters;
+import org.jboss.tools.smooks.model.medi.Description;
+import org.jboss.tools.smooks.model.medi.DocumentRoot;
+import org.jboss.tools.smooks.model.medi.EdiMap;
+import org.jboss.tools.smooks.model.medi.Field;
+import org.jboss.tools.smooks.model.medi.MEdiPackage;
+import org.jboss.tools.smooks.model.medi.MappingNode;
+import org.jboss.tools.smooks.model.medi.Segment;
+import org.jboss.tools.smooks.model.medi.Segments;
+import org.jboss.tools.smooks.model.medi.SubComponent;
 
 /**
  * <!-- begin-user-doc -->

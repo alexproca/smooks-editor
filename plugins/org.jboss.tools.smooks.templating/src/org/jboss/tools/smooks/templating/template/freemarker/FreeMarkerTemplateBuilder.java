@@ -12,7 +12,6 @@ package org.jboss.tools.smooks.templating.template.freemarker;
 
 import org.jboss.tools.smooks.templating.model.ModelBuilder;
 import org.jboss.tools.smooks.templating.model.ModelBuilderException;
-import org.jboss.tools.smooks.templating.template.CollectionMapping;
 import org.jboss.tools.smooks.templating.template.Mapping;
 import org.jboss.tools.smooks.templating.template.TemplateBuilder;
 import org.jboss.tools.smooks.templating.template.ValueMapping;

@@ -10,11 +10,12 @@ package org.jboss.tools.smooks.model.edi12.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.jboss.tools.smooks.model.edi12.*;
+import org.jboss.tools.smooks.model.edi12.EDI12DocumentRoot;
+import org.jboss.tools.smooks.model.edi12.EDI12Reader;
+import org.jboss.tools.smooks.model.edi12.Edi12Factory;
+import org.jboss.tools.smooks.model.edi12.Edi12Package;
 
 /**
  * <!-- begin-user-doc -->

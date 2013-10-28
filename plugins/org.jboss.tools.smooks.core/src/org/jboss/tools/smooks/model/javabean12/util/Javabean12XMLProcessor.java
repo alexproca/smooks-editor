@@ -8,9 +8,7 @@ package org.jboss.tools.smooks.model.javabean12.util;
 
 import java.util.Map;
 
-
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.xmi.util.XMLProcessor;
 import org.jboss.tools.smooks.model.javabean12.Javabean12Package;
 

@@ -39,7 +39,6 @@ import org.jboss.tools.smooks.configuration.editors.ModelMultiChildrenTabelPanel
 import org.jboss.tools.smooks.configuration.editors.PropertyUICreator;
 import org.jboss.tools.smooks.configuration.editors.utils.SmooksUIUtils;
 import org.jboss.tools.smooks.editor.ISmooksModelProvider;
-import org.jboss.tools.smooks.graphical.wizard.freemarker.Messages;
 import org.jboss.tools.smooks.model.csv12.Binding;
 import org.jboss.tools.smooks.model.csv12.CSV12Reader;
 import org.jboss.tools.smooks.model.csv12.Csv12Package;

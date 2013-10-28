@@ -11,7 +11,6 @@
 package org.jboss.tools.smooks.graphical.wizard;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.jface.wizard.IWizard;

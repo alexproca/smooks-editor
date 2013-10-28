@@ -19,8 +19,8 @@
  */
 package org.jboss.tools.smooks.templating.template;
 
-import org.w3c.dom.Node;
 import org.eclipse.core.runtime.Assert;
+import org.w3c.dom.Node;
 
 /**
  * Collection {@link ValueMapping}.

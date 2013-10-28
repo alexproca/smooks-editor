@@ -7,7 +7,6 @@
 package org.jboss.tools.smooks.model.medi.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
 
 /**

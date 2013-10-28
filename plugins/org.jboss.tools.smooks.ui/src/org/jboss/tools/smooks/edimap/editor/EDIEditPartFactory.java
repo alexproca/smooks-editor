@@ -12,21 +12,17 @@ package org.jboss.tools.smooks.edimap.editor;
 
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPartFactory;
-import org.jboss.tools.smooks.configuration.editors.xml.TagObject;
 import org.jboss.tools.smooks.edimap.editparts.EDIDataContainerEditPart;
 import org.jboss.tools.smooks.edimap.editparts.EDIDataEditPart;
 import org.jboss.tools.smooks.edimap.editparts.EDIMappingNodeEditPart;
 import org.jboss.tools.smooks.edimap.models.EDIDataContainerGraphModel;
 import org.jboss.tools.smooks.edimap.models.EDIDataGraphModel;
-import org.jboss.tools.smooks.edimap.models.EDIMappingNodeGraphModel;
 import org.jboss.tools.smooks.edimap.models.EDIMappingNodeContainerGraphModel;
+import org.jboss.tools.smooks.edimap.models.EDIMappingNodeGraphModel;
 import org.jboss.tools.smooks.gef.common.RootModel;
 import org.jboss.tools.smooks.gef.tree.editparts.RootEditPart;
 import org.jboss.tools.smooks.gef.tree.editparts.TreeNodeConnectionEditPart;
-import org.jboss.tools.smooks.gef.tree.model.TreeContainerModel;
 import org.jboss.tools.smooks.gef.tree.model.TreeNodeConnection;
-import org.jboss.tools.smooks.gef.tree.model.TreeNodeModel;
-import org.jboss.tools.smooks.model.medi.Segments;
 
 /**
  * @author Dart (dpeng@redhat.com)

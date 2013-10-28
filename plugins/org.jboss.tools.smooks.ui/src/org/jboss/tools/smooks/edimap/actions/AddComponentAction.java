@@ -11,7 +11,6 @@
 package org.jboss.tools.smooks.edimap.actions;
 
 import org.eclipse.emf.common.command.Command;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.ui.IWorkbenchPart;
 import org.jboss.tools.smooks.editor.ISmooksModelProvider;

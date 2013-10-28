@@ -26,7 +26,6 @@ import org.jboss.tools.smooks.gef.tree.model.IConnectableNode;
 import org.jboss.tools.smooks.gef.tree.model.TreeNodeConnection;
 import org.jboss.tools.smooks.gef.tree.model.TreeNodeModel;
 import org.jboss.tools.smooks.graphical.editors.model.IValidatableModel;
-import org.jboss.tools.smooks.graphical.editors.model.InputDataTreeNodeModel;
 import org.w3c.dom.Node;
 
 /**

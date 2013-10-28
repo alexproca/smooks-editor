@@ -9,13 +9,11 @@ package org.jboss.tools.smooks.model.common.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.xml.type.AnyType;
-import org.jboss.tools.smooks.model.common.*;
+import org.jboss.tools.smooks.model.common.AbstractAnyType;
+import org.jboss.tools.smooks.model.common.CommonPackage;
 
 /**
  * <!-- begin-user-doc -->

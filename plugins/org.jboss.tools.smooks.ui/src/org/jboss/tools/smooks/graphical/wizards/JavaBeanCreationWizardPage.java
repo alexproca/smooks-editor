@@ -10,8 +10,6 @@
  ******************************************************************************/
 package org.jboss.tools.smooks.graphical.wizards;
 
-import java.lang.reflect.Array;
-import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -49,7 +47,6 @@ import org.jboss.tools.smooks.configuration.editors.javabean12.JavabeanContentPr
 import org.jboss.tools.smooks.configuration.editors.javabean12.JavabeanlabelProvider;
 import org.jboss.tools.smooks.configuration.editors.utils.JavaTypeFieldDialog;
 import org.jboss.tools.smooks.configuration.editors.utils.ProjectClassLoader;
-import org.jboss.tools.smooks.configuration.editors.utils.SmooksUIUtils;
 
 /**
  * @author Dart

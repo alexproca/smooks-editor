@@ -16,11 +16,6 @@ import java.util.List;
 
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.jboss.tools.smooks.SmooksModelUtils;
-import org.jboss.tools.smooks.templating.model.ModelBuilderException;
-import org.jboss.tools.smooks.templating.model.csv.CSVModelBuilder;
-import org.jboss.tools.smooks.templating.template.csv.CSVFreeMarkerTemplateBuilder;
-import org.jboss.tools.smooks.templating.template.exception.InvalidMappingException;
-import org.jboss.tools.smooks.templating.template.exception.TemplateBuilderException;
 import org.jboss.tools.smooks.configuration.editors.IXMLStructuredObject;
 import org.jboss.tools.smooks.gef.model.AbstractSmooksGraphicalModel;
 import org.jboss.tools.smooks.gef.tree.model.TreeNodeConnection;
@@ -28,6 +23,11 @@ import org.jboss.tools.smooks.graphical.editors.model.javamapping.JavaBeanChildG
 import org.jboss.tools.smooks.graphical.editors.model.javamapping.JavaBeanGraphModel;
 import org.jboss.tools.smooks.model.freemarker.Freemarker;
 import org.jboss.tools.smooks.model.javabean12.BeanType;
+import org.jboss.tools.smooks.templating.model.ModelBuilderException;
+import org.jboss.tools.smooks.templating.model.csv.CSVModelBuilder;
+import org.jboss.tools.smooks.templating.template.csv.CSVFreeMarkerTemplateBuilder;
+import org.jboss.tools.smooks.templating.template.exception.InvalidMappingException;
+import org.jboss.tools.smooks.templating.template.exception.TemplateBuilderException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 

@@ -13,7 +13,6 @@ package org.jboss.tools.smooks.configuration.editors.edireader12;
 import java.util.List;
 
 import org.eclipse.jface.viewers.ViewerFilter;
-import org.jboss.tools.smooks.configuration.editors.edireader12.Messages;
 import org.jboss.tools.smooks.configuration.editors.xml.AbstractFileSelectionWizardPage;
 
 /**

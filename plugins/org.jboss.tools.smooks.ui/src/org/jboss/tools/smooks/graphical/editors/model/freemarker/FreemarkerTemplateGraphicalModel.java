@@ -34,7 +34,6 @@ import org.jboss.tools.smooks.model.freemarker.Template;
 import org.jboss.tools.smooks.templating.model.ModelBuilderException;
 import org.jboss.tools.smooks.templating.template.TemplateBuilder;
 import org.jboss.tools.smooks.templating.template.exception.TemplateBuilderException;
-import org.w3c.dom.Node;
 
 /**
  * @author Dart

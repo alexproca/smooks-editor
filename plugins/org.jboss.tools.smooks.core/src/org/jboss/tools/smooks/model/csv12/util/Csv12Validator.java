@@ -10,13 +10,14 @@ package org.jboss.tools.smooks.model.csv12.util;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.EObjectValidator;
-
 import org.eclipse.emf.ecore.xml.type.util.XMLTypeValidator;
-import org.jboss.tools.smooks.model.csv12.*;
+import org.jboss.tools.smooks.model.csv12.Binding;
+import org.jboss.tools.smooks.model.csv12.CSV12DocumentRoot;
+import org.jboss.tools.smooks.model.csv12.CSV12Reader;
+import org.jboss.tools.smooks.model.csv12.Csv12Package;
+import org.jboss.tools.smooks.model.csv12.MapBinding;
 
 /**
  * <!-- begin-user-doc -->

@@ -19,8 +19,8 @@
  */
 package org.jboss.tools.smooks.templating.template.exception;
 
-import org.w3c.dom.Element;
 import org.milyn.xml.DomUtils;
+import org.w3c.dom.Element;
 
 /**
  * Unmapped collection node exception.

@@ -10,11 +10,17 @@ package org.jboss.tools.smooks.model.javabean12.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.jboss.tools.smooks.model.javabean12.*;
+import org.jboss.tools.smooks.model.javabean12.BeanType;
+import org.jboss.tools.smooks.model.javabean12.DecodeParamType;
+import org.jboss.tools.smooks.model.javabean12.ExpressionType;
+import org.jboss.tools.smooks.model.javabean12.Javabean12DocumentRoot;
+import org.jboss.tools.smooks.model.javabean12.Javabean12Factory;
+import org.jboss.tools.smooks.model.javabean12.Javabean12Package;
+import org.jboss.tools.smooks.model.javabean12.ResultType;
+import org.jboss.tools.smooks.model.javabean12.ValueType;
+import org.jboss.tools.smooks.model.javabean12.WiringType;
 
 /**
  * <!-- begin-user-doc -->

@@ -29,7 +29,6 @@ import org.eclipse.ui.forms.events.HyperlinkEvent;
 import org.eclipse.ui.forms.events.IHyperlinkListener;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Hyperlink;
-import org.jboss.tools.smooks.configuration.editors.javabean12.Messages;
 
 /**
  * @author Dart (dpeng@redhat.com)

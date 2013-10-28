@@ -7,7 +7,6 @@
 package org.jboss.tools.smooks.model.javabean12;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.jboss.tools.smooks.model.smooks.ElementVisitor;
 

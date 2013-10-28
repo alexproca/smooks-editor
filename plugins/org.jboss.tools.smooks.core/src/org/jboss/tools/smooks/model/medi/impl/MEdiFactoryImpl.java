@@ -10,11 +10,20 @@ package org.jboss.tools.smooks.model.medi.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.jboss.tools.smooks.model.medi.*;
+import org.jboss.tools.smooks.model.medi.Component;
+import org.jboss.tools.smooks.model.medi.Delimiters;
+import org.jboss.tools.smooks.model.medi.Description;
+import org.jboss.tools.smooks.model.medi.DocumentRoot;
+import org.jboss.tools.smooks.model.medi.EdiMap;
+import org.jboss.tools.smooks.model.medi.Field;
+import org.jboss.tools.smooks.model.medi.MEdiFactory;
+import org.jboss.tools.smooks.model.medi.MEdiPackage;
+import org.jboss.tools.smooks.model.medi.MappingNode;
+import org.jboss.tools.smooks.model.medi.Segment;
+import org.jboss.tools.smooks.model.medi.Segments;
+import org.jboss.tools.smooks.model.medi.SubComponent;
 
 /**
  * <!-- begin-user-doc -->

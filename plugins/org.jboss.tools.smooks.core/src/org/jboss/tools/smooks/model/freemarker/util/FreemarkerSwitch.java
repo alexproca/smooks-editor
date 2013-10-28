@@ -12,10 +12,16 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.xml.type.AnyType;
 import org.jboss.tools.smooks.model.common.AbstractAnyType;
-import org.jboss.tools.smooks.model.freemarker.*;
+import org.jboss.tools.smooks.model.freemarker.BindTo;
+import org.jboss.tools.smooks.model.freemarker.DocumentRoot;
+import org.jboss.tools.smooks.model.freemarker.Freemarker;
+import org.jboss.tools.smooks.model.freemarker.FreemarkerPackage;
+import org.jboss.tools.smooks.model.freemarker.Inline;
+import org.jboss.tools.smooks.model.freemarker.OutputTo;
+import org.jboss.tools.smooks.model.freemarker.Template;
+import org.jboss.tools.smooks.model.freemarker.Use;
 import org.jboss.tools.smooks.model.smooks.AbstractResourceConfig;
 import org.jboss.tools.smooks.model.smooks.ElementVisitor;
 

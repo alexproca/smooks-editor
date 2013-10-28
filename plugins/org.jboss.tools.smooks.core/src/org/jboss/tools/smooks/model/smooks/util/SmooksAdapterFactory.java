@@ -9,14 +9,31 @@ package org.jboss.tools.smooks.model.smooks.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.xml.type.AnyType;
 import org.jboss.tools.smooks.model.common.AbstractAnyType;
-import org.jboss.tools.smooks.model.smooks.*;
+import org.jboss.tools.smooks.model.smooks.AbstractReader;
+import org.jboss.tools.smooks.model.smooks.AbstractResourceConfig;
+import org.jboss.tools.smooks.model.smooks.ConditionType;
+import org.jboss.tools.smooks.model.smooks.ConditionsType;
+import org.jboss.tools.smooks.model.smooks.DocumentRoot;
+import org.jboss.tools.smooks.model.smooks.ElementVisitor;
+import org.jboss.tools.smooks.model.smooks.FeaturesType;
+import org.jboss.tools.smooks.model.smooks.HandlerType;
+import org.jboss.tools.smooks.model.smooks.HandlersType;
+import org.jboss.tools.smooks.model.smooks.ImportType;
+import org.jboss.tools.smooks.model.smooks.ParamType;
+import org.jboss.tools.smooks.model.smooks.ParamsType;
+import org.jboss.tools.smooks.model.smooks.ProfileType;
+import org.jboss.tools.smooks.model.smooks.ProfilesType;
+import org.jboss.tools.smooks.model.smooks.ReaderType;
+import org.jboss.tools.smooks.model.smooks.ResourceConfigType;
+import org.jboss.tools.smooks.model.smooks.ResourceType;
+import org.jboss.tools.smooks.model.smooks.SetOffType;
+import org.jboss.tools.smooks.model.smooks.SetOnType;
+import org.jboss.tools.smooks.model.smooks.SmooksPackage;
+import org.jboss.tools.smooks.model.smooks.SmooksResourceListType;
 
 
 /**

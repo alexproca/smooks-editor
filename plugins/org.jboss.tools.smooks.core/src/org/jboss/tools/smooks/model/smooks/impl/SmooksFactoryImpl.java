@@ -9,11 +9,27 @@ package org.jboss.tools.smooks.model.smooks.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.jboss.tools.smooks.model.smooks.*;
+import org.jboss.tools.smooks.model.smooks.ConditionType;
+import org.jboss.tools.smooks.model.smooks.ConditionsType;
+import org.jboss.tools.smooks.model.smooks.DocumentRoot;
+import org.jboss.tools.smooks.model.smooks.FeaturesType;
+import org.jboss.tools.smooks.model.smooks.HandlerType;
+import org.jboss.tools.smooks.model.smooks.HandlersType;
+import org.jboss.tools.smooks.model.smooks.ImportType;
+import org.jboss.tools.smooks.model.smooks.ParamType;
+import org.jboss.tools.smooks.model.smooks.ParamsType;
+import org.jboss.tools.smooks.model.smooks.ProfileType;
+import org.jboss.tools.smooks.model.smooks.ProfilesType;
+import org.jboss.tools.smooks.model.smooks.ReaderType;
+import org.jboss.tools.smooks.model.smooks.ResourceConfigType;
+import org.jboss.tools.smooks.model.smooks.ResourceType;
+import org.jboss.tools.smooks.model.smooks.SetOffType;
+import org.jboss.tools.smooks.model.smooks.SetOnType;
+import org.jboss.tools.smooks.model.smooks.SmooksFactory;
+import org.jboss.tools.smooks.model.smooks.SmooksPackage;
+import org.jboss.tools.smooks.model.smooks.SmooksResourceListType;
 
 
 /**

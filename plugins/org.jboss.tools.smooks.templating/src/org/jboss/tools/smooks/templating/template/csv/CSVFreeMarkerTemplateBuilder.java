@@ -23,20 +23,21 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.util.Enumeration;
 
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.Node;
 import org.jboss.tools.smooks.templating.model.ModelBuilder;
 import org.jboss.tools.smooks.templating.model.ModelBuilderException;
-import org.jboss.tools.smooks.templating.template.*;
+import org.jboss.tools.smooks.templating.template.CollectionMapping;
+import org.jboss.tools.smooks.templating.template.Mapping;
+import org.jboss.tools.smooks.templating.template.ValueMapping;
 import org.jboss.tools.smooks.templating.template.exception.TemplateBuilderException;
 import org.jboss.tools.smooks.templating.template.exception.UnmappedCollectionNodeException;
 import org.jboss.tools.smooks.templating.template.freemarker.FreeMarkerTemplateBuilder;
 import org.jboss.tools.smooks.templating.template.util.FreeMarkerUtil;
 import org.milyn.xml.DomUtils;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 import au.com.bytecode.opencsv.CSVReader;
-
 import freemarker.core.TemplateElement;
 import freemarker.template.Configuration;
 import freemarker.template.Template;

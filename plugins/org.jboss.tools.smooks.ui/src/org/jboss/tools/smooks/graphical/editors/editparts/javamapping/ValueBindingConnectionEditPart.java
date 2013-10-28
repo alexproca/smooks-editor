@@ -12,8 +12,6 @@ package org.jboss.tools.smooks.graphical.editors.editparts.javamapping;
 
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Connection;
-import org.eclipse.draw2d.FigureUtilities;
-import org.jboss.tools.smooks.configuration.editors.GraphicsConstants;
 import org.jboss.tools.smooks.gef.tree.editparts.TreeNodeConnectionEditPart;
 
 /**

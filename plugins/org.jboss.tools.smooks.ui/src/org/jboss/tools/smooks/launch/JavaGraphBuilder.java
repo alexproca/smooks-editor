@@ -14,18 +14,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMResult;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-
-import org.milyn.Smooks;
-import org.milyn.payload.JavaSource;
-import org.w3c.dom.Document;
-
 public  class JavaGraphBuilder {
 
     public <T> T buildGraph(Class<T> messageType) {

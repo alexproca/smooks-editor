@@ -7,7 +7,6 @@
 package org.jboss.tools.smooks.model.json12.util;
 
 import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl;
 
 /**

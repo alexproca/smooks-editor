@@ -10,8 +10,6 @@
  ******************************************************************************/
 package org.jboss.tools.smooks.configuration.editors.javabean12;
 
-import java.lang.reflect.Array;
-
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jface.dialogs.Dialog;
@@ -38,10 +36,8 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.jboss.tools.smooks.configuration.SmooksConfigurationActivator;
 import org.jboss.tools.smooks.configuration.editors.GraphicsConstants;
-import org.jboss.tools.smooks.configuration.editors.javabean12.Messages;
 import org.jboss.tools.smooks.configuration.editors.utils.IFieldDialog;
 import org.jboss.tools.smooks.configuration.editors.utils.IModelProcsser;
-import org.jboss.tools.smooks.configuration.editors.utils.ProjectClassLoader;
 import org.jboss.tools.smooks.configuration.editors.utils.SmooksUIUtils;
 
 /**

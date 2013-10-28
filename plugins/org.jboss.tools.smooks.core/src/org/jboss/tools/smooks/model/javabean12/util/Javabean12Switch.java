@@ -9,13 +9,18 @@ package org.jboss.tools.smooks.model.javabean12.util;
 
 import java.util.List;
 
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.xml.type.AnyType;
 import org.jboss.tools.smooks.model.common.AbstractAnyType;
-import org.jboss.tools.smooks.model.javabean12.*;
+import org.jboss.tools.smooks.model.javabean12.BeanType;
+import org.jboss.tools.smooks.model.javabean12.DecodeParamType;
+import org.jboss.tools.smooks.model.javabean12.ExpressionType;
+import org.jboss.tools.smooks.model.javabean12.Javabean12DocumentRoot;
+import org.jboss.tools.smooks.model.javabean12.Javabean12Package;
+import org.jboss.tools.smooks.model.javabean12.ResultType;
+import org.jboss.tools.smooks.model.javabean12.ValueType;
+import org.jboss.tools.smooks.model.javabean12.WiringType;
 import org.jboss.tools.smooks.model.smooks.AbstractResourceConfig;
 import org.jboss.tools.smooks.model.smooks.ElementVisitor;
 

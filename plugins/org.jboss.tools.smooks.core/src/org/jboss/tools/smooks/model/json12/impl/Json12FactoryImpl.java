@@ -10,11 +10,14 @@ package org.jboss.tools.smooks.model.json12.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.jboss.tools.smooks.model.json12.*;
+import org.jboss.tools.smooks.model.json12.Json12DocumentRoot;
+import org.jboss.tools.smooks.model.json12.Json12Factory;
+import org.jboss.tools.smooks.model.json12.Json12Package;
+import org.jboss.tools.smooks.model.json12.Json12Reader;
+import org.jboss.tools.smooks.model.json12.Key;
+import org.jboss.tools.smooks.model.json12.KeyMap;
 
 /**
  * <!-- begin-user-doc -->

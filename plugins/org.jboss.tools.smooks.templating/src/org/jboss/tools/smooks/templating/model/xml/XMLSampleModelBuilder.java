@@ -35,16 +35,16 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.common.util.URI;
+import org.jboss.tools.smooks.templating.model.ModelBuilder;
+import org.jboss.tools.smooks.templating.model.ModelBuilderException;
+import org.jboss.tools.smooks.templating.template.xml.XMLFreeMarkerTemplateBuilder;
+import org.milyn.xml.DomUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-import org.jboss.tools.smooks.templating.model.ModelBuilder;
-import org.jboss.tools.smooks.templating.model.ModelBuilderException;
-import org.jboss.tools.smooks.templating.template.xml.XMLFreeMarkerTemplateBuilder;
-import org.milyn.xml.DomUtils;
 
 /**
  * XML Model Builder from an XML Sample.

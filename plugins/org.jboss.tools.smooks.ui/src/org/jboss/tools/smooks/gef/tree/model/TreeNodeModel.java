@@ -13,7 +13,6 @@ import org.jboss.tools.smooks.configuration.editors.xml.TagObject;
 import org.jboss.tools.smooks.configuration.editors.xml.TagPropertyObject;
 import org.jboss.tools.smooks.gef.model.AbstractSmooksGraphicalModel;
 import org.jboss.tools.smooks.templating.template.CollectionMapping;
-import org.jboss.tools.smooks.templating.template.Mapping;
 
 public class TreeNodeModel extends AbstractSmooksGraphicalModel {
 
