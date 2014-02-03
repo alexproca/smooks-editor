@@ -284,12 +284,12 @@ public class SmooksMultiFormEditor extends AbstractSmooksFormEditor implements I
 		return getSite().getId();
 	}
 
-	@Override
-	public void dispose() {
-		try {
-			super.dispose();
-		} catch (Throwable t) {
-			t.printStackTrace();
-		}
-	}
+//	@Override
+//	public void dispose() {
+//		try {
+//			super.dispose();
+//		} catch (Throwable t) {
+//			t.printStackTrace();
+//		}
+//	}
 }
