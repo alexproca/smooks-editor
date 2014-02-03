@@ -11,7 +11,6 @@ Bundle-ClassPath: .,
  libs/xstream-1.2.2.jar
 Require-Bundle: org.jboss.tools.smooks.runtime,
  org.eclipse.xsd,
- org.eclipse.emf,
  org.eclipse.core.runtime
 Export-Package: com.thoughtworks.xstream,
  com.thoughtworks.xstream.alias,

@@ -6,11 +6,8 @@ Bundle-Version: 1.2.0.qualifier
 Bundle-Activator: org.jboss.tools.smooks.core.SmooksCoreActivator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
- org.junit4,
- org.eclipse.emf.edit,
- org.jboss.tools.usage;bundle-version="1.0.0";resolution:=optional
+ org.eclipse.emf.edit
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.jboss.tools.smooks,
